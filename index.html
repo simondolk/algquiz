@@ -34,6 +34,8 @@
     .image-container img {
       display: none;
       width: 100%;
+      height: 300px;
+      object-fit: cover;
       border-radius: 8px;
     }
 
@@ -71,18 +73,13 @@
       background-color: #3498db;
     }
 
-    input[type="text"] {
+    input[type="text"], select {
       width: 100%;
       padding: 10px;
       margin-top: 10px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 6px;
-    }
-
-    form label {
-      display: block;
-      margin-bottom: 8px;
     }
 
     button {
@@ -97,6 +94,12 @@
 
     button:hover {
       background-color: #2980b9;
+    }
+
+    #resultDisplay {
+      margin-top: 15px;
+      font-weight: bold;
+      text-align: center;
     }
   </style>
 </head>
@@ -122,15 +125,17 @@
     <input type="text" id="textAnswer" placeholder="Skriv ditt svar här">
 
     <h3>Flervalsfråga</h3>
-    <form id="quizForm">
-      <label><input type="radio" name="alg" value="Blåstång"> Blåstång</label>
-      <label><input type="radio" name="alg" value="Tarmalg"> Tarmalg</label>
-      <label><input type="radio" name="alg" value="Korallalg"> Korallalg</label>
-      <label><input type="radio" name="alg" value="Havssallat"> Havssallat</label>
-    </form>
+    <select id="dropdownAnswer">
+      <option value="Blåstång">Blåstång</option>
+      <option value="Tarmalg">Tarmalg</option>
+      <option value="Korallalg">Korallalg</option>
+      <option value="Havssallat">Havssallat</option>
+    </select>
 
     <button onclick="checkAnswer()">Kontrollera</button>
     <button onclick="showCorrect()">Visa rätt svar</button>
+
+    <div id="resultDisplay"></div>
   </div>
 
   <script>
@@ -166,20 +171,20 @@
 
     function checkAnswer() {
       const text = document.getElementById('textAnswer').value.trim().toLowerCase();
-      const selected = document.querySelector('input[name="alg"]:checked');
+      const selected = document.getElementById('dropdownAnswer').value.toLowerCase();
       const correct = "blåstång";
 
       let message = "";
-      if (text === correct || (selected && selected.value.toLowerCase() === correct)) {
+      if (text === correct || selected === correct) {
         message = "Rätt svar! ✅";
       } else {
         message = "Fel svar. Försök igen. ❌";
       }
-      alert(message);
+      document.getElementById("resultDisplay").innerText = message;
     }
 
     function showCorrect() {
-      alert("Rätt svar är: Blåstång");
+      document.getElementById("resultDisplay").innerText = "Rätt svar är: Blåstång";
     }
   </script>
 </body>
