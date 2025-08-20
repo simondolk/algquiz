@@ -15,7 +15,7 @@
     .grid{display:grid;grid-template-columns:1fr 380px;gap:1rem}
     @media (max-width:960px){.grid{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid #e5e7eb;border-radius:.75rem;box-shadow:0 1px 2px rgba(0,0,0,.03);overflow:hidden}
-    .imgBox{aspect-ratio:4/3;background:#eef2f7;display:flex;align-items:center;justify-content:center}
+    .imgBox{aspect-ratio:4/3;background:#eef2f7;display:flex;align-items:center;justify-content:center;position:relative}
     .imgBox img{max-width:100%;max-height:100%;object-fit:contain}
     .controls{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;border-top:1px solid #e5e7eb}
     button{cursor:pointer;border:none;border-radius:.5rem;background:var(--brand);color:#fff;padding:.6rem .9rem;font-weight:600}
@@ -44,6 +44,22 @@
     .mc-options button.correct{border-color:var(--accent)}
     .mc-options button.incorrect{border-color:var(--danger)}
     .pill{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.3rem .65rem}
+
+    /* --- Bildsnurra --- */
+    .imgNav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(255,255,255,.88); color:#111; border:1px solid #e5e7eb;
+      width:36px; height:36px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center; font-weight:700;
+    }
+    .imgNav.prev{left:.5rem}
+    .imgNav.next{right:.5rem}
+    .imgNav:disabled{opacity:.4; cursor:not-allowed}
+    .imgCounter{
+      position:absolute; right:.6rem; bottom:.5rem;
+      background:rgba(0,0,0,.65); color:#fff; font-size:.85rem;
+      padding:.2rem .45rem; border-radius:.4rem;
+    }
   </style>
 </head>
 <body>
@@ -61,7 +77,10 @@
 <main class="wrap grid">
   <section class="card">
     <div class="imgBox" id="imgBox" aria-live="polite">
+      <button id="imgPrevBtn" class="imgNav prev" aria-label="Föregående bild">◀</button>
       <img id="algImg" alt="Algfoto i quizet" src="" />
+      <button id="imgNextBtn" class="imgNav next" aria-label="Nästa bild">▶</button>
+      <div id="imgCounter" class="imgCounter" aria-live="polite">1/1</div>
     </div>
     <div class="controls">
       <button id="prevBtn" class="secondary" title="Föregående">←</button>
@@ -113,32 +132,27 @@
 </main>
 
 <footer class="wrap">
-  <small class="muted">Byggd för undervisning: södra Sveriges vanliga makroalger (Kattegatt/Öresund). Bilder läggs i <code>/images</code> i ditt repo och mappas i artlistan.</small>
+  <small class="muted">Byggd för undervisning: södra Sveriges vanliga makroalger (Kattegatt/Öresund). Lägg dina foton i <code>/images</code> och ange filnamn under respektive art i listan nedan i koden.</small>
 </footer>
 
 <script>
 /*** =======================
  *  KONFIGURATION BILDER
  *  ======================= */
-// TODO: ÄNDRA denna bas-URL till din GitHub Pages- eller raw‑URL för bildmappen
-// Ex GitHub Pages: https://anvandarnamn.github.io/repo/images/
-// Ex raw:         https://raw.githubusercontent.com/anvandarnamn/repo/main/images/
-const BASE_IMAGE_URL = "https://simondolk.github.io/algquiz/images/";
+// För enkelhet: använd relativa länkar till repo-mappen "images"
+const BASE_IMAGE_URL = "./images/";
 
 /*** =======================
  *  HJÄLPLIGA FUNKTIONER
  *  ======================= */
 const norm = (s) => {
   if (!s) return "";
-  // Normalisera, ta bort diakritiska tecken, ersätt å/ä/ö, ta bort mellanrum o. skiljetecken
   return s.toLowerCase()
     .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "") // diakriter
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/å/g,"a").replace(/ä/g,"a").replace(/ö/g,"o")
-    .replace(/[^a-z0-9]/g,""); // ta bort mellanslag o. icke-alnum
+    .replace(/[^a-z0-9]/g,"");
 };
-
-// Levenshtein-avstånd
 function lev(a,b){
   const m=a.length, n=b.length;
   if(m===0) return n; if(n===0) return m;
@@ -148,38 +162,20 @@ function lev(a,b){
   for(let i=1;i<=m;i++){
     for(let j=1;j<=n;j++){
       const cost = a[i-1]===b[j-1]?0:1;
-      dp[i][j]=Math.min(
-        dp[i-1][j]+1,      // borttag
-        dp[i][j-1]+1,      // insättning
-        dp[i-1][j-1]+cost  // ersätt
-      );
+      dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost);
     }
   }
   return dp[m][n];
 }
-
-// Bedöm om användarens svar ≈ korrekt (med tolerans)
 function isMatch(userInput, item, tolLevel){
-  // tolLevel: 0=låg, 1=medel, 2=hög
   const cand = norm(userInput);
-  const accepted = [
-    item.commonName,
-    item.latinName,
-    ...(item.aliases||[])
-  ].map(norm);
-
-  // exakt träff
+  const accepted = [item.commonName, item.latinName, ...(item.aliases||[])].map(norm);
   if (accepted.includes(cand)) return true;
-
-  // Levenshtein med relativ tröskel
   const maxLen = Math.max(1, ...accepted.map(s=>s.length));
-  const base = tolLevel===0 ? 0.12 : (tolLevel===1 ? 0.20 : 0.28); // 12% / 20% / 28%
+  const base = tolLevel===0 ? 0.12 : (tolLevel===1 ? 0.20 : 0.28);
   const maxDist = Math.ceil(base * maxLen);
-
   return accepted.some(acc => lev(cand, acc) <= maxDist || acc.includes(cand) || cand.includes(acc));
 }
-
-// Slumpa ur array
 const sample = (arr, n) => {
   const a = [...arr];
   for(let i=a.length-1;i>0;i--){
@@ -192,12 +188,12 @@ const sample = (arr, n) => {
 /*** =======================
  *  ARTBANK – 30 arter
  *  ======================= */
-// OBS: Byt ut filnamn i images: ["bild1.jpg","bild2.jpg"] osv.
-// Du kan lägga flera bilder per art. Programmet roterar inom arten.
+// Tips: Lägg till/ändra filnamn här efter vad du faktiskt har i /images/
+// Exempel för Blåstång med tre bilder (byt till dina riktiga namn om de skiljer sig)
 const BANK = [
   // —— Brunalger
   { commonName:"Blåstång", latinName:"Fucus vesiculosus", group:"Brunalger",
-    aliases:["blastang","blue tang","bladder wrack"],
+    aliases:["blastang","bladder wrack","blue tang"],
     images:["blastang_1.jpg","blastang_2.jpg","blastang_3.jpg"] },
   { commonName:"Sågtång", latinName:"Fucus serratus", group:"Brunalger",
     aliases:["sagtang","serrated wrack"],
@@ -212,10 +208,10 @@ const BANK = [
     aliases:["stortare","kelp"],
     images:["stortare_1.jpg"] },
   { commonName:"Fingertare", latinName:"Laminaria digitata", group:"Brunalger",
-    aliases:["fingertare","oarweed"],
+    aliases:["oarweed","fingertare"],
     images:["fingertare_1.jpg"] },
   { commonName:"Sockertare", latinName:"Saccharina latissima", group:"Brunalger",
-    aliases:["bladtång","sockertang","sockertång","skrӓppetare","skrappetare"],
+    aliases:["bladtång","sockertång","sockertang","skrappetare","skrӓppetare"],
     images:["sockertare_1.jpg"] },
   { commonName:"Remtång", latinName:"Himanthalia elongata", group:"Brunalger",
     aliases:["knapptång","remtang","sea thong"],
@@ -291,17 +287,16 @@ const BANK = [
     aliases:["phyllophora","blatonat rodblad"],
     images:["phyllophora_1.jpg"] },
   { commonName:"Havsrufse", latinName:"Ahnfeltia plicata", group:"Rödalger",
-    aliases:["ahnfeltia","sjöris","landladys wig"],
+    aliases:["ahnfeltia","sjöris"],
     images:["ahnfeltia_1.jpg"] },
   { commonName:"Grov agaralg", latinName:"Gracilaria vermiculophylla", group:"Rödalger",
     aliases:["slemsnärja","grov agar","gracilaria"],
     images:["gracilaria_1.jpg"] }
 ];
 
-// Här kan du snabbt begränsa mängden frågor (BANK.length = 30).
-const QUIZ = BANK.map(item => ({
+// Bygg QUIZ med fullständiga bild-URL:er
+let QUIZ = BANK.map(item => ({
   ...item,
-  // prefixa varje bild med bas-URL
   images: (item.images||[]).map(file => BASE_IMAGE_URL + file)
 }));
 
@@ -310,15 +305,19 @@ const QUIZ = BANK.map(item => ({
  *  ======================= */
 let idx = 0;
 let score = 0;
-let usedImagesIndex = {}; // håller koll på vilken bild inom arten som visas
-let mode = "text"; // eller "mc"
-let tolLevel = 1;  // 0=låg,1=medel,2=hög
-let mcCorrect = null;
+let mode = "text";    // "text" eller "mc"
+let tolLevel = 1;     // 0=låg,1=medel,2=hög
+
+// Bildsnurra: vilket foto per art visas just nu
+let imgIndexMap = {};
 
 const qNum = document.getElementById("qNum");
 const qTotal = document.getElementById("qTotal");
 const scoreEl = document.getElementById("score");
 const imgEl = document.getElementById("algImg");
+const imgPrevBtn = document.getElementById("imgPrevBtn");
+const imgNextBtn = document.getElementById("imgNextBtn");
+const imgCounter = document.getElementById("imgCounter");
 const answerInput = document.getElementById("answerInput");
 const answerMsg = document.getElementById("answerMsg");
 const showBtn = document.getElementById("showBtn");
@@ -332,7 +331,6 @@ const mcBox = document.getElementById("mcBox");
 const textBox = document.getElementById("textBox");
 const mcOptionsEl = document.getElementById("mcOptions");
 const mcMsg = document.getElementById("mcMsg");
-
 qTotal.textContent = QUIZ.length.toString();
 
 function setTolLabel(){
@@ -340,115 +338,6 @@ function setTolLabel(){
 }
 setTolLabel();
 
-function render(){
-  const item = QUIZ[idx];
-  qNum.textContent = (idx+1).toString();
-  scoreEl.textContent = score.toString();
-  answerMsg.innerHTML = "";
-  mcMsg.innerHTML = "";
-
-  // växla bild inom samma art för variation
-  const arr = item.images && item.images.length ? item.images : [""];
-  const local = usedImagesIndex[item.commonName] || 0;
-  const nextLocal = (local + 1) % arr.length;
-  usedImagesIndex[item.commonName] = nextLocal;
-
-  imgEl.src = arr[local] || "";
-  imgEl.alt = `Foto av ${item.commonName} (${item.latinName})`;
-
-  // bygg flervalsalternativ
-  if(mode==="mc"){
-    buildMC(item);
-  }
-}
-
 function buildMC(item){
   mcOptionsEl.innerHTML = "";
-  const distractors = sample(
-    QUIZ.filter(x => x.commonName!==item.commonName && x.group===item.group), 3
-  );
-  const options = sample([item, ...distractors], 4);
-  mcCorrect = item.commonName;
-
-  options.forEach(opt => {
-    const b = document.createElement("button");
-    b.textContent = opt.commonName;
-    b.onclick = () => {
-      [...mcOptionsEl.children].forEach(c => c.disabled = true);
-      if(opt.commonName===item.commonName){
-        b.classList.add("correct");
-        mcMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`;
-        score++;
-        scoreEl.textContent = score.toString();
-      }else{
-        b.classList.add("incorrect");
-        mcMsg.innerHTML = `<span class="wrong">Fel.</span> Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})`;
-      }
-    };
-    mcOptionsEl.appendChild(b);
-  });
-}
-
-// Händelser
-document.querySelectorAll('input[name="mode"]').forEach(r => {
-  r.addEventListener("change", e => {
-    mode = e.target.value;
-    modeLabel.textContent = mode==="text"?"Fritext":"Flervalsfråga";
-    textBox.style.display = mode==="text" ? "block" : "none";
-    mcBox.style.display = mode==="mc" ? "block" : "none";
-    render();
-  });
-});
-tol.addEventListener("input", e => {
-  tolLevel = parseInt(e.target.value,10);
-  setTolLabel();
-});
-
-checkBtn.addEventListener("click", () => {
-  const item = QUIZ[idx];
-  if(mode==="text"){
-    const val = answerInput.value.trim();
-    if(!val){
-      answerMsg.innerHTML = `<span class="muted">Skriv ett namn först.</span>`;
-      return;
-    }
-    const ok = isMatch(val, item, tolLevel);
-    if(ok){
-      answerMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`;
-      score++;
-      scoreEl.textContent = score.toString();
-    }else{
-      answerMsg.innerHTML = `<span class="wrong">Inte riktigt.</span> Försök igen eller klicka “Visa rätt svar”.`;
-    }
-  }else{
-    mcMsg.innerHTML = `<span class="muted">Välj ett alternativ ovan.</span>`;
-  }
-});
-
-showBtn.addEventListener("click", () => {
-  const item = QUIZ[idx];
-  const also = (item.aliases && item.aliases.length) ? ` | alias: ${item.aliases.slice(0,3).join(", ")}${item.aliases.length>3?"…":""}` : "";
-  if(mode==="text"){
-    answerMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`;
-  }else{
-    mcMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`;
-  }
-});
-
-prevBtn.addEventListener("click", () => {
-  idx = (idx-1+QUIZ.length)%QUIZ.length;
-  answerInput.value = "";
-  render();
-});
-
-nextBtn.addEventListener("click", () => {
-  idx = (idx+1)%QUIZ.length;
-  answerInput.value = "";
-  render();
-});
-
-// Init
-render();
-</script>
-</body>
-</html>
+  const
