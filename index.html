@@ -62,7 +62,22 @@
     </div>
   </div>
 
+  <h3>Fritext</h3>
+  <input type="text" id="textAnswer" placeholder="Skriv ditt svar här">
+
+  <h3>Flervalsfråga</h3>
+  <form id="quizForm">
+    <label><input type="radio" name="alg" value="Blåstång"> Blåstång</label><br>
+    <label><input type="radio" name="alg" value="Tarmalg"> Tarmalg</label><br>
+    <label><input type="radio" name="alg" value="Korallalg"> Korallalg</label><br>
+    <label><input type="radio" name="alg" value="Havssallat"> Havssallat</label><br>
+  </form>
+
+  <button onclick="checkAnswer()">Kontrollera</button>
+  <button onclick="showCorrect()">Visa rätt svar</button>
+
   <script>
+    // Karusell
     document.addEventListener('DOMContentLoaded', function () {
       document.querySelectorAll('.image-carousel').forEach(carousel => {
         const container = carousel.querySelector('.image-container');
@@ -72,49 +87,4 @@
 
         function updateDisplay() {
           images.forEach((img, index) => {
-            img.style.display = index === currentIndex ? 'block' : 'none';
-          });
-          dots.forEach((dot, index) => {
-            dot.classList.toggle('active-dot', index === currentIndex);
-          });
-        }
-
-        carousel.querySelector('.prev-button').addEventListener('click', () => {
-          currentIndex = (currentIndex - 1 + images.length) % images.length;
-          updateDisplay();
-        });
-
-        carousel.querySelector('.next-button').addEventListener('click', () => {
-          currentIndex = (currentIndex + 1) % images.length;
-          updateDisplay();
-        });
-
-        updateDisplay();
-      });
-    });
-  </script>
-  <h3>Fritext</h3>
-<input type="text" placeholder="Skriv ditt svar här">
-
-<h3>Flervalsfråga</h3>
-<form>
-  <label><input type="radio" name="alg" value="Blåstång"> Blåstång</label><br>
-  <label><input type="radio" name="alg" value="Tarmalg"> Tarmalg</label><br>
-  <label><input type="radio" name="alg" value="Korallalg"> Korallalg</label><br>
-  <label><input type="radio" name="alg" value="Havssallat"> Havssallat</label><br>
-</form>
-
-<button onclick="checkAnswer()">Kontrollera</button>
-<button onclick="showCorrect()">Visa rätt svar</button>
-
-<script>
-function checkAnswer() {
-  alert('Här skulle du kontrollera svaret.');
-}
-function showCorrect() {
-  alert('Rätt svar är: Blåstång');
-}
-</script>
-
-</body>
-</html>
+            img.style.display = index === current
