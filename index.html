@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Algquiz – Blåstång</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .image-carousel {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      display: none;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .arrow-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+    }
+
+    .prev-button { left: 10px; }
+    .next-button { right: 10px; }
+
+    .dot-container {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      height: 12px;
+      width: 12px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .active-dot {
+      background-color: #3498db;
+    }
+
+    input[type=\"text\"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 10px 5px 0 0;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Algquiz – Blåstång</h1>
+    <h2>Vad heter denna alg?</h2>
+
+    <div class="image-carousel">
+      <button class="prev-button arrow-button">←</button>
+      <div class="image-container">
+        <img src="UploadedImage0.jpg" alt="Blåstång bild 1">
+        <img src="UploadedImage0.jpg" alt="Blåstång bild 2">
+      </div>
+      <button class="next-button arrow-button">→</button>
+      <div class="dot-container">
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <h3>Fritext</h3>
+    <input type="text" id="textAnswer" placeholder="Skriv ditt svar här">
+
+    <h3>Flervalsfråga</h3>
+    <form id="quizForm">
+      <label><input type="radio" name="alg" value="Blåstång"> Blåstång</label>
+      <label><input type="radio" name="alg" value="Tarmalg"> Tarmalg</label>
+      <label><input type="radio" name="alg" value="Korallalg"> Korallalg</label>
+      <label><input type="radio" name="alg" value="Havssallat"> Havssallat</label>
+    </form>
+
+    <button onclick="checkAnswer()">Kontrollera</button>
+    <button onclick="showCorrect()">Visa rätt svar</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.image-carousel').forEach(carousel => {
+        const container = carousel.querySelector('.image-container');
+        const images = container.querySelectorAll('img');
+        const dots = carousel.querySelectorAll('.dot');
+        let currentIndex =
