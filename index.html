@@ -487,11 +487,28 @@ window.addEventListener('error', e => {
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const shuffleBtn = document.getElementById("shuffleBtn");
-    const restartBtn = document.getElementById("restartBtn");
     const shuffleMsg = document.getElementById("shuffleMsg");
     const imgEl = document.getElementById("algImg");
     const imgNextBtn = document.getElementById("imgNextBtn");
     const imgPrevBtn = document.getElementById("imgPrevBtn");
+
+    function advanceImage() {
+        const item = QUIZ[idx];
+        const arr = (item.images && item.images.length) ? item.images : [""];
+        let i = (imgIndexMap[item.commonName] ?? 0) + 1;
+        if (i > arr.length - 1) i = 0;
+        imgIndexMap[item.commonName] = i;
+        showImageForCurrentItem();
+    }
+
+    function retreatImage() {
+        const item = QUIZ[idx];
+        const arr = (item.images && item.images.length) ? item.images : [""];
+        let i = (imgIndexMap[item.commonName] ?? 0) - 1;
+        if (i < 0) i = arr.length - 1;
+        imgIndexMap[item.commonName] = i;
+        showImageForCurrentItem();
+    }
 
     if (shuffleBtn && shuffleMsg && typeof QUIZ !== 'undefined') {
         shuffleBtn.addEventListener("click", () => {
@@ -506,22 +523,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (restartBtn && typeof render !== 'undefined') {
-        restartBtn.addEventListener("click", () => {
-            idx = 0;
-            render();
-        });
-    }
-
-    function advanceImage() {
-        const item = QUIZ[idx];
-        const arr = (item.images && item.images.length) ? item.images : [""];
-        let i = (imgIndexMap[item.commonName] ?? 0) + 1;
-        if (i > arr.length - 1) i = 0;
-        imgIndexMap[item.commonName] = i;
-        showImageForCurrentItem();
-    }
-
     if (imgEl) {
         imgEl.addEventListener("click", advanceImage);
     }
@@ -529,14 +530,7 @@ document.addEventListener("DOMContentLoaded", function() {
         imgNextBtn.addEventListener("click", advanceImage);
     }
     if (imgPrevBtn) {
-        imgPrevBtn.addEventListener("click", () => {
-            const item = QUIZ[idx];
-            const arr = (item.images && item.images.length) ? item.images : [""];
-            let i = (imgIndexMap[item.commonName] ?? 0) - 1;
-            if (i < 0) i = arr.length - 1;
-            imgIndexMap[item.commonName] = i;
-            showImageForCurrentItem();
-        });
+        imgPrevBtn.addEventListener("click", retreatImage);
     }
 });
 </script>
