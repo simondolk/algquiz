@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Algquiz</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        #quizContainer img { max-width: 400px; display: block; margin-bottom: 1em; }
+        button { margin: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>Algquiz – Södra Sverige</h1>
+    <div id="quizContainer">
+        <img id="algImg" alt="Algfoto" />
+        <div id="imgCounter"></div>
+        <button id="imgPrevBtn">←</button>
+        <button id="imgNextBtn">→</button>
+
+        <div id="qInfo">
+            Fråga: <span id="qNum"></span> / <span id="qTotal"></span>
+            Poäng: <span id="score">0</span>
+        </div>
+
+        <div id="modeLabel">Fritext</div>
+        <label><input type="radio" name="mode" value="text" checked> Fritext</label>
+        <label><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
+
+        <div id="textBox">
+            <input type="text" id="answerInput" />
+            <div id="answerMsg"></div>
+        </div>
+
+        <div id="mcBox" style="display:none;">
+            <select id="mcSelect"></select>
+            <div id="mcMsg"></div>
+        </div>
+
+        <button id="checkBtn">Kontrollera</button>
+        <button id="showBtn">Visa rätt svar</button>
+        <button id="prevBtn">← Föregående</button>
+        <button id="nextBtn">Nästa →</button>
+    </div>
+
+    <script>
+    async function resolveItemImages({ images }) {
+        return images;
+    }
+    </script>
+    <script>
+    
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Algquiz</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        #quizContainer img { max-width: 400px; display: block; margin-bottom: 1em; }
+        button { margin: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>Algquiz – Södra Sverige</h1>
+    <div id="quizContainer">
+        <img id="algImg" alt="Algfoto" />
+        <div id="imgCounter"></div>
+        <button id="imgPrevBtn">←</button>
+        <button id="imgNextBtn">→</button>
+
+        <div id="qInfo">
+            Fråga: <span id="qNum"></span> / <span id="qTotal"></span>
+            Poäng: <span id="score">0</span>
+        </div>
+
+        <div id="modeLabel">Fritext</div>
+        <label><input type="radio" name="mode" value="text" checked> Fritext</label>
+        <label><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
+
+        <div id="textBox">
+            <input type="text" id="answerInput" />
+            <div id="answerMsg"></div>
+        </div>
+
+        <div id="mcBox" style="display:none;">
+            <select id="mcSelect"></select>
+            <div id="mcMsg"></div>
+        </div>
+
+        <button id="checkBtn">Kontrollera</button>
+        <button id="showBtn">Visa rätt svar</button>
+        <button id="prevBtn">← Föregående</button>
+        <button id="nextBtn">Nästa →</button>
+    </div>
+
+    <script>
+    
+async function resolveItemImages({ images }) {
+    return images;
+}
+
+    </script>
+    <script>
+    <!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algquiz – Södra Sverige (30 arter)</title>
+  <style>
+    :root{
+      --brand:#0b6ea8; --accent:#0aa770; --bg:#f6f8fb; --text:#1f2937; --muted:#6b7280; --danger:#c0392b;
+    }
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;margin:0;background:var(--bg);color:var(--text);}
+    header{padding:1rem 1.25rem;border-bottom:1px solid #e5e7eb;background:#fff;position:sticky;top:0;z-index:5}
+    h1{font-size:1.4rem;margin:.2rem 0}
+    .wrap{max-width:1100px;margin:0 auto;padding:1.25rem}
+    .grid{display:grid;grid-template-columns:1fr 380px;gap:1rem}
+    @media (max-width:960px){.grid{grid-template-columns:1fr}}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:.75rem;box-shadow:0 1px 2px rgba(0,0,0,.03);overflow:hidden}
+    .imgBox{aspect-ratio:4/3;background:#eef2f7;display:flex;align-items:center;justify-content:center;position:relative}
+    .imgBox img{max-width:100%;max-height:100%;object-fit:contain}
+    .controls{display:flex;align-items:center;justify-content:space-between;padding:.5rem .75rem;border-top:1px solid #e5e7eb}
+    button{cursor:pointer;border:none;border-radius:.5rem;background:var(--brand);color:#fff;padding:.6rem .9rem;font-weight:600}
+    button.secondary{background:#eef2f7;color:#111;border:1px solid #e5e7eb}
+    button.ghost{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+    .danger{background:var(--danger)}
+    .ok{background:var(--accent)}
+    .muted{color:var(--muted)}
+    .panel{padding:1rem}
+    .row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+    .row > *{margin:.15rem 0}
+    input[type="text"]{width:100%;padding:.7rem .8rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem}
+    .badge{display:inline-flex;align-items:center;gap:.4rem;background:#eef2f7;border:1px solid #e5e7eb;color:#374151;padding:.2rem .5rem;border-radius:.4rem;font-size:.85rem}
+    .score{font-weight:700}
+    .answer{margin-top:.5rem}
+    .answer .correct{color:var(--accent);font-weight:700}
+    .answer .wrong{color:var(--danger);font-weight:700}
+    footer{padding:1rem 1.25rem;color:#6b7280}
+    details{margin-top:.6rem}
+
+    /* Flervals-rullmeny */
+    .selectBox{display:flex;flex-direction:column;gap:.5rem;margin:.5rem 0}
+    select{padding:.6rem .8rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem;background:#fff}
+
+    /* Bildsnurra */
+    .imgNav{
+      position:absolute; top:50%; transform:translateY(-50%);
+      background:rgba(255,255,255,.88); color:#111; border:1px solid #e5e7eb;
+      width:36px; height:36px; border-radius:50%;
+      display:flex; align-items:center; justify-content:center; font-weight:700;
+    }
+    .imgNav.prev{left:.5rem}
+    .imgNav.next{right:.5rem}
+    .imgNav:disabled{opacity:.4; cursor:not-allowed}
+    .imgCounter{
+      position:absolute; right:.6rem; bottom:.5rem;
+      background:rgba(0,0,0,.65); color:#fff; font-size:.85rem;
+      padding:.2rem .45rem; border-radius:.4rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="wrap">
+  <h1>Algquiz</h1>
+  <div class="row">
+    <span class="badge">Fråga: <span id="qNum">1</span> / <span id="qTotal">30</span></span>
+    <span class="badge">Poäng: <span class="score" id="score">0</span></span>
+    <span class="badge">Läge: <strong id="modeLabel">Fritext</strong></span>
+  </div>
+</header>
+
+<main class="wrap grid">
+  <section class="card">
+    <div class="imgBox" id="imgBox" aria-live="polite">
+      <button id="imgPrevBtn" class="imgNav prev" aria-label="Föregående bild">◀</button>
+      <img id="algImg" alt="Algfoto i quizet" src="" />
+      <button id="imgNextBtn" class="imgNav next" aria-label="Nästa bild">▶</button>
+      <div id="imgCounter" class="imgCounter" aria-live="polite">1/1</div>
+    </div>
+    <div class="controls">
+      <button id="prevBtn" class="secondary" title="Föregående">←</button>
+      <div class="row">
+        <button id="showBtn" class="ghost">Visa rätt svar</button>
+        <button id="checkBtn" class="">Kontrollera</button>
+        <button id="nextBtn" class="ok">Nästa →</button>
+      </div>
+    </div>
+  </section>
+
+  <aside class="card">
+    <div class="panel">
+      <h2>Vad heter denna alg?</h2>
+
+      <div class="row" style="justify-content:space-between">
+        <div class="row">
+          <label><input type="radio" name="mode" value="text" checked> Fritext</label>
+          <label><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
+        </div>
+      </div>
+
+      <!-- Fritext -->
+      <div id="textBox">
+        <input id="answerInput" type="text" placeholder="Skriv svenskt namn (latin går också bra)..." autocomplete="off" />
+        <div class="answer" id="answerMsg"></div>
+      </div>
+
+      <!-- Flervalsläge (rullmeny) -->
+      <div id="mcBox" style="display:none">
+        <div class="selectBox">
+          <label for="mcSelect" class="muted">Välj ett alternativ:</label>
+          <select id="mcSelect">
+            <option value="">-- Välj --</option>
+          </select>
+        </div>
+        <div id="mcMsg" class="answer"></div>
+      </div>
+
+      <details>
+        <summary>Tips</summary>
+        <ul>
+          <li>Endast skiftläge ignoreras och mellanslag accepteras (särskrivning). Inga övriga stavfel.</li>
+          <li>“Visa rätt svar” avslöjar det korrekta namnet för den aktuella bilden.</li>
+        </ul>
+      </details>
+    </div>
+  </aside>
+</main>
+
+<footer class="wrap">
+  <small class="muted">Lägg bilder i <code>/images</code> och döp dem t.ex. <code>sagtang_1.jpg</code>, <code>spiraltang_2.jpg</code>. Koden hittar automatiskt vilka av <code>_1…_4</code> som finns.</small>
+</footer>
+
+<script>
+/*** =======================
+ *  KONFIGURATION
+ *  ======================= */
+const BASE_IMAGE_URL = "https://simondolk.github.io/algquiz/images/";
+
+/*** =======================
+ *  HJÄLPLIGA FUNKTIONER
+ *  ======================= */
+// Endast skiftläge + mellanslag ignoreras
+const normalize = (s) => (s || "").toLowerCase().replace(/\s+/g, "");
+function isExactMatchWithSpaces(userInput, item){
+  const cand = normalize(userInput);
+  const accepted = [item.commonName, item.latinName, ...(item.aliases||[])].map(normalize);
+  return accepted.includes(cand);
+}
+const sample = (arr, n) => {
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a.slice(0, n);
+};
+// Testa om bild finns (laddar verkligen)
+<script>
+function imageExists(url){
+  return new Promise(resolve=>{
+    const im = new Image();
+    im.onload  = () => resolve(true);
+    im.onerror = () => resolve(false);
+    // cache-buster för att undvika att en tidigare 404 c achar
+    const sep = url.includes("?") ? "&" : "?";
+    im.src = url + sep + "nocache=" + Date.now();
+  });
+}
+</script>
+// Filtrera fram de bilder som faktiskt finns (av *_1…*_4)
+<script>
+async function resolveItemImages(item){
+  const files = (item.images || []); // t.ex. ["images/spiraltang_1.jpg","images/spiraltang_2.jpg","images/spiraltang_3.jpg","images/spiraltang_4.jpg"]
+  const result = [];
+
+  for (const file of files){
+    const baseUrl = BASE_IMAGE_URL + file;
+    const cands = candidatesForUrl(baseUrl); // provar .jpg/.JPG/.jpeg/.png + URL-enkodning
+    let okUrl = null;
+    for (const u of cands){
+      if (await imageExists(u)) { okUrl = u; break; }
+    }
+    if (okUrl) result.push(okUrl);
+  }
+
+  // Om inget hittades (ovanligt), lämna original-URL:er så vi ser fel i konsolen
+  return result.length ? result : files.map(f => BASE_IMAGE_URL + f);
+}
+</script>
+
+/*** =======================
+ *  ARTLISTA (30 arter)
+ *  ======================= */
+const BANK = [
+  // ——— Brunalger
+  { commonName:"Blåstång",   latinName:"Fucus vesiculosus",     group:"Brunalger",
+    aliases:["blastang","Fucus vesiculosus"],
+    images:["images/blastang_1.jpg","images/blastang_2.jpg","images/blastang_3.jpg","images/blastang_4.jpg"] },
+  { commonName:"Sågtång",    latinName:"Fucus serratus",        group:"Brunalger",
+    aliases:["sagtang","Fucus serratus"],
+    images:["images/sagtang_1.jpg","images/sagtang_2.jpg","images/sagtang_3.jpg","images/sagtang_4.jpg"] },
+  { commonName:"Spiraltång", latinName:"Fucus spiralis",        group:"Brunalger",
+    aliases:["spiraltang","Fucus spiralis"],
+    images:["images/spiraltang_1.jpg","images/spiraltang_2.jpg","images/spiraltang_3.jpg","images/spiraltang_4.jpg"] },
+  { commonName:"Knöltång",   latinName:"Ascophyllum nodosum",   group:"Brunalger",
+    aliases:["knoltang","Ascophyllum nodosum"],
+    images:["images/knoltang_1.jpg","images/knoltang_2.jpg","images/knoltang_3.jpg","images/knoltang_4.jpg"] },
+  { commonName:"Stortare",   latinName:"Laminaria hyperborea",  group:"Brunalger",
+    aliases:["stortare","Laminaria hyperborea"],
+    images:["images/stortare_1.jpg","images/stortare_2.jpg","images/stortare_3.jpg","images/stortare_4.jpg"] },
+  { commonName:"Fingertare", latinName:"Laminaria digitata",    group:"Brunalger",
+    aliases:["fingertare","Laminaria digitata"],
+    images:["images/fingertare_1.jpg","images/fingertare_2.jpg","images/fingertare_3.jpg","images/fingertare_4.jpg"] },
+  { commonName:"Sockertare", latinName:"Saccharina latissima",  group:"Brunalger",
+    aliases:["sockertare","Saccharina latissima","bladtang","sockertang"],
+    images:["images/sockertare_1.jpg","images/sockertare_2.jpg","images/sockertare_3.jpg","images/sockertare_4.jpg"] },
+  { commonName:"Remtång",    latinName:"Himanthalia elongata",  group:"Brunalger",
+    aliases:["remtang","Himanthalia elongata","knapptang"],
+    images:["images/remtang_1.jpg","images/remtang_2.jpg","images/remtang_3.jpg","images/remtang_4.jpg"] },
+  { commonName:"Sudare",     latinName:"Chorda filum",          group:"Brunalger",
+    aliases:["snarjtang","snärjtång","Chorda filum"],
+    images:["images/sudare_1.jpg","images/sudare_2.jpg","images/sudare_3.jpg","images/sudare_4.jpg"] },
+  { commonName:"Ektång",     latinName:"Halidrys siliquosa",    group:"Brunalger",
+    aliases:["ektang","Halidrys siliquosa"],
+    images:["images/ektang_1.jpg","images/ektang_2.jpg","images/ektang_3.jpg","images/ektang_4.jpg"] },
+  { commonName:"Tångludd",   latinName:"Elachista fucicola",    group:"Brunalger",
+    aliases:["Elachista fucicola","tangludd"],
+    images:["images/tangludd_1.jpg","images/tangludd_2.jpg","images/tangludd_3.jpg","images/tangludd_4.jpg"] },
+  { commonName:"Ektofs",     latinName:"Sphacelaria cirrosa",   group:"Brunalger",
+    aliases:["Sphacelaria cirrosa","ektofs"],
+    images:["images/ektofs_1.jpg","images/ektofs_2.jpg","images/ektofs_3.jpg","images/ektofs_4.jpg"] },
+  { commonName:"Sargassosnärja", latinName:"Sargassum muticum", group:"Brunalger",
+    aliases:["Sargassum muticum","japansk sargassotang","sargassosnarja"],
+    images:["images/sargassosnarja_1.jpg","images/sargassosnarja_2.jpg","images/sargassosnarja_3.jpg","images/sargassosnarja_4.jpg"] },
+
+  // ——— Grönalger
+  { commonName:"Havssallat", latinName:"Ulva lactuca",          group:"Grönalger",
+    aliases:["Ulva lactuca","havsalat"],
+    images:["images/havssallat_1.jpg","images/havssallat_2.jpg","images/havssallat_3.jpg","images/havssallat_4.jpg"] },
+  { commonName:"Östersjösallat", latinName:"Ulva fenestrata",   group:"Grönalger",
+    aliases:["Ulva fenestrata"],
+    images:["images/ostersjosallat_1.jpg","images/ostersjosallat_2.jpg","images/ostersjosallat_3.jpg","images/ostersjosallat_4.jpg"] },
+  { commonName:"Tarmalg",    latinName:"Ulva intestinalis",     group:"Grönalger",
+    aliases:["Ulva intestinalis","tarmtang"],
+    images:["images/tarmalg_1.jpg","images/tarmalg_2.jpg","images/tarmalg_3.jpg","images/tarmalg_4.jpg"] },
+  { commonName:"Grönslick",  latinName:"Cladophora glomerata",  group:"Grönalger",
+    aliases:["Cladophora glomerata","gronslick"],
+    images:["images/gronslick_1.jpg","images/gronslick_2.jpg","images/gronslick_3.jpg","images/gronslick_4.jpg"] },
+  { commonName:"Strutsallat",latinName:"Monostroma grevillei",  group:"Grönalger",
+    aliases:["Monostroma grevillei"],
+    images:["images/strutsallat_1.jpg","images/strutsallat_2.jpg","images/strutsallat_3.jpg","images/strutsallat_4.jpg"] },
+  { commonName:"Grönplym",   latinName:"Bryopsis plumosa",      group:"Grönalger",
+    aliases:["Bryopsis plumosa","gronplym"],
+    images:["images/gronplym_1.jpg","images/gronplym_2.jpg","images/gronplym_3.jpg","images/gronplym_4.jpg"] },
+
+  // ——— Rödalger
+  { commonName:"Korallalg",  latinName:"Corallina officinalis", group:"Rödalger",
+    aliases:["Corallina officinalis"],
+    images:["images/korallalg_1.jpg","images/korallalg_2.jpg","images/korallalg_3.jpg","images/korallalg_4.jpg"] },
+  { commonName:"Kräkel",     latinName:"Furcellaria lumbricalis", group:"Rödalger",
+    aliases:["Furcellaria lumbricalis","gaffeltang"],
+    images:["images/krakel_1.jpg","images/krakel_2.jpg","images/krakel_3.jpg","images/krakel_4.jpg"] },
+  { commonName:"Rödslick",   latinName:"Polysiphonia spp.",     group:"Rödalger",
+    aliases:["Polysiphonia","rodslick"],
+    images:["images/rodslick_1.jpg","images/rodslick_2.jpg","images/rodslick_3.jpg","images/rodslick_4.jpg"] },
+  { commonName:"Grovslick",  latinName:"Polysiphonia elongata", group:"Rödalger",
+    aliases:["Polysiphonia elongata","grovslick"],
+    images:["images/grovslick_1.jpg","images/grovslick_2.jpg","images/grovslick_3.jpg","images/grovslick_4.jpg"] },
+  { commonName:"Ullsläke",   latinName:"Ceramium tenuicorne",   group:"Rödalger",
+    aliases:["Ceramium tenuicorne","ullslake"],
+    images:["images/ullslake_1.jpg","images/ullslake_2.jpg","images/ullslake_3.jpg","images/ullslake_4.jpg"] },
+  { commonName:"Rosenslick", latinName:"Rhodomela confervoides", group:"Rödalger",
+    aliases:["Rhodomela confervoides","rosenslick"],
+    images:["images/rosenslick_1.jpg","images/rosenslick_2.jpg","images/rosenslick_3.jpg","images/rosenslick_4.jpg"] },
+  { commonName:"Söl",        latinName:"Palmaria palmata",      group:"Rödalger",
+    aliases:["Palmaria palmata","sol","dulse"],
+    images:["images/sol_1.jpg","images/sol_2.jpg","images/sol_3.jpg","images/sol_4.jpg"] },
+  { commonName:"Karragenalg",latinName:"Chondrus crispus",      group:"Rödalger",
+    aliases:["Chondrus crispus","karragentang","irlandsk mossa"],
+    images:["images/karragenalg_1.jpg","images/karragenalg_2.jpg","images/karragenalg_3.jpg","images/karragenalg_4.jpg"] },
+  { commonName:"Ribbeblad",  latinName:"Delesseria sanguinea",  group:"Rödalger",
+    aliases:["Delesseria sanguinea","nervtang","ribbeblad"],
+    images:["images/ribbeblad_1.jpg","images/ribbeblad_2.jpg","images/ribbeblad_3.jpg","images/ribbeblad_4.jpg"] },
+  { commonName:"Klyving",    latinName:"Polyides rotunda",      group:"Rödalger",
+    aliases:["Polyides rotunda","polyides rotundus"],
+    images:["images/klyving_1.jpg","images/klyving_2.jpg","images/klyving_3.jpg","images/klyving_4.jpg"] },
+  { commonName:"Blåtonat rödblad", latinName:"Phyllophora pseudoceranoides", group:"Rödalger",
+    aliases:["Phyllophora pseudoceranoides","phyllophora"],
+    images:["images/phyllophora_1.jpg","images/phyllophora_2.jpg","images/phyllophora_3.jpg","images/phyllophora_4.jpg"] }
+];
+
+/*** =======================
+ *  TILLSTÅND / UI
+ *  ======================= */
+let QUIZ = []; // fylls efter att bilder som finns har filtrerats
+let idx = 0;
+let score = 0;
+let mode = "text";
+
+let imgIndexMap = {};
+
+const qNum = document.getElementById("qNum");
+const qTotal = document.getElementById("qTotal");
+const scoreEl = document.getElementById("score");
+const imgEl = document.getElementById("algImg");
+const imgPrevBtn = document.getElementById("imgPrevBtn");
+const imgNextBtn = document.getElementById("imgNextBtn");
+const imgCounter = document.getElementById("imgCounter");
+const answerInput = document.getElementById("answerInput");
+const answerMsg = document.getElementById("answerMsg");
+const showBtn = document.getElementById("showBtn");
+const checkBtn = document.getElementById("checkBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const modeLabel = document.getElementById("modeLabel");
+const mcBox = document.getElementById("mcBox");
+const textBox = document.getElementById("textBox");
+const mcSelect = document.getElementById("mcSelect");
+const mcMsg = document.getElementById("mcMsg");
+
+/*** =======================
+ *  RENDER & LOGIK
+ *  ======================= */
+function candidatesForUrl(url){
+  const list = [url];
+  try { list.push(encodeURI(url)); } catch {}
+  const m = url.match(/\.(jpg|jpeg|png|webp)$/i);
+  if (m) {
+    const extBase = url.slice(0, -m[0].length);
+    const exts = ["jpg","JPG","jpeg","JPEG","webp","png","PNG"];
+    exts.forEach(ex => list.push(`${extBase}.${ex}`));
+  }
+  return [...new Set(list)];
+}
+function loadImageWithFallbacks(imgEl, urls, onSuccess, onFail){
+  let i = 0;
+  function tryNext(){
+    if (i >= urls.length) { onFail && onFail(); return; }
+    const u = urls[i++];
+    imgEl.onerror = () => { tryNext(); };
+    imgEl.onload  = () => { onSuccess && onSuccess(u); };
+    imgEl.src = u;
+  }
+  tryNext();
+}
+function showImageForCurrentItem(){
+  const item = QUIZ[idx];
+  const arr = (item.images && item.images.length) ? item.images : [""];
+  let i = imgIndexMap[item.commonName] ?? 0;
+  if (i < 0) i = 0;
+  if (i > arr.length - 1) i = arr.length - 1;
+  imgIndexMap[item.commonName] = i;
+
+  const wanted = arr[i] || "";
+  const cands = candidatesForUrl(wanted);
+
+  loadImageWithFallbacks(
+    imgEl,
+    cands,
+    () => {
+      imgEl.alt = `Foto ${i+1} av ${arr.length} – ${item.commonName} (${item.latinName})`;
+      imgCounter.textContent = `${i+1}/${arr.length}`;
+      const single = arr.length <= 1;
+      imgPrevBtn.disabled = single || i === 0;
+      imgNextBtn.disabled = single || i === arr.length - 1;
+      imgPrevBtn.style.display = single ? "none":"flex";
+      imgNextBtn.style.display = single ? "none":"flex";
+      imgCounter.style.display = single ? "none":"block";
+    },
+    () => {
+      imgEl.removeAttribute('src');
+      imgEl.alt = `Kunde inte ladda bild: ${wanted}`;
+      imgCounter.textContent = `0/${arr.length}`;
+      imgPrevBtn.disabled = true;
+      imgNextBtn.disabled = true;
+      imgPrevBtn.style.display = "none";
+      imgNextBtn.style.display = "none";
+      imgCounter.style.display = "none";
+    }
+  );
+}
+function buildMCSelect(item){
+  mcSelect.innerHTML = `<option value="">-- Välj --</option>`;
+  // Ta tre distraktorer i samma grupp om möjligt, annars slumpa från hela QUIZ
+  let pool = QUIZ.filter(x => x.commonName!==item.commonName && x.group===item.group).map(x=>x.commonName);
+  if (pool.length < 3) {
+    const extra = QUIZ.filter(x => x.commonName!==item.commonName).map(x=>x.commonName);
+    pool = pool.concat(sample(extra, Math.max(0, 3 - pool.length)));
+  }
+  const distractors = sample(pool, 3).map(nm => ({commonName:nm}));
+  const options = sample([item, ...distractors], 4);
+  options.forEach(opt => {
+    const o = document.createElement("option");
+    o.value = opt.commonName;
+    o.textContent = opt.commonName;
+    mcSelect.appendChild(o);
+  });
+}
+function render(){
+  const item = QUIZ[idx];
+  qNum.textContent = (idx+1).toString();
+  scoreEl.textContent = score.toString();
+  answerMsg.innerHTML = "";
+  mcMsg.innerHTML = "";
+  if (imgIndexMap[item.commonName] == null) imgIndexMap[item.commonName] = 0;
+
+  showImageForCurrentItem();
+  if (mode==="mc") buildMCSelect(item);
+}
+
+/*** =======================
+ *  HÄNDELSER
+ *  ======================= */
+document.querySelectorAll('input[name="mode"]').forEach(r => {
+  r.addEventListener("change", e => {
+    mode = e.target.value;
+    modeLabel.textContent = mode==="text"?"Fritext":"Flervalsfråga";
+    textBox.style.display = mode==="text" ? "block" : "none";
+    mcBox.style.display   = mode==="mc"   ? "block" : "none";
+    render();
+  });
+});
+checkBtn.addEventListener("click", () => {
+  const item = QUIZ[idx];
+  if(mode==="text"){
+    const val = answerInput.value.trim();
+    if(!val){ answerMsg.innerHTML = `<span class="muted">Skriv ett namn först.</span>`; return; }
+    const ok = isExactMatchWithSpaces(val, item);
+    if(ok){ answerMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`; score++; scoreEl.textContent = score.toString(); }
+    else  { answerMsg.innerHTML = `<span class="wrong">Inte riktigt.</span> Försök igen eller klicka “Visa rätt svar”.`; }
+  }else{
+    const chosen = mcSelect.value;
+    if(!chosen){ mcMsg.innerHTML = `<span class="muted">Välj ett alternativ i listan.</span>`; return; }
+    if(chosen===item.commonName){
+      mcMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`;
+      score++; scoreEl.textContent = score.toString();
+    }else{
+      mcMsg.innerHTML = `<span class="wrong">Fel.</span> Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})`;
+    }
+  }
+});
+showBtn.addEventListener("click", () => {
+  const item = QUIZ[idx];
+  const also = (item.aliases && item.aliases.length) ? ` | alias: ${item.aliases.slice(0,3).join(", ")}${item.aliases.length>3?"…":""}` : "";
+  if(mode==="text"){ answerMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`; }
+  else{ mcMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`; }
+});
+prevBtn.addEventListener("click", () => { idx = (idx-1+QUIZ.length)%QUIZ.length; answerInput.value = ""; render(); });
+nextBtn.addEventListener("click", () => { idx = (idx+1)%QUIZ.length; answerInput.value = ""; render(); });
+imgPrevBtn.addEventListener("click", () => {
+  const item = QUIZ[idx];
+  const i = (imgIndexMap[item.commonName] ?? 0) - 1;
+  imgIndexMap[item.commonName] = Math.max(0, i);
+  showImageForCurrentItem();
+});
+imgNextBtn.addEventListener("click", () => {
+  const item = QUIZ[idx];
+  const arr = (item.images && item.images.length) ? item.images : [""];
+  const i = (imgIndexMap[item.commonName] ?? 0) + 1;
+  imgIndexMap[item.commonName] = Math.min(arr.length - 1, i);
+  showImageForCurrentItem();
+});
+imgEl.addEventListener("click", () => {
+  const item = QUIZ[idx];
+  const arr = (item.images && item.images.length) ? item.images : [""];
+  if (arr.length <= 1) return;
+  const i = (imgIndexMap[item.commonName] ?? 0) + 1;
+  imgIndexMap[item.commonName] = (i > arr.length - 1) ? 0 : i;
+  showImageForCurrentItem();
+});
+
+// Liten felruta vid JS-fel
+window.addEventListener('error', e => {
+  const box = document.createElement('div');
+  box.style.cssText = 'position:fixed;left:10px;bottom:10px;max-width:90%;background:#fff1f2;color:#b91c1c;border:1px solid #fecaca;padding:.6rem .8rem;border-radius:.5rem;font:12px/1.4 system-ui;z-index:99999';
+  box.textContent = 'Fel i skript: ' + (e.message || e.error || 'okänt');
+  document.body.appendChild(box);
+  console.error('Algquiz fel:', e);
+});
+
+/*** =======================
+ *  INIT – lös ut vilka bilder som finns (_1…_4) per art
+ *  ======================= */
+(async function init(){
+  // Fyll QUIZ och filtrera fram bilder som faktiskt existerar
+  const items = [];
+  for (const base of BANK){
+    const item = {...base};
+    // Lista alla kandidater _1.._4 som användaren kan lägga upp
+    const candidates = (base.images || []).map(file => file);
+    // Hitta vilka som verkligen finns
+    const okUrls = await resolveItemImages({images:candidates});
+    item.images = okUrls;
+    // Lägg in art
+    items.push(item);
+  }
+  QUIZ = items;
+  qTotal.textContent = QUIZ.length.toString();
+  // Rendera första frågan
+  render();
+})();
+</script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>
+
+    </script>
+</body>
+</html>
