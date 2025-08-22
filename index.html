@@ -154,21 +154,38 @@ const sample = (arr, n) => {
   return a.slice(0, n);
 };
 // Testa om bild finns (laddar verkligen)
+<script>
 function imageExists(url){
   return new Promise(resolve=>{
     const im = new Image();
     im.onload  = () => resolve(true);
     im.onerror = () => resolve(false);
-    im.src = url;
+    // cache-buster för att undvika att en tidigare 404 c achar
+    const sep = url.includes("?") ? "&" : "?";
+    im.src = url + sep + "nocache=" + Date.now();
   });
 }
+</script>
 // Filtrera fram de bilder som faktiskt finns (av *_1…*_4)
+<script>
 async function resolveItemImages(item){
-  const urls = (item.images || []).map(file => BASE_IMAGE_URL + file);
-  const checks = await Promise.all(urls.map(u => imageExists(u)));
-  const ok = urls.filter((_,i) => checks[i]);
-  return ok.length ? ok : urls; // om inget hittades: lämna som är (för felsökning)
+  const files = (item.images || []); // t.ex. ["spiraltang_1.jpg","spiraltang_2.jpg","spiraltang_3.jpg","spiraltang_4.jpg"]
+  const result = [];
+
+  for (const file of files){
+    const baseUrl = BASE_IMAGE_URL + file;
+    const cands = candidatesForUrl(baseUrl); // provar .jpg/.JPG/.jpeg/.png + URL-enkodning
+    let okUrl = null;
+    for (const u of cands){
+      if (await imageExists(u)) { okUrl = u; break; }
+    }
+    if (okUrl) result.push(okUrl);
+  }
+
+  // Om inget hittades (ovanligt), lämna original-URL:er så vi ser fel i konsolen
+  return result.length ? result : files.map(f => BASE_IMAGE_URL + f);
 }
+</script>
 
 /*** =======================
  *  ARTLISTA (30 arter)
