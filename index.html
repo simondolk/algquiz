@@ -58,7 +58,6 @@
   </style>
 </head>
 <body>
-<button id="shuffleBtn">Blanda frågor</button><span id="shuffleMsg" style="margin-left:10px;color:green;display:none;">Frågorna är blandade!</span>
 
 <header class="wrap">
   <h1>Algquiz</h1>
@@ -93,7 +92,7 @@
 
       <div class="row" style="justify-content:space-between">
         <div class="row">
-          <label><input type="radio" name="mode" value="text" checked> Fritext</label>
+          <label><input type="radio" name="mode" value="text" checked> Fritext</label> <button id="shuffleBtn">Blanda frågor</button><span id="shuffleMsg" style="margin-left:10px;color:green;display:none;">Frågorna är blandade!</span>
           <label><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
         </div>
       </div>
@@ -502,7 +501,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (typeof imgNextBtn !== 'undefined' && typeof imgPrevBtn !== 'undefined') {
+    if (typeof imgNextBtn !== 'undefined') {
         imgNextBtn.addEventListener("click", () => {
             const item = QUIZ[idx];
             const arr = (item.images && item.images.length) ? item.images : [""];
@@ -511,7 +510,9 @@ document.addEventListener("DOMContentLoaded", function() {
             imgIndexMap[item.commonName] = i;
             showImageForCurrentItem();
         });
+    }
 
+    if (typeof imgPrevBtn !== 'undefined') {
         imgPrevBtn.addEventListener("click", () => {
             const item = QUIZ[idx];
             const arr = (item.images && item.images.length) ? item.images : [""];
