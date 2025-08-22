@@ -21,6 +21,7 @@
     button{cursor:pointer;border:none;border-radius:.5rem;background:var(--brand);color:#fff;padding:.6rem .9rem;font-weight:600}
     button.secondary{background:#eef2f7;color:#111;border:1px solid #e5e7eb}
     button.ghost{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+    button.small{padding:.35rem .6rem;font-size:.9rem}
     .danger{background:var(--danger)}
     .ok{background:var(--accent)}
     .muted{color:var(--muted)}
@@ -65,6 +66,7 @@
     <span class="badge">Fråga: <span id="qNum">1</span> / <span id="qTotal">30</span></span>
     <span class="badge">Poäng: <span class="score" id="score">0</span></span>
     <span class="badge">Läge: <strong id="modeLabel">Fritext</strong></span>
+    <button id="shuffleBtn" class="secondary small" title="Blanda frågornas ordning">Blanda frågor</button>
   </div>
 </header>
 
@@ -343,8 +345,8 @@ function showImageForCurrentItem(){
       imgEl.alt = `Foto ${i+1} av ${arr.length} – ${item.commonName} (${item.latinName})`;
       imgCounter.textContent = `${i+1}/${arr.length}`;
       const single = arr.length <= 1;
-      imgPrevBtn.disabled = single || i === 0;
-      imgNextBtn.disabled = single || i === arr.length - 1;
+      imgPrevBtn.disabled = single;
+      imgNextBtn.disabled = single;
       imgPrevBtn.style.display = single ? "none":"flex";
       imgNextBtn.style.display = single ? "none":"flex";
       imgCounter.style.display = single ? "none":"block";
@@ -427,19 +429,29 @@ showBtn.addEventListener("click", () => {
   if(mode==="text"){ answerMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`; }
   else{ mcMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`; }
 });
+shuffleBtn.addEventListener("click", () => {
+  // Blanda om nuvarande QUIZ (behåller redan upplösta bildlistor)
+  for(let i=QUIZ.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [QUIZ[i],QUIZ[j]]=[QUIZ[j],QUIZ[i]]; }
+  idx = 0; score = 0; scoreEl.textContent = score.toString();
+  imgIndexMap = {}; answerInput.value = "";
+  render();
+});
 prevBtn.addEventListener("click", () => { idx = (idx-1+QUIZ.length)%QUIZ.length; answerInput.value = ""; render(); });
 nextBtn.addEventListener("click", () => { idx = (idx+1)%QUIZ.length; answerInput.value = ""; render(); });
 imgPrevBtn.addEventListener("click", () => {
   const item = QUIZ[idx];
+  const arr = (item.images && item.images.length) ? item.images : [""];
+  if (arr.length <= 1) return;
   const i = (imgIndexMap[item.commonName] ?? 0) - 1;
-  imgIndexMap[item.commonName] = Math.max(0, i);
+  imgIndexMap[item.commonName] = (i < 0) ? (arr.length - 1) : i;
   showImageForCurrentItem();
 });
 imgNextBtn.addEventListener("click", () => {
   const item = QUIZ[idx];
   const arr = (item.images && item.images.length) ? item.images : [""];
+  if (arr.length <= 1) return;
   const i = (imgIndexMap[item.commonName] ?? 0) + 1;
-  imgIndexMap[item.commonName] = Math.min(arr.length - 1, i);
+  imgIndexMap[item.commonName] = (i > arr.length - 1) ? 0 : i;
   showImageForCurrentItem();
 });
 imgEl.addEventListener("click", () => {
