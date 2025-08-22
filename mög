@@ -1,4 +1,57 @@
+
 <!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>Algquiz</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; }
+        #quizContainer img { max-width: 400px; display: block; margin-bottom: 1em; }
+        button { margin: 0.5em; }
+    </style>
+</head>
+<body>
+    <h1>Algquiz – Södra Sverige</h1>
+    <div id="quizContainer">
+        <img id="algImg" alt="Algfoto" />
+        <div id="imgCounter"></div>
+        <button id="imgPrevBtn">←</button>
+        <button id="imgNextBtn">→</button>
+
+        <div id="qInfo">
+            Fråga: <span id="qNum"></span> / <span id="qTotal"></span>
+            Poäng: <span id="score">0</span>
+        </div>
+
+        <div id="modeLabel">Fritext</div>
+        <label><input type="radio" name="mode" value="text" checked> Fritext</label>
+        <label><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
+
+        <div id="textBox">
+            <input type="text" id="answerInput" />
+            <div id="answerMsg"></div>
+        </div>
+
+        <div id="mcBox" style="display:none;">
+            <select id="mcSelect"></select>
+            <div id="mcMsg"></div>
+        </div>
+
+        <button id="checkBtn">Kontrollera</button>
+        <button id="showBtn">Visa rätt svar</button>
+        <button id="prevBtn">← Föregående</button>
+        <button id="nextBtn">Nästa →</button>
+    </div>
+
+    <script>
+    
+async function resolveItemImages({ images }) {
+    return images;
+}
+
+    </script>
+    <script>
+    <!DOCTYPE html>
 <html lang="sv">
 <head>
   <meta charset="utf-8" />
@@ -499,5 +552,9 @@ window.addEventListener('error', e => {
   render();
 })();
 </script>
+</body>
+</html>
+
+    </script>
 </body>
 </html>
