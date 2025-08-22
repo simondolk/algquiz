@@ -21,7 +21,6 @@
     button{cursor:pointer;border:none;border-radius:.5rem;background:var(--brand);color:#fff;padding:.6rem .9rem;font-weight:600}
     button.secondary{background:#eef2f7;color:#111;border:1px solid #e5e7eb}
     button.ghost{background:transparent;color:var(--brand);border:1px solid var(--brand)}
-    button.link{background:transparent;color:var(--brand);border:none;padding:.25rem .4rem}
     .danger{background:var(--danger)}
     .ok{background:var(--accent)}
     .muted{color:var(--muted)}
@@ -29,21 +28,18 @@
     .row{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
     .row > *{margin:.15rem 0}
     input[type="text"]{width:100%;padding:.7rem .8rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem}
-    select{padding:.6rem .8rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem;background:#fff}
     .badge{display:inline-flex;align-items:center;gap:.4rem;background:#eef2f7;border:1px solid #e5e7eb;color:#374151;padding:.2rem .5rem;border-radius:.4rem;font-size:.85rem}
     .score{font-weight:700}
-    .sliderBox{display:flex;align-items:center;gap:.6rem}
-    input[type="range"]{width:150px}
     .answer{margin-top:.5rem}
     .answer .correct{color:var(--accent);font-weight:700}
     .answer .wrong{color:var(--danger);font-weight:700}
     footer{padding:1rem 1.25rem;color:#6b7280}
     details{margin-top:.6rem}
-    .mc-options{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.5rem 0}
-    .mc-options button{background:#fff;color:#111;border:1px solid #e5e7eb;text-align:left}
-    .mc-options button.correct{border-color:var(--accent)}
-    .mc-options button.incorrect{border-color:var(--danger)}
-    .pill{background:#fff;border:1px solid #e5e7eb;border-radius:999px;padding:.3rem .65rem}
+
+    /* Flervals-rullmeny */
+    .selectBox{display:flex;flex-direction:column;gap:.5rem;margin:.5rem 0}
+    select{padding:.6rem .8rem;border:1px solid #d1d5db;border-radius:.5rem;font-size:1rem;background:#fff}
+
     /* Bildsnurra */
     .imgNav{
       position:absolute; top:50%; transform:translateY(-50%);
@@ -66,10 +62,9 @@
 <header class="wrap">
   <h1>Algquiz</h1>
   <div class="row">
-    <span class="badge">Fråga: <span id="qNum">1</span> / <span id="qTotal">30</span></span>
+    <span class="badge">Fråga: <span id="qNum">1</span> / <span id="qTotal">1</span></span>
     <span class="badge">Poäng: <span class="score" id="score">0</span></span>
     <span class="badge">Läge: <strong id="modeLabel">Fritext</strong></span>
-    <span class="badge">Stavfels­tolerans: <span id="tolLabel">medel</span></span>
   </div>
 </header>
 
@@ -97,12 +92,8 @@
 
       <div class="row" style="justify-content:space-between">
         <div class="row">
-          <label class="pill"><input type="radio" name="mode" value="text" checked> Fritext</label>
-          <label class="pill"><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
-        </div>
-        <div class="sliderBox">
-          <label for="tol">Tolerans</label>
-          <input type="range" id="tol" min="0" max="2" step="1" value="1" />
+          <label><input type="radio" name="mode" value="text" checked> Fritext</label>
+          <label><input type="radio" name="mode" value="mc"> Flervalsfråga</label>
         </div>
       </div>
 
@@ -112,17 +103,21 @@
         <div class="answer" id="answerMsg"></div>
       </div>
 
-      <!-- Flervalsläge -->
+      <!-- Flervalsläge (rullmeny) -->
       <div id="mcBox" style="display:none">
-        <div class="mc-options" id="mcOptions"></div>
+        <div class="selectBox">
+          <label for="mcSelect" class="muted">Välj ett alternativ:</label>
+          <select id="mcSelect">
+            <option value="">-- Välj --</option>
+          </select>
+        </div>
         <div id="mcMsg" class="answer"></div>
       </div>
 
       <details>
         <summary>Tips</summary>
         <ul>
-          <li>Stavfel tolereras. Även latinska namn och vanliga synonymer godkänns.</li>
-          <li>Å/Ä/Ö jämställs med A/A/O, mellanslag och bindestreck ignoreras.</li>
+          <li>Endast skiftläge ignoreras och **mellanslag** accepteras (särskrivning). Inga övriga stavfel.</li>
           <li>“Visa rätt svar” avslöjar det korrekta namnet för den aktuella bilden.</li>
         </ul>
       </details>
@@ -143,37 +138,17 @@ const BASE_IMAGE_URL = "https://simondolk.github.io/algquiz/images/";
 /*** =======================
  *  HJÄLPLIGA FUNKTIONER
  *  ======================= */
-const norm = (s) => {
-  if (!s) return "";
-  return s.toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/å/g,"a").replace(/ä/g,"a").replace(/ö/g,"o")
-    .replace(/[^a-z0-9]/g,"");
-};
-function lev(a,b){
-  const m=a.length, n=b.length;
-  if(m===0) return n; if(n===0) return m;
-  const dp=Array.from({length:m+1},()=>new Array(n+1).fill(0));
-  for(let i=0;i<=m;i++) dp[i][0]=i;
-  for(let j=0;j<=n;j++) dp[0][j]=j;
-  for(let i=1;i<=m;i++){
-    for(let j=1;j<=n;j++){
-      const cost = a[i-1]===b[j-1]?0:1;
-      dp[i][j]=Math.min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost);
-    }
-  }
-  return dp[m][n];
+// Ny normalisering: endast skiftläge + mellanslag (särskrivning)
+const normalize = (s) => (s || "")
+  .toLowerCase()
+  .replace(/\s+/g, ""); // ta bort alla mellanslag, behåll allt annat
+
+function isExactMatchWithSpaces(userInput, item){
+  const cand = normalize(userInput);
+  const accepted = [item.commonName, item.latinName, ...(item.aliases||[])].map(normalize);
+  return accepted.includes(cand);
 }
-function isMatch(userInput, item, tolLevel){
-  const cand = norm(userInput);
-  const accepted = [item.commonName, item.latinName, ...(item.aliases||[])].map(norm);
-  if (accepted.includes(cand)) return true;
-  const maxLen = Math.max(1, ...accepted.map(s=>s.length));
-  const base = tolLevel===0 ? 0.12 : (tolLevel===1 ? 0.20 : 0.28);
-  const maxDist = Math.ceil(base * maxLen);
-  return accepted.some(acc => lev(cand, acc) <= maxDist || acc.includes(cand) || cand.includes(acc));
-}
+
 const sample = (arr, n) => {
   const a = [...arr];
   for(let i=a.length-1;i>0;i--){
@@ -184,19 +159,19 @@ const sample = (arr, n) => {
 };
 
 /*** =======================
- *  ARTLISTA (exempel)
+ *  ARTLISTA (börja enkelt)
  *  ======================= */
-// Börja med en art som test: Blåstång med 1–3 bilder.
-// Lägg till fler arter efterhand.
 const BANK = [
   { commonName:"Blåstång", latinName:"Fucus vesiculosus", group:"Brunalger",
-    aliases:["blastang","bladder wrack","blue tang"],
-    images:["blastang_1.jpg","blastang_2.jpg","blastang_3.jpg"] // byt/behåll så det matchar /images/
-  },
+    aliases:["blastang","Fucus vesiculosus"], // tillåt både svenska utan prickar och latin
+    images:["blastang_1.jpg","blastang_2.jpg","blastang_3.jpg"] // byt/behåll exakt som i /images/
+  }
+];
 
-  // När du vill: lägg in fler arter här:
-  // { commonName:"Havssallat", latinName:"Ulva lactuca", group:"Grönalger", images:["havssallat_1.jpg"] },
-  // ...
+// Pool för distraktorer till MC om du ännu har få arter i BANK
+const DISTRACTOR_POOL = [
+  "Sågtång","Spiraltång","Knöltång","Havssallat","Tarmalg","Grönslick",
+  "Sockertare","Fingertare","Stortare","Kräkel","Korallalg","Ullsläke"
 ];
 
 // Bygg QUIZ med fullständiga bild-URL:er
@@ -210,10 +185,8 @@ let QUIZ = BANK.map(item => ({
  *  ======================= */
 let idx = 0;
 let score = 0;
-let mode = "text";    // "text" eller "mc"
-let tolLevel = 1;     // 0=låg,1=medel,2=hög
+let mode = "text";
 
-// Bildsnurra: vilket foto per art visas just nu
 let imgIndexMap = {};
 
 const qNum = document.getElementById("qNum");
@@ -230,43 +203,14 @@ const checkBtn = document.getElementById("checkBtn");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const modeLabel = document.getElementById("modeLabel");
-const tol = document.getElementById("tol");
-const tolLabel = document.getElementById("tolLabel");
 const mcBox = document.getElementById("mcBox");
 const textBox = document.getElementById("textBox");
-const mcOptionsEl = document.getElementById("mcOptions");
+const mcSelect = document.getElementById("mcSelect");
 const mcMsg = document.getElementById("mcMsg");
+
 qTotal.textContent = QUIZ.length.toString();
 
-function setTolLabel(){
-  tolLabel.textContent = tolLevel===0?"låg":(tolLevel===1?"medel":"hög");
-}
-setTolLabel();
-
-function buildMC(item){
-  mcOptionsEl.innerHTML = "";
-  const distractors = sample(QUIZ.filter(x => x.commonName!==item.commonName && x.group===item.group), 3);
-  const options = sample([item, ...distractors], 4);
-
-  options.forEach(opt => {
-    const b = document.createElement("button");
-    b.textContent = opt.commonName;
-    b.onclick = () => {
-      [...mcOptionsEl.children].forEach(c => c.disabled = true);
-      if(opt.commonName===item.commonName){
-        b.classList.add("correct");
-        mcMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`;
-        score++; scoreEl.textContent = score.toString();
-      }else{
-        b.classList.add("incorrect");
-        mcMsg.innerHTML = `<span class="wrong">Fel.</span> Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})`;
-      }
-    };
-    mcOptionsEl.appendChild(b);
-  });
-}
-
-/* ---------- Robust bildladdning: fallback-varianter ---------- */
+/* ---------- Bildsnurra (oförändrad funktionalitet) ---------- */
 function candidatesForUrl(url){
   const list = [url];
   try { list.push(encodeURI(url)); } catch {}
@@ -289,7 +233,6 @@ function loadImageWithFallbacks(imgEl, urls, onSuccess, onFail){
   }
   tryNext();
 }
-
 function showImageForCurrentItem(){
   const item = QUIZ[idx];
   const arr = (item.images && item.images.length) ? item.images : [""];
@@ -304,7 +247,7 @@ function showImageForCurrentItem(){
   loadImageWithFallbacks(
     imgEl,
     cands,
-    (usedUrl) => {
+    () => {
       imgEl.alt = `Foto ${i+1} av ${arr.length} – ${item.commonName} (${item.latinName})`;
       imgCounter.textContent = `${i+1}/${arr.length}`;
       const single = arr.length <= 1;
@@ -323,7 +266,6 @@ function showImageForCurrentItem(){
       imgPrevBtn.style.display = "none";
       imgNextBtn.style.display = "none";
       imgCounter.style.display = "none";
-      console.warn("Kunde inte ladda någon kandidat:", cands);
     }
   );
 }
@@ -335,40 +277,76 @@ function render(){
   answerMsg.innerHTML = "";
   mcMsg.innerHTML = "";
   if (imgIndexMap[item.commonName] == null) imgIndexMap[item.commonName] = 0;
+
+  // Bild
   showImageForCurrentItem();
-  if(mode==="mc"){ buildMC(item); }
+
+  // MC – bygg rullmeny
+  if (mode==="mc"){
+    buildMCSelect(item);
+  }
 }
 
-/* ————— Händelser ————— */
+/* ---------- Flervalsläge: rullmeny med 4 alternativ ---------- */
+function buildMCSelect(item){
+  mcSelect.innerHTML = `<option value="">-- Välj --</option>`;
+  // Försök ta 3 distraktorer från BANK i samma grupp
+  let pool = QUIZ.filter(x => x.commonName!==item.commonName && x.group===item.group).map(x=>x.commonName);
+
+  // Om för få i BANK, fyll på från DISTRACTOR_POOL (utan dubbletter)
+  if (pool.length < 3) {
+    const extra = DISTRACTOR_POOL.filter(nm => nm !== item.commonName && !pool.includes(nm));
+    pool = pool.concat(sample(extra, Math.max(0, 3 - pool.length)));
+  }
+  const distractors = sample(pool, 3).map(nm => ({commonName:nm}));
+
+  const options = sample([item, ...distractors], 4);
+  options.forEach(opt => {
+    const o = document.createElement("option");
+    o.value = opt.commonName;
+    o.textContent = opt.commonName;
+    mcSelect.appendChild(o);
+  });
+}
+
+/* ---------- Händelser ---------- */
 document.querySelectorAll('input[name="mode"]').forEach(r => {
   r.addEventListener("change", e => {
     mode = e.target.value;
     modeLabel.textContent = mode==="text"?"Fritext":"Flervalsfråga";
     textBox.style.display = mode==="text" ? "block" : "none";
-    mcBox.style.display = mode==="mc" ? "block" : "none";
+    mcBox.style.display   = mode==="mc"   ? "block" : "none";
     render();
   });
 });
-tol.addEventListener("input", e => { tolLevel = parseInt(e.target.value,10); setTolLabel(); });
 
 checkBtn.addEventListener("click", () => {
   const item = QUIZ[idx];
   if(mode==="text"){
     const val = answerInput.value.trim();
     if(!val){ answerMsg.innerHTML = `<span class="muted">Skriv ett namn först.</span>`; return; }
-    const ok = isMatch(val, item, tolLevel);
+    const ok = isExactMatchWithSpaces(val, item);
     if(ok){ answerMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`; score++; scoreEl.textContent = score.toString(); }
-    else{ answerMsg.innerHTML = `<span class="wrong">Inte riktigt.</span> Försök igen eller klicka “Visa rätt svar”.`; }
+    else  { answerMsg.innerHTML = `<span class="wrong">Inte riktigt.</span> Försök igen eller klicka “Visa rätt svar”.`; }
   }else{
-    mcMsg.innerHTML = `<span class="muted">Välj ett alternativ ovan.</span>`;
+    const chosen = mcSelect.value;
+    if(!chosen){ mcMsg.innerHTML = `<span class="muted">Välj ett alternativ i listan.</span>`; return; }
+    if(chosen===item.commonName){
+      mcMsg.innerHTML = `<span class="correct">Rätt!</span> ${item.commonName} (${item.latinName})`;
+      score++; scoreEl.textContent = score.toString();
+    }else{
+      mcMsg.innerHTML = `<span class="wrong">Fel.</span> Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})`;
+    }
   }
 });
+
 showBtn.addEventListener("click", () => {
   const item = QUIZ[idx];
   const also = (item.aliases && item.aliases.length) ? ` | alias: ${item.aliases.slice(0,3).join(", ")}${item.aliases.length>3?"…":""}` : "";
   if(mode==="text"){ answerMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`; }
   else{ mcMsg.innerHTML = `Rätt svar: <strong>${item.commonName}</strong> (${item.latinName})${also}`; }
 });
+
 prevBtn.addEventListener("click", () => { idx = (idx-1+QUIZ.length)%QUIZ.length; answerInput.value = ""; render(); });
 nextBtn.addEventListener("click", () => { idx = (idx+1)%QUIZ.length; answerInput.value = ""; render(); });
 
@@ -394,7 +372,7 @@ imgEl.addEventListener("click", () => {
   showImageForCurrentItem();
 });
 
-// Visa fel i en liten ruta om något skriptfel inträffar
+// Liten felruta vid JS-fel (hjälper om något skulle sluta funka)
 window.addEventListener('error', e => {
   const box = document.createElement('div');
   box.style.cssText = 'position:fixed;left:10px;bottom:10px;max-width:90%;background:#fff1f2;color:#b91c1c;border:1px solid #fecaca;padding:.6rem .8rem;border-radius:.5rem;font:12px/1.4 system-ui;z-index:99999';
