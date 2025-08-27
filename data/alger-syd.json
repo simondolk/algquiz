@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "title": "Algquiz – Södra Sverige",
+  "questions": [
+    { "image": "images/alger-syd/EXEMPEL_blastang.jpg",
+      "answers": ["blåstång","Fucus vesiculosus"] }
+
+    // Lägg till dina 27 frågor här (utan kommentarer i riktig JSON)
+  ]
+}
