@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "title": "Algquiz – Södra Sverige",
+  "questions": [
+    {
+      "images": [
+        "images/blastang_1.jpg",
+        "images/blastang_2.jpg",
+        "images/blastang_3.jpg",
+        "images/blastang_4.jpg"
+      ],
+      "answers": [
+        "Blåstång",
+        "Fucus vesiculosus",
+        "blastang",
+        "Fucus vesiculosus"
+      ]
+    },
+    {
+      "images": [
+        "images/sagtang_1.jpg",
+        "images/sagtang_2.jpg",
+        "images/sagtang_3.jpg",
+        "images/sagtang_4.jpg"
+      ],
+      "answers": [
+        "Sågtång",
+        "Fucus serratus",
+        "sagtang",
+        "Fucus serratus"
+      ]
+    },
+    {
+      "images": [
+        "images/spiraltang_1.jpg",
+        "images/spiraltang_2.jpg",
+        "images/spiraltang_3.jpg",
+        "images/spiraltang_4.jpg"
+      ],
+      "answers": [
+        "Spiraltång",
+        "Fucus spiralis",
+        "spiraltang",
+        "Fucus spiralis"
+      ]
+    },
+    {
+      "images": [
+        "images/knoltang_1.jpg",
+        "images/knoltang_2.jpg",
+        "images/knoltang_3.jpg",
+        "images/knoltang_4.jpg"
+      ],
+      "answers": [
+        "Knöltång",
+        "Ascophyllum nodosum",
+        "knoltang",
+        "Ascophyllum nodosum"
+      ]
+    },
+    {
+      "images": [
+        "images/stortare_1.jpg",
+        "images/stortare_2.jpg",
+        "images/stortare_3.jpg",
+        "images/stortare_4.jpg"
+      ],
+      "answers": [
+        "Stortare",
+        "Laminaria hyperborea",
+        "stortare",
+        "Laminaria hyperborea"
+      ]
+    },
+    {
+      "images": [
+        "images/fingertare_1.jpg",
+        "images/fingertare_2.jpg",
+        "images/fingertare_3.jpg",
+        "images/fingertare_4.jpg"
+      ],
+      "answers": [
+        "Fingertare",
+        "Laminaria digitata",
+        "fingertare",
+        "Laminaria digitata"
+      ]
+    },
+    {
+      "images": [
+        "images/sockertare_1.jpg",
+        "images/sockertare_2.jpg",
+        "images/sockertare_3.jpg",
+        "images/sockertare_4.jpg"
+      ],
+      "answers": [
+        "Sockertare",
+        "Saccharina latissima",
+        "sockertare",
+        "Saccharina latissima",
+        "bladtang",
+        "sockertang"
+      ]
+    },
+    {
+      "images": [
+        "images/remtang_1.jpg",
+        "images/remtang_2.jpg",
+        "images/remtang_3.jpg",
+        "images/remtang_4.jpg"
+      ],
+      "answers": [
+        "Remtång",
+        "Himanthalia elongata",
+        "remtang",
+        "Himanthalia elongata",
+        "knapptang"
+      ]
+    },
+    {
+      "images": [
+        "images/sudare_1.jpg",
+        "images/sudare_2.jpg",
+        "images/sudare_3.jpg",
+        "images/sudare_4.jpg"
+      ],
+      "answers": [
+        "Sudare",
+        "Chorda filum",
+        "snarjtang",
+        "snärjtång",
+        "Chorda filum"
+      ]
+    },
+    {
+      "images": [
+        "images/ektang_1.jpg",
+        "images/ektang_2.jpg",
+        "images/ektang_3.jpg",
+        "images/ektang_4.jpg"
+      ],
+      "answers": [
+        "Ektång",
+        "Halidrys siliquosa",
+        "ektang",
+        "Halidrys siliquosa"
+      ]
+    },
+    {
+      "images": [
+        "images/tangludd_1.jpg",
+        "images/tangludd_2.jpg",
+        "images/tangludd_3.jpg",
+        "images/tangludd_4.jpg"
+      ],
+      "answers": [
+        "Tångludd",
+        "Elachista fucicola",
+        "Elachista fucicola",
+        "tangludd"
+      ]
+    },
+    {
+      "images": [
+        "images/ektofs_1.jpg",
+        "images/ektofs_2.jpg",
+        "images/ektofs_3.jpg",
+        "images/ektofs_4.jpg"
+      ],
+      "answers": [
+        "Ektofs",
+        "Sphacelaria cirrosa",
+        "Sphacelaria cirrosa",
+        "ektofs"
+      ]
+    },
+    {
+      "images": [
+        "images/sargassosnarja_1.jpg",
+        "images/sargassosnarja_2.jpg",
+        "images/sargassosnarja_3.jpg",
+        "images/sargassosnarja_4.jpg"
+      ],
+      "answers": [
+        "Sargassosnärja",
+        "Sargassum muticum",
+        "Sargassum muticum",
+        "japansk sargassotang",
+        "sargassosnarja"
+      ]
+    },
+    {
+      "images": [
+        "images/havssallat_1.jpg",
+        "images/havssallat_2.jpg",
+        "images/havssallat_3.jpg",
+        "images/havssallat_4.jpg"
+      ],
+      "answers": [
+        "Havssallat",
+        "Ulva lactuca",
+        "Ulva lactuca",
+        "havsalat"
+      ]
+    },
+    {
+      "images": [
+        "images/tarmalg_1.jpg",
+        "images/tarmalg_2.jpg",
+        "images/tarmalg_3.jpg",
+        "images/tarmalg_4.jpg"
+      ],
+      "answers": [
+        "Tarmalg",
+        "Ulva intestinalis",
+        "Ulva intestinalis",
+        "tarmtang"
+      ]
+    },
+    {
+      "images": [
+        "images/gronslick_1.jpg",
+        "images/gronslick_2.jpg",
+        "images/gronslick_3.jpg",
+        "images/gronslick_4.jpg"
+      ],
+      "answers": [
+        "Grönslick",
+        "Cladophora glomerata",
+        "Cladophora glomerata",
+        "gronslick"
+      ]
+    },
+    {
+      "images": [
+        "images/gronplym_1.jpg",
+        "images/gronplym_2.jpg",
+        "images/gronplym_3.jpg",
+        "images/gronplym_4.jpg"
+      ],
+      "answers": [
+        "Grönplym",
+        "Bryopsis plumosa",
+        "Bryopsis plumosa",
+        "gronplym"
+      ]
+    },
+    {
+      "images": [
+        "images/korallalg_1.jpg",
+        "images/korallalg_2.jpg",
+        "images/korallalg_3.jpg",
+        "images/korallalg_4.jpg"
+      ],
+      "answers": [
+        "Korallalg",
+        "Corallina officinalis",
+        "Corallina officinalis"
+      ]
+    },
+    {
+      "images": [
+        "images/krakel_1.jpg",
+        "images/krakel_2.jpg",
+        "images/krakel_3.jpg",
+        "images/krakel_4.jpg"
+      ],
+      "answers": [
+        "Kräkel",
+        "Furcellaria lumbricalis",
+        "Furcellaria lumbricalis",
+        "gaffeltang"
+      ]
+    },
+    {
+      "images": [
+        "images/rodslick_1.jpg",
+        "images/rodslick_2.jpg",
+        "images/rodslick_3.jpg",
+        "images/rodslick_4.jpg"
+      ],
+      "answers": [
+        "Rödslick",
+        "Polysiphonia spp.",
+        "Polysiphonia",
+        "rodslick"
+      ]
+    },
+    {
+      "images": [
+        "images/grovslick_1.jpg",
+        "images/grovslick_2.jpg",
+        "images/grovslick_3.jpg",
+        "images/grovslick_4.jpg"
+      ],
+      "answers": [
+        "Grovslick",
+        "Polysiphonia elongata",
+        "Polysiphonia elongata",
+        "grovslick"
+      ]
+    },
+    {
+      "images": [
+        "images/ullslake_1.jpg",
+        "images/ullslake_2.jpg",
+        "images/ullslake_3.jpg",
+        "images/ullslake_4.jpg"
+      ],
+      "answers": [
+        "Ullsläke",
+        "Ceramium tenuicorne",
+        "Ceramium tenuicorne",
+        "ullslake"
+      ]
+    },
+    {
+      "images": [
+        "images/rosenslick_1.jpg",
+        "images/rosenslick_2.jpg",
+        "images/rosenslick_3.jpg",
+        "images/rosenslick_4.jpg"
+      ],
+      "answers": [
+        "Rosenslick",
+        "Rhodomela confervoides",
+        "Rhodomela confervoides",
+        "rosenslick"
+      ]
+    },
+    {
+      "images": [
+        "images/sol_1.jpg",
+        "images/sol_2.jpg",
+        "images/sol_3.jpg",
+        "images/sol_4.jpg"
+      ],
+      "answers": [
+        "Söl",
+        "Palmaria palmata",
+        "Palmaria palmata",
+        "sol",
+        "dulse"
+      ]
+    },
+    {
+      "images": [
+        "images/karragenalg_1.jpg",
+        "images/karragenalg_2.jpg",
+        "images/karragenalg_3.jpg",
+        "images/karragenalg_4.jpg"
+      ],
+      "answers": [
+        "Karragenalg",
+        "Chondrus crispus",
+        "Chondrus crispus",
+        "karragentang",
+        "irlandsk mossa"
+      ]
+    },
+    {
+      "images": [
+        "images/ribbeblad_1.jpg",
+        "images/ribbeblad_2.jpg",
+        "images/ribbeblad_3.jpg",
+        "images/ribbeblad_4.jpg"
+      ],
+      "answers": [
+        "Ribbeblad",
+        "Delesseria sanguinea",
+        "Delesseria sanguinea",
+        "nervtang",
+        "ribbeblad"
+      ]
+    },
+    {
+      "images": [
+        "images/klyving_1.jpg",
+        "images/klyving_2.jpg",
+        "images/klyving_3.jpg",
+        "images/klyving_4.jpg"
+      ],
+      "answers": [
+        "Klyving",
+        "Polyides rotunda",
+        "Polyides rotunda",
+        "polyides rotundus"
+      ]
+    }
+  ]
+}
