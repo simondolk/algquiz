@@ -1,0 +1,495 @@
+[
+  {
+    "commonName": "Blåstång",
+    "latinName": "Fucus vesiculosus",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Blåstång",
+      "Fucus vesiculosus",
+      "blastang",
+      "Fucus vesiculosus"
+    ],
+    "images": [
+      "images/blastang_1.jpg",
+      "images/blastang_2.jpg",
+      "images/blastang_3.jpg",
+      "images/blastang_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Sågtång",
+    "latinName": "Fucus serratus",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sågtång",
+      "Fucus serratus",
+      "sagtang",
+      "Fucus serratus"
+    ],
+    "images": [
+      "images/sagtang_1.jpg",
+      "images/sagtang_2.jpg",
+      "images/sagtang_3.jpg",
+      "images/sagtang_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Spiraltång",
+    "latinName": "Fucus spiralis",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Spiraltång",
+      "Fucus spiralis",
+      "spiraltang",
+      "Fucus spiralis"
+    ],
+    "images": [
+      "images/spiraltang_1.jpg",
+      "images/spiraltang_2.jpg",
+      "images/spiraltang_3.jpg",
+      "images/spiraltang_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Knöltång",
+    "latinName": "Ascophyllum nodosum",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Knöltång",
+      "Ascophyllum nodosum",
+      "knoltang",
+      "Ascophyllum nodosum"
+    ],
+    "images": [
+      "images/knoltang_1.jpg",
+      "images/knoltang_2.jpg",
+      "images/knoltang_3.jpg",
+      "images/knoltang_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Stortare",
+    "latinName": "Laminaria hyperborea",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Stortare",
+      "Laminaria hyperborea",
+      "stortare",
+      "Laminaria hyperborea"
+    ],
+    "images": [
+      "images/stortare_1.jpg",
+      "images/stortare_2.jpg",
+      "images/stortare_3.jpg",
+      "images/stortare_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Fingertare",
+    "latinName": "Laminaria digitata",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Fingertare",
+      "Laminaria digitata",
+      "fingertare",
+      "Laminaria digitata"
+    ],
+    "images": [
+      "images/fingertare_1.jpg",
+      "images/fingertare_2.jpg",
+      "images/fingertare_3.jpg",
+      "images/fingertare_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Sockertare",
+    "latinName": "Saccharina latissima",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sockertare",
+      "Saccharina latissima",
+      "sockertare",
+      "Saccharina latissima",
+      "bladtang",
+      "sockertang"
+    ],
+    "images": [
+      "images/sockertare_1.jpg",
+      "images/sockertare_2.jpg",
+      "images/sockertare_3.jpg",
+      "images/sockertare_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Remtång",
+    "latinName": "Himanthalia elongata",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Remtång",
+      "Himanthalia elongata",
+      "remtang",
+      "Himanthalia elongata",
+      "knapptang"
+    ],
+    "images": [
+      "images/remtang_1.jpg",
+      "images/remtang_2.jpg",
+      "images/remtang_3.jpg",
+      "images/remtang_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Sudare",
+    "latinName": "Chorda filum",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sudare",
+      "Chorda filum",
+      "snarjtang",
+      "snärjtång",
+      "Chorda filum"
+    ],
+    "images": [
+      "images/sudare_1.jpg",
+      "images/sudare_2.jpg",
+      "images/sudare_3.jpg",
+      "images/sudare_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Ektång",
+    "latinName": "Halidrys siliquosa",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Ektång",
+      "Halidrys siliquosa",
+      "ektang",
+      "Halidrys siliquosa"
+    ],
+    "images": [
+      "images/ektang_1.jpg",
+      "images/ektang_2.jpg",
+      "images/ektang_3.jpg",
+      "images/ektang_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Tångludd",
+    "latinName": "Elachista fucicola",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Tångludd",
+      "Elachista fucicola",
+      "Elachista fucicola",
+      "tangludd"
+    ],
+    "images": [
+      "images/tangludd_1.jpg",
+      "images/tangludd_2.jpg",
+      "images/tangludd_3.jpg",
+      "images/tangludd_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Ektofs",
+    "latinName": "Sphacelaria cirrosa",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Ektofs",
+      "Sphacelaria cirrosa",
+      "Sphacelaria cirrosa",
+      "ektofs"
+    ],
+    "images": [
+      "images/ektofs_1.jpg",
+      "images/ektofs_2.jpg",
+      "images/ektofs_3.jpg",
+      "images/ektofs_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Sargassosnärja",
+    "latinName": "Sargassum muticum",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sargassosnärja",
+      "Sargassum muticum",
+      "Sargassum muticum",
+      "japansk sargassotang",
+      "sargassosnarja"
+    ],
+    "images": [
+      "images/sargassosnarja_1.jpg",
+      "images/sargassosnarja_2.jpg",
+      "images/sargassosnarja_3.jpg",
+      "images/sargassosnarja_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Havssallat",
+    "latinName": "Ulva lactuca",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Havssallat",
+      "Ulva lactuca",
+      "Ulva lactuca",
+      "havsalat"
+    ],
+    "images": [
+      "images/havssallat_1.jpg",
+      "images/havssallat_2.jpg",
+      "images/havssallat_3.jpg",
+      "images/havssallat_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Tarmalg",
+    "latinName": "Ulva intestinalis",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Tarmalg",
+      "Ulva intestinalis",
+      "Ulva intestinalis",
+      "tarmtang"
+    ],
+    "images": [
+      "images/tarmalg_1.jpg",
+      "images/tarmalg_2.jpg",
+      "images/tarmalg_3.jpg",
+      "images/tarmalg_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Grönslick",
+    "latinName": "Cladophora glomerata",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Grönslick",
+      "Cladophora glomerata",
+      "Cladophora glomerata",
+      "gronslick"
+    ],
+    "images": [
+      "images/gronslick_1.jpg",
+      "images/gronslick_2.jpg",
+      "images/gronslick_3.jpg",
+      "images/gronslick_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Grönplym",
+    "latinName": "Bryopsis plumosa",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Grönplym",
+      "Bryopsis plumosa",
+      "Bryopsis plumosa",
+      "gronplym"
+    ],
+    "images": [
+      "images/gronplym_1.jpg",
+      "images/gronplym_2.jpg",
+      "images/gronplym_3.jpg",
+      "images/gronplym_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Korallalg",
+    "latinName": "Corallina officinalis",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Korallalg",
+      "Corallina officinalis",
+      "Corallina officinalis"
+    ],
+    "images": [
+      "images/korallalg_1.jpg",
+      "images/korallalg_2.jpg",
+      "images/korallalg_3.jpg",
+      "images/korallalg_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Kräkel",
+    "latinName": "Furcellaria lumbricalis",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Kräkel",
+      "Furcellaria lumbricalis",
+      "Furcellaria lumbricalis",
+      "gaffeltang"
+    ],
+    "images": [
+      "images/krakel_1.jpg",
+      "images/krakel_2.jpg",
+      "images/krakel_3.jpg",
+      "images/krakel_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Rödslick",
+    "latinName": "Polysiphonia spp.",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Rödslick",
+      "Polysiphonia spp.",
+      "Polysiphonia",
+      "rodslick"
+    ],
+    "images": [
+      "images/rodslick_1.jpg",
+      "images/rodslick_2.jpg",
+      "images/rodslick_3.jpg",
+      "images/rodslick_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Grovslick",
+    "latinName": "Polysiphonia elongata",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Grovslick",
+      "Polysiphonia elongata",
+      "Polysiphonia elongata",
+      "grovslick"
+    ],
+    "images": [
+      "images/grovslick_1.jpg",
+      "images/grovslick_2.jpg",
+      "images/grovslick_3.jpg",
+      "images/grovslick_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Ullsläke",
+    "latinName": "Ceramium tenuicorne",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Ullsläke",
+      "Ceramium tenuicorne",
+      "Ceramium tenuicorne",
+      "ullslake"
+    ],
+    "images": [
+      "images/ullslake_1.jpg",
+      "images/ullslake_2.jpg",
+      "images/ullslake_3.jpg",
+      "images/ullslake_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Rosenslick",
+    "latinName": "Rhodomela confervoides",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Rosenslick",
+      "Rhodomela confervoides",
+      "Rhodomela confervoides",
+      "rosenslick"
+    ],
+    "images": [
+      "images/rosenslick_1.jpg",
+      "images/rosenslick_2.jpg",
+      "images/rosenslick_3.jpg",
+      "images/rosenslick_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Söl",
+    "latinName": "Palmaria palmata",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Söl",
+      "Palmaria palmata",
+      "Palmaria palmata",
+      "sol",
+      "dulse"
+    ],
+    "images": [
+      "images/sol_1.jpg",
+      "images/sol_2.jpg",
+      "images/sol_3.jpg",
+      "images/sol_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Karragenalg",
+    "latinName": "Chondrus crispus",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Karragenalg",
+      "Chondrus crispus",
+      "Chondrus crispus",
+      "karragentang",
+      "irlandsk mossa"
+    ],
+    "images": [
+      "images/karragenalg_1.jpg",
+      "images/karragenalg_2.jpg",
+      "images/karragenalg_3.jpg",
+      "images/karragenalg_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Ribbeblad",
+    "latinName": "Delesseria sanguinea",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Ribbeblad",
+      "Delesseria sanguinea",
+      "Delesseria sanguinea",
+      "nervtang",
+      "ribbeblad"
+    ],
+    "images": [
+      "images/ribbeblad_1.jpg",
+      "images/ribbeblad_2.jpg",
+      "images/ribbeblad_3.jpg",
+      "images/ribbeblad_4.jpg"
+    ]
+  },
+  {
+    "commonName": "Klyving",
+    "latinName": "Polyides rotunda",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Klyving",
+      "Polyides rotunda",
+      "Polyides rotunda",
+      "polyides rotundus"
+    ],
+    "images": [
+      "images/klyving_1.jpg",
+      "images/klyving_2.jpg",
+      "images/klyving_3.jpg",
+      "images/klyving_4.jpg"
+    ]
+  }
+]
