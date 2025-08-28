@@ -235,15 +235,20 @@
   function updateStats(){
     els.stats.textContent = `Fråga: ${i+1} / ${order.length} · Poäng: ${score}`;
   }
-  async function validateImages(q){
+ async function validateImages(q){
   if(q._validImages) return q._validImages;
-  const candidates = (q.images && q.images.length ? q.images : []);
-  const checks = await Promise.all(candidates.map(url => new Promise(res => {
-    const img = new Image();
-    img.onload = () => res(url);
-    img.onerror = () => res(null);
-    img.src = url;
-  })));
+  // ANVÄND ALLTID ENRICHED VARIANTS:
+  const candidates = toImagesList(q);
+
+  const checks = await Promise.all(
+    candidates.map(url => new Promise(res => {
+      const img = new Image();
+      img.onload = () => res(url);
+      img.onerror = () => res(null);
+      img.src = url;
+    }))
+  );
+
   q._validImages = checks.filter(Boolean);
   return q._validImages;
 }
