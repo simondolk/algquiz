@@ -28,7 +28,7 @@
   .choices{display:grid;gap:8px}
   .choice{display:flex;gap:8px;align-items:center}
   .help{color:var(--muted);font-size:14px}
-  .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:12px;cursor:pointer}
+  .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:12px;cursor:default}
   .ok{color:var(--accent)}
   .bad{color:var(--danger)}
   footer{padding:20px;color:#94a3b8;text-align:center}
@@ -57,6 +57,9 @@
       </div>
       <div class="content">
         <h2 id="prompt">Vad heter denna art?</h2>
+        <!-- diskret taxa-info (group/subgroup) -->
+        <div class="help" id="taxaBadge"></div>
+
         <div class="row" id="freeRow">
           <input id="answerInput" type="text" placeholder="Skriv svaret här…" size="40"/>
           <button id="checkBtn">Kontrollera</button>
@@ -139,7 +142,7 @@
   }
   function numberStrippers(base){
     // remove trailing _n or -n if present
-    const m = base.match(/^(.*?)[_-](\d+)$/);
+    const m = base.match(/^(.*?)_-$/);
     return m ? m[1] : base;
   }
   function buildVariants(p){
@@ -160,6 +163,43 @@
   }
   function registerResult(ok){
     if(ok && !seen.has(order[i])){ score++; seen.add(order[i]); updateStats(); }
+  }
+
+  // ===== NEW HELPERS for new data format + subgroup-aware MC =====
+  function uniq(arr){ 
+    return [...new Set((arr || []).filter(Boolean))]; 
+  }
+
+  function getSubgroup(q){
+    // Reads subgroup from standardized question object (preferred),
+    // or from possible legacy meta.
+    return q.subgroup || q.group || (q.meta && (q.meta.subgroup || q.meta.group)) || '';
+  }
+
+  // Subgroup index: subgroup -> array of question objects
+  let bySubgroup = new Map();
+  function indexBySubgroup(){
+    bySubgroup.clear();
+    (data.questions || []).forEach(q => {
+      const g = getSubgroup(q);
+      if(!g) return;
+      if(!bySubgroup.has(g)) bySubgroup.set(g, []);
+      bySubgroup.get(g).push(q);
+    });
+  }
+
+  // Map a record from the new array schema into the internal question schema
+  function mapRecordToQuestion(rec){
+    const answers = uniq([rec.commonName, rec.latinName, ...(rec.aliases || [])]);
+    const images = (rec.images && rec.images.length) ? rec.images : (rec.image ? [rec.image] : []);
+    return {
+      answers,
+      images,
+      subgroup: rec.subgroup || rec.group || '',
+      group: rec.group || '',
+      commonName: rec.commonName || '',
+      latinName: rec.latinName || ''
+    };
   }
 
   function sample(arr, k){
@@ -257,20 +297,63 @@
     els.feedback.textContent = '';
     els.feedback.className = '';
 
+    // taxa badge (diskret)
+    const badge = document.getElementById('taxaBadge');
+    if (badge) {
+      const grp = q.group ? q.group : '';
+      const sub = q.subgroup ? ` · ${q.subgroup}` : '';
+      badge.textContent = (grp || sub) ? `Kategori: ${grp}${sub}` : '';
+    }
+
     // Build choices if needed
     if(mode==='mc'){
-      const allPrimary = data.questions.map(x => (x.answers&&primaryCommon(x.answers))||'').filter(Boolean);
-      const correct = (q.answers&&primaryCommon(q.answers))||'';
-      let options = [correct];
-      const distractors = allPrimary.filter(x => x && x!==correct);
-      const need = Math.max(0, 4 - options.length);
-      options = options.concat(sample(distractors, need));
-      options = sample(options, options.length); // shuffle
+      const correct = (q.answers && primaryCommon(q.answers)) || '';
+      const g = getSubgroup(q);
+
+      // Primär pool: samma undergrupp (exkl. den aktuella frågan)
+      const sameGroupQs = (bySubgroup.get(g) || []).filter(x => x !== q);
+      let poolSame = uniq(
+        sameGroupQs
+          .map(x => (x.answers && primaryCommon(x.answers)) || '')
+          .filter(x => x && x !== correct)
+      );
+
+      // Sekundär pool: allt annat i kategorin
+      const allOther = data.questions.filter(x => x !== q && getSubgroup(x) !== g);
+      let poolOther = uniq(
+        allOther
+          .map(x => (x.answers && primaryCommon(x.answers)) || '')
+          .filter(x => x && x !== correct)
+      );
+
+      // 1 rätt + 3 distraktorer = 4 alternativ (om möjligt)
+      const need = 3;
+      let distractors = sample(poolSame, Math.min(need, poolSame.length));
+
+      if (distractors.length < need) {
+        const remaining = need - distractors.length;
+        distractors = distractors.concat(sample(poolOther, Math.min(remaining, poolOther.length)));
+      }
+
+      // Sista fallback: fyll från alla primära namn, utan dubletter
+      if (distractors.length < need) {
+        const allPrimary = uniq(
+          data.questions
+            .filter(x => x !== q)
+            .map(x => (x.answers && primaryCommon(x.answers)) || '')
+            .filter(Boolean)
+        ).filter(x => x !== correct && !distractors.includes(x));
+        distractors = distractors.concat(sample(allPrimary, Math.max(0, need - distractors.length)));
+      }
+
+      let options = uniq([correct, ...distractors]);
+      options = sample(options, options.length); // blanda
+
       els.mcRow.innerHTML = '';
       options.forEach(opt =>{
         const id = 'opt_'+Math.random().toString(36).slice(2,8);
         const div = document.createElement('div'); div.className='choice';
-        div.innerHTML = `<input type=\"radio\" name=\"mc\" id=\"${id}\" value=\"${opt}\"><label for=\"${id}\">${opt}</label>`;
+        div.innerHTML = `<input type="radio" name="mc" id="${id}" value="${opt}"><label for="${id}">${opt}</label>`;
         els.mcRow.appendChild(div);
       });
     }
@@ -356,7 +439,20 @@
   async function loadCategory(id){
     const meta = categories.find(c=>c.id===id) || categories[0];
     localStorage.setItem(CATEGORY_KEY, meta.id);
-    data = await fetch(meta.data).then(r=>r.json());
+
+    const raw = await fetch(meta.data).then(r=>r.json());
+
+    if (Array.isArray(raw)) {
+      // NEW: your new schema (array of records)
+      data = { title: meta.name || 'Quiz', questions: raw.map(mapRecordToQuestion) };
+    } else if (raw && Array.isArray(raw.questions)) {
+      // Legacy schema
+      data = raw;
+    } else {
+      throw new Error('Okänt dataformat i ' + meta.data);
+    }
+
+    indexBySubgroup();  // build subgroup index
     buildOrder();
     render();
   }
