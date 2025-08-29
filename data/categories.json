@@ -8,5 +8,10 @@
     "id": "insekter-syd",
     "title": "Vanliga insekter i södra Sverige",
     "path": "data/categories/insekter-syd.json"
-  }
+  },
+  {
+  "id": "insekter-skog-syd",
+  "title": "Vanliga insekter i skog södra Sverige",
+  "path": "data/categories/insekter-skog-syd.json"
+}
 ]
