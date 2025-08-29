@@ -1,39 +1,40 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Quiz – Flera kategorier</title>
-<style>
-  :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--danger:#ef4444;--btn:#1f2937;--btn-text:#e5e7eb}
-  *{box-sizing:border-box}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--text)}
-  header{padding:16px 20px;border-bottom:1px solid #1f2937;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-  header h1{font-size:20px;margin:0}
-  main{max-width:980px;margin:0 auto;padding:20px}
-  .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted)}
-  select, input[type="text"], button{background:var(--btn);color:var(--btn-text);border:1px solid #374151;border-radius:8px;padding:8px 10px}
-  label{color:var(--muted);font-size:14px}
-  .card{background:var(--card);border:1px solid #1f2937;border-radius:12px;overflow:hidden}
-  .card .media{position:relative;display:grid;place-items:center;background:#0b1220;aspect-ratio:16/9}
-  .card img{max-width:100%;max-height:70vh;object-fit:contain}
-  .nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(15,23,42,.6);color:#e5e7eb;width:40px;height:48px;border-radius:8px;display:grid;place-items:center;cursor:pointer}
-  .nav:hover{background:rgba(15,23,42,.8)}
-  .nav.prev{left:8px}
-  .nav.next{right:8px}
-  .counter{position:absolute;bottom:8px;right:10px;background:rgba(2,6,23,.6);padding:2px 8px;border-radius:999px;font-size:12px;color:#cbd5e1}
-  .card .content{padding:16px;display:grid;gap:12px}
-  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-  .stats{color:var(--muted)}
-  .choices{display:grid;gap:8px}
-  .choice{display:flex;gap:8px;align-items:center}
-  .help{color:var(--muted);font-size:14px}
-  .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:12px;cursor:default}
-  .ok{color:var(--accent)}
-  .bad{color:var(--danger)}
-  footer{padding:20px;color:#94a3b8;text-align:center}
-  @media (max-width:480px){ .nav{width:32px;height:40px} }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Quiz – Flera kategorier</title>
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--danger:#ef4444;--btn:#1f2937;--btn-text:#e5e7eb}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    header{padding:16px 20px;border-bottom:1px solid #1f2937;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    header h1{font-size:20px;margin:0}
+    main{max-width:980px;margin:0 auto;padding:20px}
+    .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted)}
+    select, input[type="text"], button{background:var(--btn);color:var(--btn-text);border:1px solid #374151;border-radius:8px;padding:8px 10px}
+    label{color:var(--muted);font-size:14px}
+    .card{background:var(--card);border:1px solid #1f2937;border-radius:12px;overflow:hidden}
+    .card .media{position:relative;display:grid;place-items:center;background:#0b1220;aspect-ratio:16/9}
+    .card img{max-width:100%;max-height:70vh;object-fit:contain}
+    .nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(15,23,42,.6);color:#e5e7eb;width:40px;height:48px;border-radius:8px;display:grid;place-items:center;cursor:pointer}
+    .nav:hover{background:rgba(15,23,42,.8)}
+    .nav.prev{left:8px}
+    .nav.next{right:8px}
+    .counter{position:absolute;bottom:8px;right:10px;background:rgba(2,6,23,.6);padding:2px 8px;border-radius:999px;font-size:12px;color:#cbd5e1}
+    .card .content{padding:16px;display:grid;gap:12px}
+    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .stats{color:var(--muted)}
+    .choices{display:grid;gap:8px}
+    .choice{display:flex;gap:8px;align-items:center}
+    .help{color:var(--muted);font-size:14px}
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:12px;cursor:default}
+    .ok{color:var(--accent)}
+    .bad{color:var(--danger)}
+    footer{padding:20px;color:#94a3b8;text-align:center}
+    @media (max-width:480px){ .nav{width:32px;height:40px} }
+  </style>
 </head>
 <body>
   <header>
@@ -41,7 +42,8 @@
     <div class="toolbar">
       <label for="categorySelect">Kategori</label>
       <select id="categorySelect"></select>
-      <span class="badge" id="modeBadge" title="Klicka för att växla">Läge: Fritext</span>
+      <!-- Behåll visuell badge, men ge den knappsemantik -->
+      <span class="badge" id="modeBadge" title="Klicka för att växla" role="button" tabindex="0" aria-pressed="true">Läge: Fritext</span>
       <label><input type="checkbox" id="shuffleToggle"> Blanda frågor</label>
     </div>
     <div class="stats" id="stats">Fråga: – / – · Poäng: 0</div>
@@ -51,7 +53,7 @@
     <article class="card">
       <div class="media">
         <button class="nav prev" id="imgPrevBtn" aria-label="Föregående bild">◀</button>
-        <img id="image" alt="Bild för aktuell fråga"/>
+        <img id="image" decoding="async" alt="Bild för aktuell fråga"/>
         <button class="nav next" id="imgNextBtn" aria-label="Nästa bild">▶</button>
         <div class="counter" id="imageCounter">1/1</div>
       </div>
@@ -68,7 +70,7 @@
         <div class="row">
           <button id="revealBtn">Visa rätt svar</button>
           <button id="nextBtn">Nästa →</button>
-          <span id="feedback"></span>
+          <span id="feedback" role="status" aria-live="polite"></span>
         </div>
         <div class="help">
           Tips: Endast skiftläge ignoreras och mellanslag accepteras (särskrivning). Inga övriga stavfel.
@@ -116,6 +118,8 @@
   function setMode(m){
     mode = m; localStorage.setItem(MODE_KEY, m);
     els.mode.textContent = 'Läge: ' + (m==='free' ? 'Fritext' : 'Flervalsfråga');
+    // uppdatera knappsemantik
+    els.mode.setAttribute('aria-pressed', m==='free' ? 'true' : 'false');
     els.freeRow.style.display = (m==='free')?'flex':'none';
     els.mcRow.style.display = (m==='mc')?'grid':'none';
     els.feedback.textContent = '';
@@ -134,15 +138,15 @@
     return {dir, base, ext};
   }
   function extVariants(ext){
-    const core = ['.jpg','.jpeg','.png'];
+    const core = ['.jpg','.jpeg','.png','.webp','.avif'];
     const set = new Set([ext.toLowerCase(), ...core]);
     const out = [];
     set.forEach(e=>{ out.push(e); out.push(e.toUpperCase()); });
     return [...new Set(out)];
   }
   function numberStrippers(base){
-    // remove trailing _n or -n if present
-    const m = base.match(/^(.*?)_-$/);
+    // Ta bort t.ex. "_1", "-2", "_12" eller "-04" i slutet om det finns (fixad regex)
+    const m = base.match(/^(.*?)(?:[_-]\d+)?$/);
     return m ? m[1] : base;
   }
   function buildVariants(p){
@@ -156,7 +160,13 @@
     return [...names];
   }
 
-  function normalize(s){ return (s||'').toLowerCase().replace(/\s+/g,''); }
+  // Robust normering: ignorera skiftläge och mellanslag + Unicode-normalisering
+  function normalize(s){
+    return (s||'')
+      .normalize('NFKC')
+      .toLowerCase()
+      .replace(/\s+/g,'');
+  }
   function isCorrect(input, answers){
     const n = normalize(input);
     return (answers||[]).some(a => normalize(a)===n);
@@ -166,8 +176,8 @@
   }
 
   // ===== NEW HELPERS for new data format + subgroup-aware MC =====
-  function uniq(arr){ 
-    return [...new Set((arr || []).filter(Boolean))]; 
+  function uniq(arr){
+    return [...new Set((arr || []).filter(Boolean))];
   }
 
   function getSubgroup(q){
@@ -235,23 +245,24 @@
   function updateStats(){
     els.stats.textContent = `Fråga: ${i+1} / ${order.length} · Poäng: ${score}`;
   }
- async function validateImages(q){
-  if(q._validImages) return q._validImages;
-  // ANVÄND ALLTID ENRICHED VARIANTS:
-  const candidates = toImagesList(q);
 
-  const checks = await Promise.all(
-    candidates.map(url => new Promise(res => {
-      const img = new Image();
-      img.onload = () => res(url);
-      img.onerror = () => res(null);
-      img.src = url;
-    }))
-  );
+  async function validateImages(q){
+    if(q._validImages) return q._validImages;
+    // ANVÄND ALLTID ENRICHED VARIANTS:
+    const candidates = toImagesList(q);
 
-  q._validImages = checks.filter(Boolean);
-  return q._validImages;
-}
+    const checks = await Promise.all(
+      candidates.map(url => new Promise(res => {
+        const img = new Image();
+        img.onload = () => res(url);
+        img.onerror = () => res(null);
+        img.src = url;
+      }))
+    );
+
+    q._validImages = checks.filter(Boolean);
+    return q._validImages;
+  }
 
   function updateCarouselUI(n){
     els.counter.textContent = n? `${imgIdx+1}/${n}` : '';
@@ -261,15 +272,18 @@
 
   async function showImage(){
     const q = normalizeQuestion(current());
+    els.img.alt = 'Laddar bild...';
     const imgs = await validateImages(q);
     const n = imgs.length;
     if(n===0){
       els.img.removeAttribute('src');
+      els.img.alt = 'Ingen bild tillgänglig';
       updateCarouselUI(0);
       return;
     }
     imgIdx = (imgIdx + n) % n; // wrap
     els.img.src = imgs[imgIdx];
+    els.img.alt = 'Bild: ' + ((q.answers && q.answers[0]) || 'Okänd');
     updateCarouselUI(n);
   }
 
@@ -295,7 +309,6 @@
     const q = normalizeQuestion(current());
     imgIdx = 0; // reset for new question
     showImage();
-    els.img.alt = 'Bild: ' + ((q.answers && q.answers[0]) || 'Okänd');
     els.prompt.textContent = 'Vad heter denna art?';
     els.input.value = '';
     els.feedback.textContent = '';
@@ -466,6 +479,13 @@
     const m = (mode==='free'?'mc':'free');
     localStorage.setItem(MODE_KEY, m);
     location.reload();
+  });
+  // Tangentbordsstöd på badge (Enter/Space)
+  els.mode.addEventListener('keydown', (e)=>{
+    if(e.key==='Enter' || e.key===' '){
+      e.preventDefault();
+      els.mode.click();
+    }
   });
 
   // Shuffle change can be soft (no reload)
