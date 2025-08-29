@@ -1,12 +1,12 @@
 [
   {
     "id": "alger-syd",
-    "name": "Vanliga alger i södra Sverige",
-    "data": "data/alger-syd-new.json"
+    "title": "Vanliga alger i södra Sverige",
+    "path": "data/categories/alger-syd.json"
   },
   {
     "id": "insekter-syd",
-    "name": "Vanliga insekter i södra Sverige",
-    "data": "data/insekter-syd-new.json"
+    "title": "Vanliga insekter i södra Sverige",
+    "path": "data/categories/insekter-syd.json"
   }
 ]
