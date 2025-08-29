@@ -5,36 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <title>Quiz – Flera kategorier</title>
-  <style>
-    :root{--bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e;--danger:#ef4444;--btn:#1f2937;--btn-text:#e5e7eb}
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    header{padding:16px 20px;border-bottom:1px solid #1f2937;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
-    header h1{font-size:20px;margin:0}
-    main{max-width:980px;margin:0 auto;padding:20px}
-    .toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;color:var(--muted)}
-    select, input[type="text"], button{background:var(--btn);color:var(--btn-text);border:1px solid #374151;border-radius:8px;padding:8px 10px}
-    label{color:var(--muted);font-size:14px}
-    .card{background:var(--card);border:1px solid #1f2937;border-radius:12px;overflow:hidden}
-    .card .media{position:relative;display:grid;place-items:center;background:#0b1220;aspect-ratio:16/9}
-    .card img{max-width:100%;max-height:70vh;object-fit:contain}
-    .nav{position:absolute;top:50%;transform:translateY(-50%);border:none;background:rgba(15,23,42,.6);color:#e5e7eb;width:40px;height:48px;border-radius:8px;display:grid;place-items:center;cursor:pointer}
-    .nav:hover{background:rgba(15,23,42,.8)}
-    .nav.prev{left:8px}
-    .nav.next{right:8px}
-    .counter{position:absolute;bottom:8px;right:10px;background:rgba(2,6,23,.6);padding:2px 8px;border-radius:999px;font-size:12px;color:#cbd5e1}
-    .card .content{padding:16px;display:grid;gap:12px}
-    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .stats{color:var(--muted)}
-    .choices{display:grid;gap:8px}
-    .choice{display:flex;gap:8px;align-items:center}
-    .help{color:var(--muted);font-size:14px}
-    .badge{display:inline-block;padding:2px 8px;border-radius:999px;background:#1e293b;color:#cbd5e1;font-size:12px;cursor:default}
-    .ok{color:var(--accent)}
-    .bad{color:var(--danger)}
-    footer{padding:20px;color:#94a3b8;text-align:center}
-    @media (max-width:480px){ .nav{width:32px;height:40px} }
-  </style>
+<style>
+  /* ===== Miljöverkstaden-inspirerad ljus design =====
+     - Ljus bakgrund, stark läsbarhet
+     - Grön accent, rundade komponenter, luft och tydliga kort
+     - Endast CSS: din befintliga HTML/JS fortsätter fungera
+  */
+
+  :root{
+    --bg:#ffffff;
+    --surface:#f8fafc;      /* ljus yta för sektioner */
+    --card:#ffffff;
+    --text:#1f2937;         /* slate-800 */
+    --muted:#6b7280;        /* slate-500/600 */
+    --border:#e5e7eb;       /* light grey */
+    --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
+
+    --primary:#22c55e;      /* grön accent */
+    --primary-600:#16a34a;
+    --primary-50:#ecfdf5;
+
+    --btn:#ffffff;
+    --btn-text:#111827;
+
+    --radius:12px;
+    --radius-sm:8px;
+    --space:16px;
+  }
+
+  *{ box-sizing:border-box }
+  html { -webkit-text-size-adjust: 100%; }
+  body{
+    margin:0;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+    background: var(--surface);
+    color: var(--text);
+    line-height:1.45;
+  }
+
+  /* ===== Header ===== */
+  header{
+    position: sticky; top:0; z-index:10;
+    padding: 14px 20px;
+    border-bottom:1px solid var(--border);
+    background: rgba(255,255,255,.9);
+    backdrop-filter: saturate(180%) blur(8px);
+    display:flex; gap:16px; flex-wrap:wrap; align-items:center
+  }
+  header h1{
+    font-size: clamp(18px, 2.2vw, 22px);
+    margin:0;
+    letter-spacing:.2px;
+  }
+  .toolbar{
+    display:flex; gap:12px; align-items:center; flex-wrap:wrap;
+    color:var(--muted);
+  }
+
+  /* ===== Form controls / Buttons ===== */
+  select, input[type="text"], button{
+    background: var(--btn);
+    color: var(--btn-text);
+    border:1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding:8px 10px;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  select:focus, input[type="text"]:focus, button:focus{
+    outline: none;
+    border-color: var(--primary-600);
+    box-shadow: 0 0 0 3px rgba(34,197,94,.25);
+  }
+  button{
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+  button:hover{ background: var(--primary-600); border-color: var(--primary-600); }
+
+  label{ color:var(--muted); font-size:14px }
+
+  /* ===== Badge-knappar (t.ex. lägesväxlarna) ===== */
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:6px 10px;
+    border-radius: 999px;
+    background: #fff;
+    color:#0b1a13;
+    border:1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 0 1px 0 rgba(0,0,0,.02);
+  }
+  .badge:hover{ border-color:#d1d5db; }
+  .badge[aria-pressed="true"]{
+    background: var(--primary-50);
+    border-color: var(--primary);
+    color: #065f46;
+  }
+
+  /* ===== Stat / Footer ===== */
+  .stats{ color:#475569; } /* slate-600 */
+  footer{ padding:20px; color:#64748b; text-align:center }
+
+  /* ===== Kort och media ===== */
+  main{ max-width: 980px; margin: 0 auto; padding: 20px; }
+  .card{
+    background: var(--card);
+    border:1px solid var(--border);
+    border-radius: var(--radius);
+    overflow:hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .card .media{
+    position:relative; display:grid; place-items:center;
+    background: #eef2f7; /* mycket ljus gråblå bakgrund för bilder */
+    aspect-ratio: 16/9;  /* behåll din tidigare responsiva yta */
+  }
+  .card img{
+    max-width:100%;
+    max-height:70vh;
+    object-fit: contain;
+  }
+  .nav{
+    position:absolute; top:50%; transform:translateY(-50%);
+    border:none;
+    background:#ffffff;
+    color:#111827;
+    width:42px; height:48px;
+    border-radius: 10px;
+    display:grid; place-items:center;
+    cursor:pointer;
+    box-shadow: 0 2px 10px rgba(0,0,0,.10);
+    border:1px solid var(--border);
+  }
+  .nav:hover{ background:#f9fafb }
+  .nav.prev{ left:10px }
+  .nav.next{ right:10px }
+  .counter{
+    position:absolute; bottom:10px; right:12px;
+    background: rgba(255,255,255,.95);
+    padding:3px 10px; border-radius: 999px;
+    font-size:12px; color:#334155; border:1px solid var(--border);
+  }
+
+  .card .content{ padding:16px; display:grid; gap:12px }
+  .row{ display:flex; gap:12px; flex-wrap:wrap; align-items:center }
+
+  /* ===== Flervals-alternativ som kort ===== */
+  .choices{ display:grid; gap:10px }
+  .choice{ display:flex; gap:8px; align-items:center }
+  .choice input[type="radio"]{
+    /* vi behåller radion men gör den liten och icke-distraherande */
+    width:18px; height:18px; accent-color: var(--primary);
+  }
+  /* Alternativ: gör bara labeln till "kort" */
+  .choice label{
+    display:block;
+    padding:10px 12px;
+    border:1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background:#fff;
+    color:#0f172a;
+    width:100%;
+    transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+    cursor:pointer;
+  }
+  .choice input[type="radio"]:checked + label{
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(34,197,94,.20);
+    background: #f6fff9;
+  }
+  .choice label:hover{ background:#f9fafb }
+
+  /* ===== Hjälptext & feedback ===== */
+  .help{ color:#64748b; font-size:14px }
+  .ok{ color: var(--primary-600); font-weight:600 }
+  .bad{ color:#dc2626; font-weight:600 }
+
+  /* ===== Tillgänglighet / fokus ===== */
+  :focus-visible{
+    outline: 3px solid rgba(34,197,94,.45);
+    outline-offset: 2px;
+  }
+
+  /* ===== Småskärmar ===== */
+  @media (max-width:480px){
+    .nav{ width:40px; height:44px }
+  }
+</style>
 </head>
 <body>
   <header>
