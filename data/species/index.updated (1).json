@@ -1,0 +1,1338 @@
+[
+  {
+    "id": "aglais-io",
+    "commonName": "påfågelöga",
+    "latinName": "Aglais io",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "påfågelöga",
+      "Aglais io"
+    ],
+    "images": [
+      "images/insekter-syd/pafageloga.jpg"
+    ]
+  },
+  {
+    "id": "aglais-urticae",
+    "commonName": "nässelfjäril",
+    "latinName": "Aglais urticae",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "nässelfjäril",
+      "Aglais urticae"
+    ],
+    "images": [
+      "images/insekter-syd/nasselfjaril.jpg"
+    ]
+  },
+  {
+    "id": "aphididae",
+    "commonName": "bladlus",
+    "latinName": "Aphididae",
+    "group": "Insekter",
+    "subgroup": "Halvvingar",
+    "aliases": [
+      "Aphididae",
+      "bladlus",
+      "bladlöss"
+    ],
+    "images": [
+      "images/insekter-syd/bladloss.jpg"
+    ]
+  },
+  {
+    "id": "apis-mellifera",
+    "commonName": "honungsbi",
+    "latinName": "Apis mellifera",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "honungsbi",
+      "Apis mellifera",
+      "bi"
+    ],
+    "images": [
+      "images/insekter-syd/honungsbi.jpg"
+    ]
+  },
+  {
+    "id": "ascophyllum-nodosum",
+    "commonName": "Knöltång",
+    "latinName": "Ascophyllum nodosum",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Knöltång",
+      "Ascophyllum nodosum",
+      "knoltang"
+    ],
+    "images": [
+      "images/knoltang_1.jpg",
+      "images/knoltang_2.jpg",
+      "images/knoltang_3.jpg",
+      "images/knoltang_4.jpg"
+    ]
+  },
+  {
+    "id": "bombus-terrestris",
+    "commonName": "humla",
+    "latinName": "Bombus terrestris",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "humla",
+      "humlor",
+      "Bombus",
+      "Bombus terrestris"
+    ],
+    "images": [
+      "images/insekter-syd/humla.jpg"
+    ]
+  },
+  {
+    "id": "bryopsis-plumosa",
+    "commonName": "Grönplym",
+    "latinName": "Bryopsis plumosa",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Grönplym",
+      "Bryopsis plumosa",
+      "gronplym"
+    ],
+    "images": [
+      "images/gronplym_1.jpg",
+      "images/gronplym_2.jpg",
+      "images/gronplym_3.jpg",
+      "images/gronplym_4.jpg"
+    ]
+  },
+  {
+    "id": "carabus-nemoralis",
+    "commonName": "jordlöpare",
+    "latinName": "Carabus nemoralis",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "jordlöpare",
+      "Carabus nemoralis"
+    ],
+    "images": [
+      "images/insekter-syd/jordlopare.jpg"
+    ]
+  },
+  {
+    "id": "ceramium-tenuicorne",
+    "commonName": "Ullsläke",
+    "latinName": "Ceramium tenuicorne",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Ullsläke",
+      "Ceramium tenuicorne",
+      "ullslake"
+    ],
+    "images": [
+      "images/ullslake_1.jpg",
+      "images/ullslake_2.jpg",
+      "images/ullslake_3.jpg",
+      "images/ullslake_4.jpg"
+    ]
+  },
+  {
+    "id": "cetonia-aurata",
+    "commonName": "blomsterbagge",
+    "latinName": "Cetonia aurata",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "blomsterbagge",
+      "Cetonia aurata",
+      "guldbagge"
+    ],
+    "images": [
+      "images/insekter-syd/blomsterbagge.jpg"
+    ]
+  },
+  {
+    "id": "chondrus-crispus",
+    "commonName": "Karragenalg",
+    "latinName": "Chondrus crispus",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Karragenalg",
+      "Chondrus crispus",
+      "karragentang",
+      "irlandsk mossa"
+    ],
+    "images": [
+      "images/karragenalg_1.jpg",
+      "images/karragenalg_2.jpg",
+      "images/karragenalg_3.jpg",
+      "images/karragenalg_4.jpg"
+    ]
+  },
+  {
+    "id": "chorda-filum",
+    "commonName": "Sudare",
+    "latinName": "Chorda filum",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sudare",
+      "Chorda filum",
+      "snarjtang",
+      "snärjtång"
+    ],
+    "images": [
+      "images/sudare_1.jpg",
+      "images/sudare_2.jpg",
+      "images/sudare_3.jpg",
+      "images/sudare_4.jpg"
+    ]
+  },
+  {
+    "id": "chorthippus-brunneus",
+    "commonName": "gräshoppa",
+    "latinName": "Chorthippus brunneus",
+    "group": "Insekter",
+    "subgroup": "Hopprätvingar",
+    "aliases": [
+      "gräshoppa",
+      "Chorthippus brunneus"
+    ],
+    "images": [
+      "images/insekter-syd/grashoppa.jpg"
+    ]
+  },
+  {
+    "id": "cladophora-glomerata",
+    "commonName": "Grönslick",
+    "latinName": "Cladophora glomerata",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Grönslick",
+      "Cladophora glomerata",
+      "gronslick"
+    ],
+    "images": [
+      "images/gronslick_1.jpg",
+      "images/gronslick_2.jpg",
+      "images/gronslick_3.jpg",
+      "images/gronslick_4.jpg"
+    ]
+  },
+  {
+    "id": "coccinella-septempunctata",
+    "commonName": "nyckelpiga",
+    "latinName": "Coccinella septempunctata",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "nyckelpiga",
+      "Coccinella septempunctata"
+    ],
+    "images": [
+      "images/insekter-syd/nyckelpiga.jpg"
+    ]
+  },
+  {
+    "id": "corallina-officinalis",
+    "commonName": "Korallalg",
+    "latinName": "Corallina officinalis",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Korallalg",
+      "Corallina officinalis"
+    ],
+    "images": [
+      "images/korallalg_1.jpg",
+      "images/korallalg_2.jpg",
+      "images/korallalg_3.jpg",
+      "images/korallalg_4.jpg"
+    ]
+  },
+  {
+    "id": "culex-pipiens",
+    "commonName": "mygga",
+    "latinName": "Culex pipiens",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "mygga",
+      "mygg",
+      "Culex pipiens"
+    ],
+    "images": [
+      "images/insekter-syd/mygga.jpg"
+    ]
+  },
+  {
+    "id": "delesseria-sanguinea",
+    "commonName": "Ribbeblad",
+    "latinName": "Delesseria sanguinea",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Ribbeblad",
+      "Delesseria sanguinea",
+      "nervtang"
+    ],
+    "images": [
+      "images/ribbeblad_1.jpg",
+      "images/ribbeblad_2.jpg",
+      "images/ribbeblad_3.jpg",
+      "images/ribbeblad_4.jpg"
+    ]
+  },
+  {
+    "id": "dolichovespula-rufa",
+    "commonName": "rödhalsad geting",
+    "latinName": "Dolichovespula rufa",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "Dolichovespula rufa",
+      "rödhalsad geting"
+    ],
+    "images": [
+      "images/insekter-syd/rodhalsad-geting.jpg"
+    ]
+  },
+  {
+    "id": "elachista-fucicola",
+    "commonName": "Tångludd",
+    "latinName": "Elachista fucicola",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Tångludd",
+      "Elachista fucicola",
+      "tangludd"
+    ],
+    "images": [
+      "images/tangludd_1.jpg",
+      "images/tangludd_2.jpg",
+      "images/tangludd_3.jpg",
+      "images/tangludd_4.jpg"
+    ]
+  },
+  {
+    "id": "forficula-auricularia",
+    "commonName": "tvestjärt",
+    "latinName": "Forficula auricularia",
+    "group": "Insekter",
+    "subgroup": "Övriga vanliga arter",
+    "aliases": [
+      "tvestjärt",
+      "Forficula auricularia"
+    ],
+    "images": [
+      "images/insekter-syd/tvestjart.jpg"
+    ]
+  },
+  {
+    "id": "formica-rufa",
+    "commonName": "myra",
+    "latinName": "Formica rufa",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "myra",
+      "Formica rufa",
+      "röd skogsmyra"
+    ],
+    "images": [
+      "images/insekter-syd/myra.jpg"
+    ]
+  },
+  {
+    "id": "fucus-serratus",
+    "commonName": "Sågtång",
+    "latinName": "Fucus serratus",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sågtång",
+      "Fucus serratus",
+      "sagtang"
+    ],
+    "images": [
+      "images/sagtang_1.jpg",
+      "images/sagtang_2.jpg",
+      "images/sagtang_3.jpg",
+      "images/sagtang_4.jpg"
+    ]
+  },
+  {
+    "id": "fucus-spiralis",
+    "commonName": "Spiraltång",
+    "latinName": "Fucus spiralis",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Spiraltång",
+      "Fucus spiralis",
+      "spiraltang"
+    ],
+    "images": [
+      "images/spiraltang_1.jpg",
+      "images/spiraltang_2.jpg",
+      "images/spiraltang_3.jpg",
+      "images/spiraltang_4.jpg"
+    ]
+  },
+  {
+    "id": "fucus-vesiculosus",
+    "commonName": "Blåstång",
+    "latinName": "Fucus vesiculosus",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Blåstång",
+      "Fucus vesiculosus",
+      "blastang"
+    ],
+    "images": [
+      "images/blastang_1.jpg",
+      "images/blastang_2.jpg",
+      "images/blastang_3.jpg",
+      "images/blastang_4.jpg"
+    ]
+  },
+  {
+    "id": "furcellaria-lumbricalis",
+    "commonName": "Kräkel",
+    "latinName": "Furcellaria lumbricalis",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Kräkel",
+      "Furcellaria lumbricalis",
+      "gaffeltang"
+    ],
+    "images": [
+      "images/krakel_1.jpg",
+      "images/krakel_2.jpg",
+      "images/krakel_3.jpg",
+      "images/krakel_4.jpg"
+    ]
+  },
+  {
+    "id": "geotrupes-stercorarius",
+    "commonName": "tordyvel",
+    "latinName": "Geotrupes stercorarius",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "tordyvel",
+      "Geotrupes stercorarius"
+    ],
+    "images": [
+      "images/insekter-syd/tordyvel.jpg"
+    ]
+  },
+  {
+    "id": "gerris-lacustris",
+    "commonName": "vattenlöpare",
+    "latinName": "Gerris lacustris",
+    "group": "Insekter",
+    "subgroup": "Övriga vanliga arter",
+    "aliases": [
+      "vattenlöpare",
+      "Gerris lacustris"
+    ],
+    "images": [
+      "images/insekter-syd/vattenlopare.jpg"
+    ]
+  },
+  {
+    "id": "gonepteryx-rhamni",
+    "commonName": "citronfjäril",
+    "latinName": "Gonepteryx rhamni",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "citronfjäril",
+      "Gonepteryx rhamni"
+    ],
+    "images": [
+      "images/insekter-syd/citronfjaril.jpg"
+    ]
+  },
+  {
+    "id": "gryllus-campestris",
+    "commonName": "syrsa",
+    "latinName": "Gryllus campestris",
+    "group": "Insekter",
+    "subgroup": "Hopprätvingar",
+    "aliases": [
+      "syrsa",
+      "Gryllus campestris"
+    ],
+    "images": [
+      "images/insekter-syd/syrsa.jpg"
+    ]
+  },
+  {
+    "id": "halidrys-siliquosa",
+    "commonName": "Ektång",
+    "latinName": "Halidrys siliquosa",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Ektång",
+      "Halidrys siliquosa",
+      "ektang"
+    ],
+    "images": [
+      "images/ektang_1.jpg",
+      "images/ektang_2.jpg",
+      "images/ektang_3.jpg",
+      "images/ektang_4.jpg"
+    ]
+  },
+  {
+    "id": "himanthalia-elongata",
+    "commonName": "Remtång",
+    "latinName": "Himanthalia elongata",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Remtång",
+      "Himanthalia elongata",
+      "remtang",
+      "knapptang"
+    ],
+    "images": [
+      "images/remtang_1.jpg",
+      "images/remtang_2.jpg",
+      "images/remtang_3.jpg",
+      "images/remtang_4.jpg"
+    ]
+  },
+  {
+    "id": "laminaria-digitata",
+    "commonName": "Fingertare",
+    "latinName": "Laminaria digitata",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Fingertare",
+      "Laminaria digitata"
+    ],
+    "images": [
+      "images/fingertare_1.jpg",
+      "images/fingertare_2.jpg",
+      "images/fingertare_3.jpg",
+      "images/fingertare_4.jpg"
+    ]
+  },
+  {
+    "id": "laminaria-hyperborea",
+    "commonName": "Stortare",
+    "latinName": "Laminaria hyperborea",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Stortare",
+      "Laminaria hyperborea"
+    ],
+    "images": [
+      "images/stortare_1.jpg",
+      "images/stortare_2.jpg",
+      "images/stortare_3.jpg",
+      "images/stortare_4.jpg"
+    ]
+  },
+  {
+    "id": "lasius-niger",
+    "commonName": "svartmyra",
+    "latinName": "Lasius niger",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "svartmyra",
+      "Lasius niger"
+    ],
+    "images": [
+      "images/insekter-syd/svartmyra.jpg"
+    ]
+  },
+  {
+    "id": "lepisma-saccharinum",
+    "commonName": "silverfisk",
+    "latinName": "Lepisma saccharinum",
+    "group": "Insekter",
+    "subgroup": "Övriga vanliga arter",
+    "aliases": [
+      "silverfisk",
+      "Lepisma saccharinum"
+    ],
+    "images": [
+      "images/insekter-syd/silverfisk.jpg"
+    ]
+  },
+  {
+    "id": "lygaeidae",
+    "commonName": "skinnbagge",
+    "latinName": "Lygaeidae",
+    "group": "Insekter",
+    "subgroup": "Halvvingar",
+    "aliases": [
+      "Lygaeidae",
+      "skinnbagge"
+    ],
+    "images": [
+      "images/insekter-syd/skinnbagge.jpg"
+    ]
+  },
+  {
+    "id": "melolontha-melolontha",
+    "commonName": "ollonborre",
+    "latinName": "Melolontha melolontha",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "ollonborre",
+      "Melolontha melolontha"
+    ],
+    "images": [
+      "images/insekter-syd/ollonborre.jpg"
+    ]
+  },
+  {
+    "id": "musca-domestica",
+    "commonName": "husfluga",
+    "latinName": "Musca domestica",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "husfluga",
+      "Musca domestica",
+      "fluga"
+    ],
+    "images": [
+      "images/insekter-syd/husfluga.jpg"
+    ]
+  },
+  {
+    "id": "palmaria-palmata",
+    "commonName": "Söl",
+    "latinName": "Palmaria palmata",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Söl",
+      "Palmaria palmata",
+      "sol",
+      "dulse"
+    ],
+    "images": [
+      "images/sol_1.jpg",
+      "images/sol_2.jpg",
+      "images/sol_3.jpg",
+      "images/sol_4.jpg"
+    ]
+  },
+  {
+    "id": "pentatomidae",
+    "commonName": "bärfis",
+    "latinName": "Pentatomidae",
+    "group": "Insekter",
+    "subgroup": "Halvvingar",
+    "aliases": [
+      "bärfis",
+      "Pentatomidae"
+    ],
+    "images": [
+      "images/insekter-syd/barfis.jpg"
+    ]
+  },
+  {
+    "id": "philaenus-spumarius",
+    "commonName": "spottstrit",
+    "latinName": "Philaenus spumarius",
+    "group": "Insekter",
+    "subgroup": "Övriga vanliga arter",
+    "aliases": [
+      "spottstrit",
+      "Philaenus spumarius"
+    ],
+    "images": [
+      "images/insekter-syd/spottstrit.jpg"
+    ]
+  },
+  {
+    "id": "pieris-brassicae",
+    "commonName": "kålfjäril",
+    "latinName": "Pieris brassicae",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "kålfjäril",
+      "Pieris brassicae"
+    ],
+    "images": [
+      "images/insekter-syd/kalfjaril.jpg"
+    ]
+  },
+  {
+    "id": "polygonia-c-album",
+    "commonName": "vinbärsfuks",
+    "latinName": "Polygonia c-album",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "vinbärsfuks",
+      "Polygonia c-album",
+      "Polygonia calbum"
+    ],
+    "images": [
+      "images/insekter-syd/vinbarsfuks.jpg"
+    ]
+  },
+  {
+    "id": "polyides-rotunda",
+    "commonName": "Klyving",
+    "latinName": "Polyides rotunda",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Klyving",
+      "Polyides rotunda",
+      "polyides rotundus"
+    ],
+    "images": [
+      "images/klyving_1.jpg",
+      "images/klyving_2.jpg",
+      "images/klyving_3.jpg",
+      "images/klyving_4.jpg"
+    ]
+  },
+  {
+    "id": "polysiphonia-elongata",
+    "commonName": "Grovslick",
+    "latinName": "Polysiphonia elongata",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Grovslick",
+      "Polysiphonia elongata"
+    ],
+    "images": [
+      "images/grovslick_1.jpg",
+      "images/grovslick_2.jpg",
+      "images/grovslick_3.jpg",
+      "images/grovslick_4.jpg"
+    ]
+  },
+  {
+    "id": "polysiphonia-spp",
+    "commonName": "Rödslick",
+    "latinName": "Polysiphonia spp.",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Rödslick",
+      "Polysiphonia spp.",
+      "Polysiphonia",
+      "rodslick"
+    ],
+    "images": [
+      "images/rodslick_1.jpg",
+      "images/rodslick_2.jpg",
+      "images/rodslick_3.jpg",
+      "images/rodslick_4.jpg"
+    ]
+  },
+  {
+    "id": "rhodomela-confervoides",
+    "commonName": "Rosenslick",
+    "latinName": "Rhodomela confervoides",
+    "group": "Alger",
+    "subgroup": "Rödalger",
+    "aliases": [
+      "Rosenslick",
+      "Rhodomela confervoides"
+    ],
+    "images": [
+      "images/rosenslick_1.jpg",
+      "images/rosenslick_2.jpg",
+      "images/rosenslick_3.jpg",
+      "images/rosenslick_4.jpg"
+    ]
+  },
+  {
+    "id": "saccharina-latissima",
+    "commonName": "Sockertare",
+    "latinName": "Saccharina latissima",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sockertare",
+      "Saccharina latissima",
+      "bladtang",
+      "sockertang"
+    ],
+    "images": [
+      "images/sockertare_1.jpg",
+      "images/sockertare_2.jpg",
+      "images/sockertare_3.jpg",
+      "images/sockertare_4.jpg"
+    ]
+  },
+  {
+    "id": "sargassum-muticum",
+    "commonName": "Sargassosnärja",
+    "latinName": "Sargassum muticum",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Sargassosnärja",
+      "Sargassum muticum",
+      "japansk sargassotang",
+      "sargassosnarja"
+    ],
+    "images": [
+      "images/sargassosnarja_1.jpg",
+      "images/sargassosnarja_2.jpg",
+      "images/sargassosnarja_3.jpg",
+      "images/sargassosnarja_4.jpg"
+    ]
+  },
+  {
+    "id": "simuliidae",
+    "commonName": "knott",
+    "latinName": "Simuliidae",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "knott",
+      "Simuliidae"
+    ],
+    "images": [
+      "images/insekter-syd/knott.jpg"
+    ]
+  },
+  {
+    "id": "sphacelaria-cirrosa",
+    "commonName": "Ektofs",
+    "latinName": "Sphacelaria cirrosa",
+    "group": "Alger",
+    "subgroup": "Brunalger",
+    "aliases": [
+      "Ektofs",
+      "Sphacelaria cirrosa"
+    ],
+    "images": [
+      "images/ektofs_1.jpg",
+      "images/ektofs_2.jpg",
+      "images/ektofs_3.jpg",
+      "images/ektofs_4.jpg"
+    ]
+  },
+  {
+    "id": "tabanus-bovinus",
+    "commonName": "broms",
+    "latinName": "Tabanus bovinus",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "broms",
+      "Tabanus bovinus"
+    ],
+    "images": [
+      "images/insekter-syd/broms.jpg"
+    ]
+  },
+  {
+    "id": "tettigonia-viridissima",
+    "commonName": "vårtbitaren",
+    "latinName": "Tettigonia viridissima",
+    "group": "Insekter",
+    "subgroup": "Övriga vanliga arter",
+    "aliases": [
+      "vårtbitaren",
+      "Tettigonia viridissima",
+      "vårtbitare"
+    ],
+    "images": [
+      "images/insekter-syd/vartbitaren.jpg"
+    ]
+  },
+  {
+    "id": "ulva-intestinalis",
+    "commonName": "Tarmalg",
+    "latinName": "Ulva intestinalis",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Tarmalg",
+      "Ulva intestinalis",
+      "tarmtang"
+    ],
+    "images": [
+      "images/tarmalg_1.jpg",
+      "images/tarmalg_2.jpg",
+      "images/tarmalg_3.jpg",
+      "images/tarmalg_4.jpg"
+    ]
+  },
+  {
+    "id": "ulva-lactuca",
+    "commonName": "Havssallat",
+    "latinName": "Ulva lactuca",
+    "group": "Alger",
+    "subgroup": "Grönalger",
+    "aliases": [
+      "Havssallat",
+      "Ulva lactuca",
+      "havsalat"
+    ],
+    "images": [
+      "images/havssallat_1.jpg",
+      "images/havssallat_2.jpg",
+      "images/havssallat_3.jpg",
+      "images/havssallat_4.jpg"
+    ]
+  },
+  {
+    "id": "vespula-vulgaris",
+    "commonName": "geting",
+    "latinName": "Vespula vulgaris",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "geting",
+      "Vespula vulgaris"
+    ],
+    "images": [
+      "images/insekter-syd/geting.jpg"
+    ]
+  },
+  {
+    "id": "ips-typographus",
+    "commonName": "granbarkborre",
+    "latinName": "Ips typographus",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "granbarkborre",
+      "Ips typographus"
+    ],
+    "images": [
+      "images/granbarkborre.jpg"
+    ]
+  },
+  {
+    "id": "tomicus-piniperda",
+    "commonName": "större märgborre",
+    "latinName": "Tomicus piniperda",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "större märgborre",
+      "Tomicus piniperda"
+    ],
+    "images": [
+      "images/storre_margborre.jpg"
+    ]
+  },
+  {
+    "id": "monochamus-sutor",
+    "commonName": "tallbock",
+    "latinName": "Monochamus sutor",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "tallbock",
+      "Monochamus sutor"
+    ],
+    "images": [
+      "images/tallbock.jpg"
+    ]
+  },
+  {
+    "id": "chrysolina-fastuosa",
+    "commonName": "chrysolina fastuosa",
+    "latinName": "Chrysolina fastuosa",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "Chrysolina fastuosa"
+    ],
+    "images": [
+      "images/chrysolina_fastuosa.jpg"
+    ]
+  },
+  {
+    "id": "otiorhynchus-sulcatus",
+    "commonName": "vinstocksvivel",
+    "latinName": "Otiorhynchus sulcatus",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "vinstocksvivel",
+      "Otiorhynchus sulcatus"
+    ],
+    "images": [
+      "images/vinstocksvivel.jpg"
+    ]
+  },
+  {
+    "id": "gnorimus-variabilis",
+    "commonName": "svart guldbagge",
+    "latinName": "Gnorimus variabilis",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "svart guldbagge",
+      "Gnorimus variabilis"
+    ],
+    "images": [
+      "images/svart_guldbagge.jpg"
+    ]
+  },
+  {
+    "id": "staphylinus-olens",
+    "commonName": "större rovbagg",
+    "latinName": "Staphylinus olens",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "större rovbagg",
+      "Staphylinus olens"
+    ],
+    "images": [
+      "images/storre_rovbagg.jpg"
+    ]
+  },
+  {
+    "id": "agriotes-lineatus",
+    "commonName": "åkerknäppare",
+    "latinName": "Agriotes lineatus",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "åkerknäppare",
+      "Agriotes lineatus"
+    ],
+    "images": [
+      "images/akerknappare.jpg"
+    ]
+  },
+  {
+    "id": "dytiscus-marginalis",
+    "commonName": "dykare",
+    "latinName": "Dytiscus marginalis",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "dykare",
+      "Dytiscus marginalis"
+    ],
+    "images": [
+      "images/dykare.jpg"
+    ]
+  },
+  {
+    "id": "cis-boleti",
+    "commonName": "mycelbagge",
+    "latinName": "Cis boleti",
+    "group": "Insekter",
+    "subgroup": "Skalbaggar",
+    "aliases": [
+      "mycelbagge",
+      "Cis boleti"
+    ],
+    "images": [
+      "images/mycelbagge.jpg"
+    ]
+  },
+  {
+    "id": "melitaea-athalia",
+    "commonName": "skogsnätfjäril",
+    "latinName": "Melitaea athalia",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "skogsnätfjäril",
+      "Melitaea athalia"
+    ],
+    "images": [
+      "images/skogsnatfjaril.jpg"
+    ]
+  },
+  {
+    "id": "apatura-iris",
+    "commonName": "aspfjäril",
+    "latinName": "Apatura iris",
+    "group": "Insekter",
+    "subgroup": "Fjärilar",
+    "aliases": [
+      "aspfjäril",
+      "Apatura iris"
+    ],
+    "images": [
+      "images/aspfjaril.jpg"
+    ]
+  },
+  {
+    "id": "lipoptena-cervi",
+    "commonName": "hjortfluga",
+    "latinName": "Lipoptena cervi",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "hjortfluga",
+      "Lipoptena cervi"
+    ],
+    "images": [
+      "images/hjortfluga.jpg"
+    ]
+  },
+  {
+    "id": "hypoderma-bovis",
+    "commonName": "nötkreatursstyng",
+    "latinName": "Hypoderma bovis",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "nötkreatursstyng",
+      "Hypoderma bovis"
+    ],
+    "images": [
+      "images/notkreatursstyng.jpg"
+    ]
+  },
+  {
+    "id": "lucilia-sericata",
+    "commonName": "grön metallblomfluga",
+    "latinName": "Lucilia sericata",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "grön metallblomfluga",
+      "Lucilia sericata"
+    ],
+    "images": [
+      "images/gron_metallblomfluga.jpg"
+    ]
+  },
+  {
+    "id": "syrphus-ribesii",
+    "commonName": "större bandblomfluga",
+    "latinName": "Syrphus ribesii",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "större bandblomfluga",
+      "Syrphus ribesii"
+    ],
+    "images": [
+      "images/storre_bandblomfluga.jpg"
+    ]
+  },
+  {
+    "id": "tabanus-bromius",
+    "commonName": "regnbroms",
+    "latinName": "Tabanus bromius",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "regnbroms",
+      "Tabanus bromius"
+    ],
+    "images": [
+      "images/regnbroms.jpg"
+    ]
+  },
+  {
+    "id": "mycetophila-fungorum",
+    "commonName": "svampmygga",
+    "latinName": "Mycetophila fungorum",
+    "group": "Insekter",
+    "subgroup": "Tvåvingar",
+    "aliases": [
+      "svampmygga",
+      "Mycetophila fungorum"
+    ],
+    "images": [
+      "images/svampmygga.jpg"
+    ]
+  },
+  {
+    "id": "ichneumon-suspiciosus",
+    "commonName": "parasitstekel",
+    "latinName": "Ichneumon suspiciosus",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "parasitstekel",
+      "Ichneumon suspiciosus"
+    ],
+    "images": [
+      "images/parasitstekel.jpg"
+    ]
+  },
+  {
+    "id": "dolichovespula-saxonica",
+    "commonName": "vedgeting",
+    "latinName": "Dolichovespula saxonica",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "vedgeting",
+      "Dolichovespula saxonica"
+    ],
+    "images": [
+      "images/vedgeting.jpg"
+    ]
+  },
+  {
+    "id": "formica-fusca",
+    "commonName": "liten skogsmyra",
+    "latinName": "Formica fusca",
+    "group": "Insekter",
+    "subgroup": "Steklar",
+    "aliases": [
+      "liten skogsmyra",
+      "Formica fusca"
+    ],
+    "images": [
+      "images/liten_skogsmyra.jpg"
+    ]
+  },
+  {
+    "id": "palomena-prasina",
+    "commonName": "grön bärfis",
+    "latinName": "Palomena prasina",
+    "group": "Insekter",
+    "subgroup": "Halvvingar",
+    "aliases": [
+      "grön bärfis",
+      "Palomena prasina"
+    ],
+    "images": [
+      "images/gron_barfis.jpg"
+    ]
+  },
+  {
+    "id": "lygaeus-equestris",
+    "commonName": "vanlig fröskinnbagge",
+    "latinName": "Lygaeus equestris",
+    "group": "Insekter",
+    "subgroup": "Halvvingar",
+    "aliases": [
+      "vanlig fröskinnbagge",
+      "Lygaeus equestris"
+    ],
+    "images": [
+      "images/vanlig_froskinnbagge.jpg"
+    ]
+  },
+  {
+    "id": "cicadella-viridis",
+    "commonName": "lövhoppsstrit",
+    "latinName": "Cicadella viridis",
+    "group": "Insekter",
+    "subgroup": "Halvvingar",
+    "aliases": [
+      "lövhoppsstrit",
+      "Cicadella viridis"
+    ],
+    "images": [
+      "images/lovhoppsstrit.jpg"
+    ]
+  },
+  {
+    "id": "chorthippus-parallelus",
+    "commonName": "ängsgräshoppa",
+    "latinName": "Chorthippus parallelus",
+    "group": "Insekter",
+    "subgroup": "Hopprätvingar",
+    "aliases": [
+      "ängsgräshoppa",
+      "Chorthippus parallelus"
+    ],
+    "images": [
+      "images/angsgrashoppa.jpg"
+    ]
+  },
+  {
+    "id": "coenagrion-puella",
+    "commonName": "större blåflickslända",
+    "latinName": "Coenagrion puella",
+    "group": "Insekter",
+    "subgroup": "Trollsländor",
+    "aliases": [
+      "större blåflickslända",
+      "Coenagrion puella"
+    ],
+    "images": [
+      "images/storre_blaflickslanda.jpg"
+    ]
+  },
+  {
+    "id": "aeshna-grandis",
+    "commonName": "brun mosaikslända",
+    "latinName": "Aeshna grandis",
+    "group": "Insekter",
+    "subgroup": "Trollsländor",
+    "aliases": [
+      "brun mosaikslända",
+      "Aeshna grandis"
+    ],
+    "images": [
+      "images/brun_mosaikslanda.jpg"
+    ]
+  },
+  {
+    "id": "ephemera-vulgata",
+    "commonName": "stor dagslända",
+    "latinName": "Ephemera vulgata",
+    "group": "Insekter",
+    "subgroup": "Dagsländor",
+    "aliases": [
+      "stor dagslända",
+      "Ephemera vulgata"
+    ],
+    "images": [
+      "images/stor_dagslanda.jpg"
+    ]
+  },
+  {
+    "id": "nemoura-cinerea",
+    "commonName": "vanlig bäckslända",
+    "latinName": "Nemoura cinerea",
+    "group": "Insekter",
+    "subgroup": "Bäcksländor",
+    "aliases": [
+      "vanlig bäckslända",
+      "Nemoura cinerea"
+    ],
+    "images": [
+      "images/vanlig_backslanda.jpg"
+    ]
+  },
+  {
+    "id": "limnephilus-flavicornis",
+    "commonName": "gulbrun nattslända",
+    "latinName": "Limnephilus flavicornis",
+    "group": "Insekter",
+    "subgroup": "Nattsländor",
+    "aliases": [
+      "gulbrun nattslända",
+      "Limnephilus flavicornis"
+    ],
+    "images": [
+      "images/gulbrun_nattslanda.jpg"
+    ]
+  }
+]
