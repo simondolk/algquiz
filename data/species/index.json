@@ -14,6 +14,53 @@
     ]
   },
   {
+  "id": "operophtera-brumata",
+  "commonName": "mindre frostfjäril",
+  "latinName": "Operophtera brumata",
+  "group": "Insekter",
+  "subgroup": "Fjärilar",
+  "aliases": [
+    "mindre frostfjäril",
+    "frostfjäril",
+    "allmän frostfjäril",
+    "Operophtera brumata"
+  ],
+  "images": [
+    "images/insekter-syd/mindre_frostfjaril.jpg"
+  ]
+},
+  {
+  "id": "autographa-gamma",
+  "commonName": "gammafly",
+  "latinName": "Autographa gamma",
+  "group": "Insekter",
+  "subgroup": "Fjärilar",
+  "aliases": [
+    "gammafly",
+    "Autographa gamma",
+    "silver Y"
+  ],
+  "images": [
+    "images/insekter-syd/gammafly.jpg"
+  ]
+},
+  {
+  "id": "argynnis-aglaja",
+  "commonName": "ängspärlemorfjäril",
+  "latinName": "Argynnis aglaja",
+  "group": "Insekter",
+  "subgroup": "Fjärilar",
+  "aliases": [
+    "ängspärlemorfjäril",
+    "stor pärlemorfjäril",
+    "Argynnis aglaja",
+    "Speyeria aglaja"
+  ],
+  "images": [
+    "images/insekter-syd/angsparlemorfjaril.jpg"
+  ]
+},
+  {
     "id": "aglais-urticae",
     "commonName": "nässelfjäril",
     "latinName": "Aglais urticae",
