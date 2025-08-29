@@ -1,0 +1,12 @@
+{
+  "name": "species-data",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "validate:data": "node scripts/validate-data.mjs"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}
