@@ -243,11 +243,14 @@
 
 <script>
 (function(){
+  // ==============================
+  // Konstanter, helpers och element
+  // ==============================
   const CATEGORY_KEY='quiz.category';
-  const MODE_KEY='quiz.mode'; // 'free' | 'mc'
+  const MODE_KEY='quiz.mode';      // 'free' | 'mc'
   const SHUFFLE_KEY='quiz.shuffle';
 
-  const $ = sel => document.querySelector(sel);
+  const $  = sel => document.querySelector(sel);
   const $$ = sel => Array.from(document.querySelectorAll(sel));
 
   const els = {
@@ -258,19 +261,27 @@
     mcRow: $('#mcRow'),
     check: $('#checkBtn'), reveal: $('#revealBtn'), next: $('#nextBtn'),
     feedback: $('#feedback'),
-    prev: $('#imgPrevBtn'), nextImg: $('#imgNextBtn'), counter: $('#imageCounter')
+    prev: $('#imgPrevBtn'), nextImg: $('#imgNextBtn'), counter: $('#imageCounter'),
+    taxaBadge: $('#taxaBadge')
   };
 
-  // State
-  let categories = [];
-  let data = { title: 'Quiz', questions: [] };
-  let order = [];
-  let i = 0; // index in order
-  let score = 0;
-  let seen = new Set();
-  let imgIdx = 0;
+  // ==============================
+  // App-state
+  // ==============================
+  let categories = [];            // från data/categories.json [{id,title,path}]
+  let speciesIndex = [];          // masterlista species/index.json
+  let speciesById = new Map();    // id -> species
 
-  // Settings
+  let data = { title: 'Quiz', questions: [] }; // {title, questions: Question[]}
+  let order = [];                 // fråga-index i slumpad/linjär ordning
+  let i = 0;                      // position i 'order'
+  let score = 0;
+  let seen = new Set();           // vilka index som redan poängsatts
+  let imgIdx = 0;                 // index i bildkarusell
+
+  // ==============================
+  // Settings (läge & blanda)
+  // ==============================
   let mode = localStorage.getItem(MODE_KEY) || 'free';
   let shuffle = localStorage.getItem(SHUFFLE_KEY) === '1';
   els.shuffle.checked = shuffle;
@@ -278,7 +289,6 @@
   function setMode(m){
     mode = m; localStorage.setItem(MODE_KEY, m);
     els.mode.textContent = 'Läge: ' + (m==='free' ? 'Fritext' : 'Flervalsfråga');
-    // uppdatera knappsemantik
     els.mode.setAttribute('aria-pressed', m==='free' ? 'true' : 'false');
     els.freeRow.style.display = (m==='free')?'flex':'none';
     els.mcRow.style.display = (m==='mc')?'grid':'none';
@@ -287,7 +297,25 @@
   }
   setMode(mode);
 
-  // === Filename variant helpers ===
+  // ==============================
+  // Hjälpfunktioner
+  // ==============================
+  function normalize(s){
+    return (s||'')
+      .normalize('NFKC')
+      .toLowerCase()
+      .replace(/\s+/g,'');
+  }
+  function isCorrect(input, answers){
+    const n = normalize(input);
+    return (answers||[]).some(a => normalize(a)===n);
+  }
+  function registerResult(ok){
+    if(ok && !seen.has(order[i])){ score++; seen.add(order[i]); updateStats(); }
+  }
+  function uniq(arr){ return [...new Set((arr || []).filter(Boolean))]; }
+
+  // Filnamnsvarianter (dina befintliga helpers, något stramade)
   function pathParts(p){
     const m = p.match(/^(.*\/)?([^\/]+)$/); // dir, file
     const dir = (m && m[1]) || '';
@@ -305,7 +333,6 @@
     return [...new Set(out)];
   }
   function numberStrippers(base){
-    // Ta bort t.ex. "_1", "-2", "_12" eller "-04" i slutet om det finns (fixad regex)
     const m = base.match(/^(.*?)(?:[_-]\d+)?$/);
     return m ? m[1] : base;
   }
@@ -320,45 +347,9 @@
     return [...names];
   }
 
-  // Robust normering: ignorera skiftläge och mellanslag + Unicode-normalisering
-  function normalize(s){
-    return (s||'')
-      .normalize('NFKC')
-      .toLowerCase()
-      .replace(/\s+/g,'');
-  }
-  function isCorrect(input, answers){
-    const n = normalize(input);
-    return (answers||[]).some(a => normalize(a)===n);
-  }
-  function registerResult(ok){
-    if(ok && !seen.has(order[i])){ score++; seen.add(order[i]); updateStats(); }
-  }
-
-  // ===== NEW HELPERS for new data format + subgroup-aware MC =====
-  function uniq(arr){
-    return [...new Set((arr || []).filter(Boolean))];
-  }
-
-  function getSubgroup(q){
-    // Reads subgroup from standardized question object (preferred),
-    // or from possible legacy meta.
-    return q.subgroup || q.group || (q.meta && (q.meta.subgroup || q.meta.group)) || '';
-  }
-
-  // Subgroup index: subgroup -> array of question objects
-  let bySubgroup = new Map();
-  function indexBySubgroup(){
-    bySubgroup.clear();
-    (data.questions || []).forEach(q => {
-      const g = getSubgroup(q);
-      if(!g) return;
-      if(!bySubgroup.has(g)) bySubgroup.set(g, []);
-      bySubgroup.get(g).push(q);
-    });
-  }
-
-  // Map a record from the new array schema into the internal question schema
+  // ==============================
+  // Map & indexering
+  // ==============================
   function mapRecordToQuestion(rec){
     const answers = uniq([rec.commonName, rec.latinName, ...(rec.aliases || [])]);
     const images = (rec.images && rec.images.length) ? rec.images : (rec.image ? [rec.image] : []);
@@ -372,6 +363,79 @@
     };
   }
 
+  function getSubgroup(q){
+    return q.subgroup || q.group || (q.meta && (q.meta.subgroup || q.meta.group)) || '';
+  }
+
+  // Undergruppsindex för MC-distraktorer
+  let bySubgroup = new Map();
+  function indexBySubgroup(){
+    bySubgroup.clear();
+    (data.questions || []).forEach(q => {
+      const g = getSubgroup(q);
+      if(!g) return;
+      if(!bySubgroup.has(g)) bySubgroup.set(g, []);
+      bySubgroup.get(g).push(q);
+    });
+  }
+
+  // ==============================
+  // Laddning av datafiler
+  // ==============================
+  async function fetchJson(url){
+    const res = await fetch(url, {cache:'no-store'});
+    if(!res.ok) throw new Error(`Misslyckades läsa ${url}: ${res.status}`);
+    return await res.json();
+  }
+
+  async function loadCategoriesOverview(){
+    categories = await fetchJson('data/categories.json'); // [{id,title,path}]
+    els.cat.innerHTML = '';
+    for(const c of categories){
+      const opt = document.createElement('option');
+      opt.value = c.id;
+      opt.textContent = c.title || c.id;
+      opt.dataset.path = c.path;
+      els.cat.appendChild(opt);
+    }
+  }
+
+  async function ensureSpeciesIndex(){
+    if(speciesIndex.length) return;
+    speciesIndex = await fetchJson('data/species/index.json');
+    speciesById = new Map(speciesIndex.map(s => [s.id, s]));
+  }
+
+  function findCategoryMeta(id){
+    return categories.find(c => c.id === id);
+  }
+
+  async function loadCategoryAsQuestions(categoryId){
+    const meta = findCategoryMeta(categoryId);
+    if(!meta) throw new Error(`Okänd kategori: ${categoryId}`);
+    const cat = await fetchJson(meta.path); // {id,name,description?,speciesIds:[]}
+    const qs = [];
+    for(const sid of cat.speciesIds || []){
+      const rec = speciesById.get(sid);
+      if(!rec){
+        console.warn('Saknas i masterlistan:', sid);
+        continue;
+      }
+      qs.push(mapRecordToQuestion(rec));
+    }
+    data = { title: cat.name || meta.title || cat.id, questions: qs };
+    indexBySubgroup();
+    buildOrder();
+    i = 0;
+    imgIdx = 0;
+    els.title.textContent = data.title || 'Quiz';
+    updateStats();
+    await render(); // starta första frågan
+  }
+
+  // ==============================
+  // Ordning / statistik
+  // ==============================
   function sample(arr, k){
     const a=[...arr];
     for(let j=a.length-1;j>0;--j){const r=Math.floor(Math.random()*(j+1)); [a[j],a[r]]=[a[r],a[j]]}
@@ -390,10 +454,8 @@
     let candidates = [];
     if(q.images && q.images.length){ candidates = [...q.images]; }
     else if(q.image){ candidates = [q.image]; }
-    // enrich with variant guesses for each candidate
     let enriched = [];
     candidates.forEach(p=>{ enriched.push(p); buildVariants(p).forEach(v=> enriched.push(v)); });
-    // de-dup
     return [...new Set(enriched)];
   }
 
@@ -408,9 +470,7 @@
 
   async function validateImages(q){
     if(q._validImages) return q._validImages;
-    // ANVÄND ALLTID ENRICHED VARIANTS:
     const candidates = toImagesList(q);
-
     const checks = await Promise.all(
       candidates.map(url => new Promise(res => {
         const img = new Image();
@@ -419,7 +479,6 @@
         img.src = url;
       }))
     );
-
     q._validImages = checks.filter(Boolean);
     return q._validImages;
   }
@@ -430,6 +489,9 @@
     els.prev.style.display = show; els.nextImg.style.display = show;
   }
 
+  // ==============================
+  // --- DINA (infällda) RENDER-funktioner ---
+  // ==============================
   async function showImage(){
     const q = normalizeQuestion(current());
     els.img.alt = 'Laddar bild...';
@@ -457,85 +519,90 @@
 
   function primaryCommon(ans){
     if(!ans || !ans.length) return '';
-    // Prefer first entry that is NOT binomial latin
     const latinRegex = /^[A-ZÅÄÖ][a-zåäöéèê\-]+\s+[a-zåäöéèê\-\.]+$/;
     const nonLatin = ans.find(a => !latinRegex.test(a.trim()));
     return nonLatin || ans[0];
   }
 
-  function render(){
+  function buildMCChoicesFromSubgroup(q){
+    els.mcRow.innerHTML = '';
+    const correct = (q.answers && primaryCommon(q.answers)) || '';
+    const g = getSubgroup(q);
+
+    // Primär pool: samma undergrupp (exkl. aktuell fråga)
+    const sameGroupQs = (bySubgroup.get(g) || []).filter(x => x !== q);
+    let poolSame = uniq(
+      sameGroupQs
+        .map(x => (x.answers && primaryCommon(x.answers)) || '')
+        .filter(x => x && x !== correct)
+    );
+
+    // Sekundär pool: allt annat i kategorin
+    const allOther = data.questions.filter(x => x !== q && getSubgroup(x) !== g);
+    let poolOther = uniq(
+      allOther
+        .map(x => (x.answers && primaryCommon(x.answers)) || '')
+        .filter(x => x && x !== correct)
+    );
+
+    // 1 rätt + 3 distraktorer
+    const need = 3;
+    let distractors = sample(poolSame, Math.min(need, poolSame.length));
+
+    if (distractors.length < need) {
+      const remaining = need - distractors.length;
+      distractors = distractors.concat(sample(poolOther, Math.min(remaining, poolOther.length)));
+    }
+
+    // Sista fallback: fyll från alla primära namn, utan dubletter
+    if (distractors.length < need) {
+      const allPrimary = uniq(
+        data.questions
+          .filter(x => x !== q)
+          .map(x => (x.answers && primaryCommon(x.answers)) || '')
+          .filter(Boolean)
+      ).filter(x => x !== correct && !distractors.includes(x));
+      distractors = distractors.concat(sample(allPrimary, Math.max(0, need - distractors.length)));
+    }
+
+    let options = uniq([correct, ...distractors]);
+    options = sample(options, options.length); // blanda
+
+    options.forEach(opt =>{
+      const id = 'opt_'+Math.random().toString(36).slice(2,8);
+      const div = document.createElement('div'); div.className='choice';
+      div.innerHTML = `<input type="radio" name="mc" id="${id}" value="${opt}"><label for="${id}">${opt}</label>`;
+      els.mcRow.appendChild(div);
+    });
+  }
+
+  async function render(){
     els.title.textContent = (data.title || 'Quiz');
     updateStats();
     const q = normalizeQuestion(current());
-    imgIdx = 0; // reset for new question
-    showImage();
+    imgIdx = 0; // reset för ny fråga
+    await showImage();
     els.prompt.textContent = 'Vad heter denna art?';
     els.input.value = '';
     els.feedback.textContent = '';
     els.feedback.className = '';
 
     // taxa badge (diskret)
-    const badge = document.getElementById('taxaBadge');
-    if (badge) {
-      const grp = q.group ? q.group : '';
-      const sub = q.subgroup ? ` · ${q.subgroup}` : '';
-      badge.textContent = (grp || sub) ? `Kategori: ${grp}${sub}` : '';
-    }
+    const grp = q.group ? q.group : '';
+    const sub = q.subgroup ? ` • ${q.subgroup}` : '';
+    els.taxaBadge.textContent = (grp || sub) ? `${grp}${sub}` : '';
 
-    // Build choices if needed
+    // Bygg MC om läge = mc
     if(mode==='mc'){
-      const correct = (q.answers && primaryCommon(q.answers)) || '';
-      const g = getSubgroup(q);
-
-      // Primär pool: samma undergrupp (exkl. den aktuella frågan)
-      const sameGroupQs = (bySubgroup.get(g) || []).filter(x => x !== q);
-      let poolSame = uniq(
-        sameGroupQs
-          .map(x => (x.answers && primaryCommon(x.answers)) || '')
-          .filter(x => x && x !== correct)
-      );
-
-      // Sekundär pool: allt annat i kategorin
-      const allOther = data.questions.filter(x => x !== q && getSubgroup(x) !== g);
-      let poolOther = uniq(
-        allOther
-          .map(x => (x.answers && primaryCommon(x.answers)) || '')
-          .filter(x => x && x !== correct)
-      );
-
-      // 1 rätt + 3 distraktorer = 4 alternativ (om möjligt)
-      const need = 3;
-      let distractors = sample(poolSame, Math.min(need, poolSame.length));
-
-      if (distractors.length < need) {
-        const remaining = need - distractors.length;
-        distractors = distractors.concat(sample(poolOther, Math.min(remaining, poolOther.length)));
-      }
-
-      // Sista fallback: fyll från alla primära namn, utan dubletter
-      if (distractors.length < need) {
-        const allPrimary = uniq(
-          data.questions
-            .filter(x => x !== q)
-            .map(x => (x.answers && primaryCommon(x.answers)) || '')
-            .filter(Boolean)
-        ).filter(x => x !== correct && !distractors.includes(x));
-        distractors = distractors.concat(sample(allPrimary, Math.max(0, need - distractors.length)));
-      }
-
-      let options = uniq([correct, ...distractors]);
-      options = sample(options, options.length); // blanda
-
+      buildMCChoicesFromSubgroup(q);
+    } else {
       els.mcRow.innerHTML = '';
-      options.forEach(opt =>{
-        const id = 'opt_'+Math.random().toString(36).slice(2,8);
-        const div = document.createElement('div'); div.className='choice';
-        div.innerHTML = `<input type="radio" name="mc" id="${id}" value="${opt}"><label for="${id}">${opt}</label>`;
-        els.mcRow.appendChild(div);
-      });
     }
   }
 
+  // ==============================
+  // Event handlers
+  // ==============================
   function setFeedback(ok, q){
     if(ok){
       const latin = latinFromAnswers(q.answers);
@@ -579,15 +646,32 @@
 
   function handleNext(){
     if(order.length===0) return;
-    i = (i+1) % order.length; render();
+    i = (i+1) % order.length;
+    render();
   }
 
+  // Badge: växla läge (utan full reload)
+  els.mode.addEventListener('click', () => {
+    setMode(mode==='free' ? 'mc' : 'free');
+    render();
+  });
+  els.mode.addEventListener('keydown', (e) => {
+    if(e.key===' ' || e.key==='Enter'){ e.preventDefault(); els.mode.click(); }
+  });
+
+  // Shuffle: spara, bygg om ordning och rendera om
+  els.shuffle.addEventListener('change', (e)=>{
+    shuffle = !!e.target.checked; localStorage.setItem(SHUFFLE_KEY, shuffle?'1':'0');
+    buildOrder(); i = 0; imgIdx = 0; updateStats(); render();
+  });
+
+  // Svarsknappar mm.
   els.check.addEventListener('click', handleCheck);
   els.reveal.addEventListener('click', handleReveal);
   els.next.addEventListener('click', handleNext);
   els.mcRow.addEventListener('change', handleMCSelection);
 
-  // Carousel controls
+  // Karusell & tangentbord
   els.prev.addEventListener('click', ()=>{ imgIdx--; showImage(); });
   els.nextImg.addEventListener('click', ()=>{ imgIdx++; showImage(); });
   document.addEventListener('keydown', (ev)=>{
@@ -595,70 +679,46 @@
     if(ev.key==='ArrowRight'){ imgIdx++; showImage(); }
   });
 
-  // Category loading
-  async function loadCategories(){
-    const cats = await fetch('data/categories.json').then(r=>r.json());
-    categories = cats;
-    els.cat.innerHTML = '';
-    cats.forEach(c=>{
-      const opt = document.createElement('option');
-      opt.value = c.id; opt.textContent = c.name; els.cat.appendChild(opt);
-    });
-    const saved = localStorage.getItem(CATEGORY_KEY);
-    if(saved && cats.some(c=>c.id===saved)) els.cat.value = saved;
-    await loadCategory(els.cat.value || cats[0].id);
-    // On change, persist + hard reload (ensures all listeners re-init properly)
-    els.cat.addEventListener('change', e=>{
-      const id = e.target.value; localStorage.setItem(CATEGORY_KEY, id); location.reload();
-    });
+  // Kategori: ladda vald kategori
+  els.cat.addEventListener('change', async () => {
+    const id = els.cat.value;
+    localStorage.setItem(CATEGORY_KEY, id);
+    imgIdx = 0;
+    await loadCategoryAsQuestions(id);
+  });
+
+  // ==============================
+  // Init
+  // ==============================
+  async function init(){
+    try{
+      await loadCategoriesOverview();
+      await ensureSpeciesIndex();
+
+      // välj initial kategori
+      const saved = localStorage.getItem(CATEGORY_KEY);
+      const defaultId = saved && categories.some(c=>c.id===saved) ? saved : (categories[0]?.id);
+      if(defaultId){ els.cat.value = defaultId; }
+
+      // ladda vald kategori
+      if(els.cat.value){
+        await loadCategoryAsQuestions(els.cat.value);
+      }else{
+        data = {title: 'Quiz', questions: []};
+        updateStats();
+      }
+    }catch(err){
+      console.error(err);
+      els.feedback.textContent = 'Kunde inte ladda data. Kontrollera att data/-filerna finns.';
+      els.feedback.className = 'bad';
+    }
   }
 
-  async function loadCategory(id){
-    const meta = categories.find(c=>c.id===id) || categories[0];
-    localStorage.setItem(CATEGORY_KEY, meta.id);
-
-    const raw = await fetch(meta.data).then(r=>r.json());
-
-    if (Array.isArray(raw)) {
-      // NEW: your new schema (array of records)
-      data = { title: meta.name || 'Quiz', questions: raw.map(mapRecordToQuestion) };
-    } else if (raw && Array.isArray(raw.questions)) {
-      // Legacy schema
-      data = raw;
-    } else {
-      throw new Error('Okänt dataformat i ' + meta.data);
-    }
-
-    indexBySubgroup();  // build subgroup index
-    buildOrder();
-    render();
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init, {once:true});
+  }else{
+    init();
   }
-
-  // Mode toggle → persist + hard reload
-  els.mode.addEventListener('click', ()=>{
-    const m = (mode==='free'?'mc':'free');
-    localStorage.setItem(MODE_KEY, m);
-    location.reload();
-  });
-  // Tangentbordsstöd på badge (Enter/Space)
-  els.mode.addEventListener('keydown', (e)=>{
-    if(e.key==='Enter' || e.key===' '){
-      e.preventDefault();
-      els.mode.click();
-    }
-  });
-
-  // Shuffle change can be soft (no reload)
-  els.shuffle.addEventListener('change', (e)=>{
-    shuffle = e.target.checked; localStorage.setItem(SHUFFLE_KEY, shuffle?'1':'0');
-    buildOrder(); render();
-  });
-
-  loadCategories().catch(err=>{
-    console.error(err);
-    els.prompt.textContent = 'Kunde inte ladda kategorierna. Kontrollera filvägarna.';
-  });
-
 })();
 </script>
 </body>
