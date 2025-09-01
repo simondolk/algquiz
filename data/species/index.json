@@ -86,7 +86,7 @@
       "bladlöss"
     ],
     "images": [
-      "images/bladloss.jpg"
+      "images/bladlus.jpg"
     ]
   },
   {
@@ -243,16 +243,16 @@
   },
   {
     "id": "chorthippus-brunneus",
-    "commonName": "gräshoppa",
+    "commonName": "backgräshoppa",
     "latinName": "Chorthippus brunneus",
     "group": "Insekter",
     "subgroup": "Hopprätvingar",
     "aliases": [
-      "gräshoppa",
+      "backgräshoppa",
       "Chorthippus brunneus"
     ],
     "images": [
-      "images/grashoppa.jpg"
+      "images/backgrashoppa.jpg"
     ]
   },
   {
@@ -275,16 +275,16 @@
   },
   {
     "id": "coccinella-septempunctata",
-    "commonName": "nyckelpiga",
+    "commonName": "sjuprickig nyceklpiga",
     "latinName": "Coccinella septempunctata",
     "group": "Insekter",
     "subgroup": "Skalbaggar",
     "aliases": [
-      "nyckelpiga",
+      "sjuprickig nyckelpiga",
       "Coccinella septempunctata"
     ],
     "images": [
-      "images/nyckelpiga.jpg"
+      "images/sjuprickig_nyckelpiga.jpg"
     ]
   },
   {
@@ -306,17 +306,17 @@
   },
   {
     "id": "culex-pipiens",
-    "commonName": "mygga",
+    "commonName": "sydlig husmygga",
     "latinName": "Culex pipiens",
     "group": "Insekter",
     "subgroup": "Tvåvingar",
     "aliases": [
-      "mygga",
-      "mygg",
+      "sydlig husmygga",
+      "husmygga",
       "Culex pipiens"
     ],
     "images": [
-      "images/mygga.jpg"
+      "images/husmygga.jpg"
     ]
   },
   {
@@ -340,11 +340,12 @@
   {
     "id": "dolichovespula-rufa",
     "commonName": "rödhalsad geting",
-    "latinName": "Dolichovespula rufa",
+    "latinName": "Vespula rufa",
     "group": "Insekter",
     "subgroup": "Steklar",
     "aliases": [
-      "Dolichovespula rufa",
+      "Vespula rufa",
+      "rödbandad geting",
       "rödhalsad geting"
     ],
     "images": [
@@ -371,12 +372,13 @@
   },
   {
     "id": "forficula-auricularia",
-    "commonName": "tvestjärt",
+    "commonName": "vanlig tvestjärt",
     "latinName": "Forficula auricularia",
     "group": "Insekter",
     "subgroup": "Övriga vanliga arter",
     "aliases": [
       "tvestjärt",
+      "vanlig tvestjärt",
       "Forficula auricularia"
     ],
     "images": [
