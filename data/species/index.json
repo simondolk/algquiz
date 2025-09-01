@@ -387,17 +387,17 @@
   },
   {
     "id": "formica-rufa",
-    "commonName": "myra",
+    "commonName": "röd skogsmyra",
     "latinName": "Formica rufa",
     "group": "Insekter",
     "subgroup": "Steklar",
     "aliases": [
-      "myra",
+      "skogsmyra",
       "Formica rufa",
       "röd skogsmyra"
     ],
     "images": [
-      "images/myra.jpg"
+      "images/rod-skogsmyra.jpg"
     ]
   },
   {
@@ -488,16 +488,17 @@
   },
   {
     "id": "gerris-lacustris",
-    "commonName": "vattenlöpare",
+    "commonName": "allmän skräddare",
     "latinName": "Gerris lacustris",
     "group": "Insekter",
     "subgroup": "Övriga vanliga arter",
     "aliases": [
       "vattenlöpare",
+      "allmän skräddare",
       "Gerris lacustris"
     ],
     "images": [
-      "images/vattenlopare.jpg"
+      "images/skraddare.jpg"
     ]
   },
   {
@@ -516,16 +517,16 @@
   },
   {
     "id": "gryllus-campestris",
-    "commonName": "syrsa",
+    "commonName": "fältsyrsa",
     "latinName": "Gryllus campestris",
     "group": "Insekter",
     "subgroup": "Hopprätvingar",
     "aliases": [
-      "syrsa",
+      "fältsyrsa",
       "Gryllus campestris"
     ],
     "images": [
-      "images/syrsa.jpg"
+      "images/faltsyrsa.jpg"
     ]
   },
   {
@@ -629,16 +630,17 @@
   },
   {
     "id": "lygaeidae",
-    "commonName": "skinnbagge",
-    "latinName": "Lygaeidae",
+    "commonName": "riddarskinnbagge",
+    "latinName": "Lygaeus equestris",
     "group": "Insekter",
     "subgroup": "Halvvingar",
     "aliases": [
-      "Lygaeidae",
-      "skinnbagge"
+      "Lygaeus equestris",
+      "riddarbagge",
+      "riddarskinnbagge"
     ],
     "images": [
-      "images/skinnbagge.jpg"
+      "images/riddarskinnbagge.jpg"
     ]
   },
   {
@@ -690,17 +692,17 @@
     ]
   },
   {
-    "id": "pentatomidae",
-    "commonName": "bärfis",
-    "latinName": "Pentatomidae",
+    "id": "Dolycoris-baccarum",
+    "commonName": "hårig bärfis",
+    "latinName": "Dolycoris baccarum",
     "group": "Insekter",
     "subgroup": "Halvvingar",
     "aliases": [
-      "bärfis",
-      "Pentatomidae"
+      "hårig bärfis",
+      "Dolycoris baccarum"
     ],
     "images": [
-      "images/barfis.jpg"
+      "images/harig_barfis.jpg"
     ]
   },
   {
