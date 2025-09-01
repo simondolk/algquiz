@@ -26,7 +26,7 @@
     "Operophtera brumata"
   ],
   "images": [
-    "images/insekter-syd/mindre_frostfjaril.jpg"
+    "images/mindre_frostfjaril.jpg"
   ]
 },
   {
@@ -41,7 +41,7 @@
     "silver Y"
   ],
   "images": [
-    "images/insekter-syd/gammafly.jpg"
+    "images/gammafly.jpg"
   ]
 },
   {
@@ -57,7 +57,7 @@
     "Speyeria aglaja"
   ],
   "images": [
-    "images/insekter-syd/angsparlemorfjaril.jpg"
+    "images/angsparlemorfjaril.jpg"
   ]
 },
   {
@@ -71,7 +71,7 @@
       "Aglais urticae"
     ],
     "images": [
-      "images/insekter-syd/nasselfjaril.jpg"
+      "images/nasselfjaril.jpg"
     ]
   },
   {
@@ -86,7 +86,7 @@
       "bladlöss"
     ],
     "images": [
-      "images/insekter-syd/bladloss.jpg"
+      "images/bladloss.jpg"
     ]
   },
   {
@@ -101,7 +101,7 @@
       "bi"
     ],
     "images": [
-      "images/insekter-syd/honungsbi.jpg"
+      "images/honungsbi.jpg"
     ]
   },
   {
@@ -124,18 +124,18 @@
   },
   {
     "id": "bombus-terrestris",
-    "commonName": "humla",
+    "commonName": "mörk jordhumla",
     "latinName": "Bombus terrestris",
     "group": "Insekter",
     "subgroup": "Steklar",
     "aliases": [
-      "humla",
-      "humlor",
+      "mörk jordhumla",
+      "jordhumla",
       "Bombus",
       "Bombus terrestris"
     ],
     "images": [
-      "images/insekter-syd/humla.jpg"
+      "images/jordhumla.jpg"
     ]
   },
   {
@@ -167,7 +167,7 @@
       "Carabus nemoralis"
     ],
     "images": [
-      "images/insekter-syd/jordlopare.jpg"
+      "images/jordlopare.jpg"
     ]
   },
   {
@@ -200,7 +200,7 @@
       "guldbagge"
     ],
     "images": [
-      "images/insekter-syd/blomsterbagge.jpg"
+      "images/blomsterbagge.jpg"
     ]
   },
   {
@@ -252,7 +252,7 @@
       "Chorthippus brunneus"
     ],
     "images": [
-      "images/insekter-syd/grashoppa.jpg"
+      "images/grashoppa.jpg"
     ]
   },
   {
@@ -284,7 +284,7 @@
       "Coccinella septempunctata"
     ],
     "images": [
-      "images/insekter-syd/nyckelpiga.jpg"
+      "images/nyckelpiga.jpg"
     ]
   },
   {
@@ -316,7 +316,7 @@
       "Culex pipiens"
     ],
     "images": [
-      "images/insekter-syd/mygga.jpg"
+      "images/mygga.jpg"
     ]
   },
   {
@@ -348,7 +348,7 @@
       "rödhalsad geting"
     ],
     "images": [
-      "images/insekter-syd/rodhalsad-geting.jpg"
+      "images/rodhalsad-geting.jpg"
     ]
   },
   {
@@ -380,7 +380,7 @@
       "Forficula auricularia"
     ],
     "images": [
-      "images/insekter-syd/tvestjart.jpg"
+      "images/tvestjart.jpg"
     ]
   },
   {
@@ -395,7 +395,7 @@
       "röd skogsmyra"
     ],
     "images": [
-      "images/insekter-syd/myra.jpg"
+      "images/myra.jpg"
     ]
   },
   {
@@ -481,7 +481,7 @@
       "Geotrupes stercorarius"
     ],
     "images": [
-      "images/insekter-syd/tordyvel.jpg"
+      "images/tordyvel.jpg"
     ]
   },
   {
@@ -495,7 +495,7 @@
       "Gerris lacustris"
     ],
     "images": [
-      "images/insekter-syd/vattenlopare.jpg"
+      "images/vattenlopare.jpg"
     ]
   },
   {
@@ -509,7 +509,7 @@
       "Gonepteryx rhamni"
     ],
     "images": [
-      "images/insekter-syd/citronfjaril.jpg"
+      "images/citronfjaril.jpg"
     ]
   },
   {
@@ -523,7 +523,7 @@
       "Gryllus campestris"
     ],
     "images": [
-      "images/insekter-syd/syrsa.jpg"
+      "images/syrsa.jpg"
     ]
   },
   {
@@ -608,7 +608,7 @@
       "Lasius niger"
     ],
     "images": [
-      "images/insekter-syd/svartmyra.jpg"
+      "images/svartmyra.jpg"
     ]
   },
   {
@@ -622,7 +622,7 @@
       "Lepisma saccharinum"
     ],
     "images": [
-      "images/insekter-syd/silverfisk.jpg"
+      "images/silverfisk.jpg"
     ]
   },
   {
@@ -636,7 +636,7 @@
       "skinnbagge"
     ],
     "images": [
-      "images/insekter-syd/skinnbagge.jpg"
+      "images/skinnbagge.jpg"
     ]
   },
   {
@@ -650,7 +650,7 @@
       "Melolontha melolontha"
     ],
     "images": [
-      "images/insekter-syd/ollonborre.jpg"
+      "images/ollonborre.jpg"
     ]
   },
   {
@@ -665,7 +665,7 @@
       "fluga"
     ],
     "images": [
-      "images/insekter-syd/husfluga.jpg"
+      "images/husfluga.jpg"
     ]
   },
   {
@@ -698,7 +698,7 @@
       "Pentatomidae"
     ],
     "images": [
-      "images/insekter-syd/barfis.jpg"
+      "images/barfis.jpg"
     ]
   },
   {
@@ -712,7 +712,7 @@
       "Philaenus spumarius"
     ],
     "images": [
-      "images/insekter-syd/spottstrit.jpg"
+      "images/spottstrit.jpg"
     ]
   },
   {
@@ -726,7 +726,7 @@
       "Pieris brassicae"
     ],
     "images": [
-      "images/insekter-syd/kalfjaril.jpg"
+      "images/kalfjaril.jpg"
     ]
   },
   {
@@ -741,7 +741,7 @@
       "Polygonia calbum"
     ],
     "images": [
-      "images/insekter-syd/vinbarsfuks.jpg"
+      "images/vinbarsfuks.jpg"
     ]
   },
   {
@@ -864,7 +864,7 @@
       "Simuliidae"
     ],
     "images": [
-      "images/insekter-syd/knott.jpg"
+      "images/knott.jpg"
     ]
   },
   {
@@ -895,7 +895,7 @@
       "Tabanus bovinus"
     ],
     "images": [
-      "images/insekter-syd/broms.jpg"
+      "images/broms.jpg"
     ]
   },
   {
@@ -910,7 +910,7 @@
       "vårtbitare"
     ],
     "images": [
-      "images/insekter-syd/vartbitaren.jpg"
+      "images/vartbitaren.jpg"
     ]
   },
   {
@@ -951,16 +951,17 @@
   },
   {
     "id": "vespula-vulgaris",
-    "commonName": "geting",
+    "commonName": "vanlig geting",
     "latinName": "Vespula vulgaris",
     "group": "Insekter",
     "subgroup": "Steklar",
     "aliases": [
       "geting",
+      "vanlig geting",
       "Vespula vulgaris"
     ],
     "images": [
-      "images/insekter-syd/geting.jpg"
+      "images/vanlig_geting.jpg"
     ]
   },
   {
