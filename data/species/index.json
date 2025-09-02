@@ -741,7 +741,6 @@
     "subgroup": "Fjärilar",
     "aliases": [
       "vinbärsfuks",
-      "Polygonia calbum",
       "Polygonia calbum"
     ],
     "images": [
@@ -890,31 +889,31 @@
   },
   {
     "id": "tabanus-bovinus",
-    "commonName": "broms",
+    "commonName": "fäbroms",
     "latinName": "Tabanus bovinus",
     "group": "Insekter",
     "subgroup": "Tvåvingar",
     "aliases": [
-      "broms",
+      "fäbroms",
       "Tabanus bovinus"
     ],
     "images": [
-      "images/broms.jpg"
+      "images/fabroms.jpg"
     ]
   },
   {
     "id": "tettigonia-viridissima",
-    "commonName": "vårtbitaren",
+    "commonName": "grön vårtbitare",
     "latinName": "Tettigonia viridissima",
     "group": "Insekter",
     "subgroup": "Övriga vanliga arter",
     "aliases": [
-      "vårtbitaren",
+      "grön vårtbitare",
       "Tettigonia viridissima",
       "vårtbitare"
     ],
     "images": [
-      "images/vartbitaren.jpg"
+      "images/vartbitare.jpg"
     ]
   },
   {
@@ -1025,16 +1024,16 @@
   },
   {
     "id": "otiorhynchus-sulcatus",
-    "commonName": "vinstocksvivel",
+    "commonName": "växthusöronvivel",
     "latinName": "Otiorhynchus sulcatus",
     "group": "Insekter",
     "subgroup": "Skalbaggar",
     "aliases": [
-      "vinstocksvivel",
+      "växthusöronvivel",
       "Otiorhynchus sulcatus"
     ],
     "images": [
-      "images/vinstocksvivel.jpg"
+      "images/vaxthusoronvivel.jpg"
     ]
   },
   {
@@ -1053,58 +1052,58 @@
   },
   {
     "id": "staphylinus-olens",
-    "commonName": "större rovbagg",
+    "commonName": "jättekortvinge",
     "latinName": "Staphylinus olens",
     "group": "Insekter",
     "subgroup": "Skalbaggar",
     "aliases": [
-      "större rovbagg",
+      "jättekortvinge",
       "Staphylinus olens"
     ],
     "images": [
-      "images/storre_rovbagg.jpg"
+      "images/jattekortvinge.jpg"
     ]
   },
   {
     "id": "agriotes-lineatus",
-    "commonName": "åkerknäppare",
+    "commonName": "randig sädesknäppare",
     "latinName": "Agriotes lineatus",
     "group": "Insekter",
     "subgroup": "Skalbaggar",
     "aliases": [
-      "åkerknäppare",
+      "randig sädesknäppare",
       "Agriotes lineatus"
     ],
     "images": [
-      "images/akerknappare.jpg"
+      "images/randig_sadesknappare.jpg"
     ]
   },
   {
     "id": "dytiscus-marginalis",
-    "commonName": "dykare",
+    "commonName": "gulbrämad dykare",
     "latinName": "Dytiscus marginalis",
     "group": "Insekter",
     "subgroup": "Skalbaggar",
     "aliases": [
-      "dykare",
+      "gulbrämad dykare",
       "Dytiscus marginalis"
     ],
     "images": [
-      "images/dykare.jpg"
+      "images/gulbramad_dykare.jpg"
     ]
   },
   {
     "id": "cis-boleti",
-    "commonName": "mycelbagge",
+    "commonName": "trädsvampborrare",
     "latinName": "Cis boleti",
     "group": "Insekter",
     "subgroup": "Skalbaggar",
     "aliases": [
-      "mycelbagge",
+      "trädsvampborrare",
       "Cis boleti"
     ],
     "images": [
-      "images/mycelbagge.jpg"
+      "images/tradsvampborrare.jpg"
     ]
   },
   {
@@ -1123,16 +1122,16 @@
   },
   {
     "id": "apatura-iris",
-    "commonName": "aspfjäril",
+    "commonName": "sälgskimmerfjäril",
     "latinName": "Apatura iris",
     "group": "Insekter",
     "subgroup": "Fjärilar",
     "aliases": [
-      "aspfjäril",
+      "sälgskimmerfjäril",
       "Apatura iris"
     ],
     "images": [
-      "images/aspfjaril.jpg"
+      "images/salgskimmerfjaril.jpg"
     ]
   },
   {
