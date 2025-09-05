@@ -1150,58 +1150,59 @@
   },
   {
     "id": "hypoderma-bovis",
-    "commonName": "nötkreatursstyng",
+    "commonName": "stort oxstyng",
     "latinName": "Hypoderma bovis",
     "group": "Insekter",
     "subgroup": "Tvåvingar",
     "aliases": [
-      "nötkreatursstyng",
+      "stort oxstyng",
       "Hypoderma bovis"
     ],
     "images": [
-      "images/notkreatursstyng.jpg"
+      "images/stort_oxstyng.jpg"
     ]
   },
   {
     "id": "lucilia-sericata",
-    "commonName": "grön metallblomfluga",
+    "commonName": "trädgårdsguldfluga",
     "latinName": "Lucilia sericata",
     "group": "Insekter",
     "subgroup": "Tvåvingar",
     "aliases": [
-      "grön metallblomfluga",
+      "trädgårdsguldfluga",
+      "spyfluga",
       "Lucilia sericata"
     ],
     "images": [
-      "images/gron_metallblomfluga.jpg"
+      "images/tradgardsblomfluga.jpg"
     ]
   },
   {
     "id": "syrphus-ribesii",
-    "commonName": "större bandblomfluga",
+    "commonName": "gul solblomfluga",
     "latinName": "Syrphus ribesii",
     "group": "Insekter",
     "subgroup": "Tvåvingar",
     "aliases": [
-      "större bandblomfluga",
+      "gul solblomfluga",
       "Syrphus ribesii"
     ],
     "images": [
-      "images/storre_bandblomfluga.jpg"
+      "images/gul_solblomfluga.jpg"
     ]
   },
   {
     "id": "tabanus-bromius",
-    "commonName": "regnbroms",
+    "commonName": "allmän gråbroms",
     "latinName": "Tabanus bromius",
     "group": "Insekter",
     "subgroup": "Tvåvingar",
     "aliases": [
-      "regnbroms",
+      "allmän gråbroms",
       "Tabanus bromius"
     ],
     "images": [
-      "images/regnbroms.jpg"
+      "images/allman_grabroms.jpg"
     ]
   },
   {
@@ -1234,30 +1235,30 @@
   },
   {
     "id": "dolichovespula-saxonica",
-    "commonName": "vedgeting",
+    "commonName": "takgeting",
     "latinName": "Dolichovespula saxonica",
     "group": "Insekter",
     "subgroup": "Steklar",
     "aliases": [
-      "vedgeting",
+      "takgeting",
       "Dolichovespula saxonica"
     ],
     "images": [
-      "images/vedgeting.jpg"
+      "images/takgeting.jpg"
     ]
   },
   {
     "id": "formica-fusca",
-    "commonName": "liten skogsmyra",
+    "commonName": "svart slavmyra",
     "latinName": "Formica fusca",
     "group": "Insekter",
     "subgroup": "Steklar",
     "aliases": [
-      "liten skogsmyra",
+      "svart slavmyra",
       "Formica fusca"
     ],
     "images": [
-      "images/liten_skogsmyra.jpg"
+      "images/svart_slavmyra.jpg"
     ]
   },
   {
@@ -1274,60 +1275,48 @@
       "images/gron_barfis.jpg"
     ]
   },
-  {
-    "id": "lygaeus-equestris",
-    "commonName": "vanlig fröskinnbagge",
-    "latinName": "Lygaeus equestris",
-    "group": "Insekter",
-    "subgroup": "Halvvingar",
-    "aliases": [
-      "vanlig fröskinnbagge",
-      "Lygaeus equestris"
-    ],
-    "images": [
-      "images/vanlig_froskinnbagge.jpg"
-    ]
-  },
+ ,
   {
     "id": "cicadella-viridis",
-    "commonName": "lövhoppsstrit",
+    "commonName": "blågrön kärrstrit",
     "latinName": "Cicadella viridis",
     "group": "Insekter",
     "subgroup": "Halvvingar",
     "aliases": [
-      "lövhoppsstrit",
+      "blågrön kärrstrit",
       "Cicadella viridis"
     ],
     "images": [
-      "images/lovhoppsstrit.jpg"
+      "images/blagron_karrstrit.jpg"
     ]
   },
   {
     "id": "chorthippus-parallelus",
-    "commonName": "ängsgräshoppa",
+    "commonName": "kortvingad ängsgräshoppa",
     "latinName": "Chorthippus parallelus",
     "group": "Insekter",
     "subgroup": "Hopprätvingar",
     "aliases": [
-      "ängsgräshoppa",
-      "Chorthippus parallelus"
+      "kortvingad ängsgräshoppa",
+      "Chorthippus parallelus",
+      "ängsgräshoppa"
     ],
     "images": [
-      "images/angsgrashoppa.jpg"
+      "images/kortvingad_angsgrashoppa.jpg"
     ]
-  },
+  },  
   {
     "id": "coenagrion-puella",
-    "commonName": "större blåflickslända",
+    "commonName": "ljus lyrflickslända",
     "latinName": "Coenagrion puella",
     "group": "Insekter",
     "subgroup": "Trollsländor",
     "aliases": [
-      "större blåflickslända",
+      "ljus lyrflickslända",
       "Coenagrion puella"
     ],
     "images": [
-      "images/storre_blaflickslanda.jpg"
+      "images/ljus_lyrfliskslanda.jpg"
     ]
   },
   {
@@ -1346,44 +1335,44 @@
   },
   {
     "id": "ephemera-vulgata",
-    "commonName": "stor dagslända",
+    "commonName": "sjösandslända",
     "latinName": "Ephemera vulgata",
     "group": "Insekter",
     "subgroup": "Dagsländor",
     "aliases": [
-      "stor dagslända",
+      "sjösandslända",
       "Ephemera vulgata"
     ],
     "images": [
-      "images/stor_dagslanda.jpg"
+      "images/sjosandslanda.jpg"
     ]
   },
   {
     "id": "nemoura-cinerea",
-    "commonName": "vanlig bäckslända",
+    "commonName": "misärslända",
     "latinName": "Nemoura cinerea",
     "group": "Insekter",
     "subgroup": "Bäcksländor",
     "aliases": [
-      "vanlig bäckslända",
+      "misärslända",
       "Nemoura cinerea"
     ],
     "images": [
-      "images/vanlig_backslanda.jpg"
+      "images/misarslanda.jpg"
     ]
   },
   {
     "id": "limnephilus-flavicornis",
-    "commonName": "gulbrun nattslända",
+    "commonName": "nattslända",
     "latinName": "Limnephilus flavicornis",
     "group": "Insekter",
     "subgroup": "Nattsländor",
     "aliases": [
-      "gulbrun nattslända",
+      "nattslända",
       "Limnephilus flavicornis"
     ],
     "images": [
-      "images/gulbrun_nattslanda.jpg"
+      "images/nattslanda.jpg"
     ]
   }
 ]
