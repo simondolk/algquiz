@@ -13,5 +13,10 @@
   "id": "insekter-skog-syd",
   "title": "Vanliga insekter i skog södra Sverige",
   "path": "data/categories/insekter-skog-syd.json"
+},
+{
+  "id": "svampar",
+  "title": "Bra svampar att känna till",
+  "path": "data/categories/svampar.json"
 }
 ]
