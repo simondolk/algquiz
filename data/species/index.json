@@ -1363,7 +1363,7 @@
   {
     "id": "trollsmor",
     "commonName": "Trollsmör",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Slemsvampar",
     "aliases": ["Trollsmör"],
@@ -1372,7 +1372,7 @@
   {
     "id": "stenmurkla",
     "commonName": "Stenmurkla",
-    "latinName": "Giftig utan behandling",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Ascomyceter",
     "aliases": ["Stenmurkla"],
@@ -1381,7 +1381,7 @@
   {
     "id": "monjeskal",
     "commonName": "Mönjeskål",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Ascomyceter",
     "aliases": ["Mönjeskål"],
