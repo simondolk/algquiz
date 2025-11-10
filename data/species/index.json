@@ -1394,7 +1394,7 @@
     "group": "Svampar",
     "subgroup": "Buksvampar",
     "aliases": ["Vårtig röksvamp"],
-    "images": ["images/vartig-roksvamp.jpg"]
+    "images": ["images/vartig_roksvamp.jpg"]
   },
   {
     "id": "skalroksvamp",
@@ -1412,7 +1412,7 @@
     "group": "Svampar",
     "subgroup": "Taggsvampar",
     "aliases": ["Blek taggsvamp"],
-    "images": ["images/blek-taggsvamp.jpg"]
+    "images": ["images/blek_taggsvamp.jpg"]
   },
   {
     "id": "rodgul-taggsvamp",
@@ -1421,7 +1421,7 @@
     "group": "Svampar",
     "subgroup": "Taggsvampar",
     "aliases": ["Rödgul taggsvamp"],
-    "images": ["images/rodgul-taggsvamp.jpg"]
+    "images": ["images/rodgul_taggsvamp.jpg"]
   },
   {
     "id": "en-gul-fingersvamp",
@@ -1430,7 +1430,7 @@
     "group": "Svampar",
     "subgroup": "Fingersvampar",
     "aliases": ["En gul fingersvamp"],
-    "images": ["images/en-gul-fingersvamp.jpg"]
+    "images": ["images/en_gul_fingersvamp.jpg"]
   },
   {
     "id": "druvfingersvamp",
@@ -1475,7 +1475,7 @@
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Blek kantarell"],
-    "images": ["images/blek-kantarell.jpg"]
+    "images": ["images/blek_kantarell.jpg"]
   },
   {
     "id": "narrkantarell",
@@ -1502,7 +1502,7 @@
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Rödgul trumpetsvamp"],
-    "images": ["images/rodgul-trumpetsvamp.jpg"]
+    "images": ["images/rodgul_trumpetsvamp.jpg"]
   },
   {
     "id": "svart-trumpetsvamp",
@@ -1511,16 +1511,7 @@
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Svart trumpetsvamp"],
-    "images": ["images/svart-trumpetsvamp.jpg"]
-  },
-  {
-    "id": "porer-av-orsopp",
-    "commonName": "Porer av örsopp",
-    "latinName": "",
-    "group": "Svampar",
-    "subgroup": "Exempel på svamp med rör/porer",
-    "aliases": ["Porer av örsopp"],
-    "images": ["images/porer-av-orsopp.jpg"]
+    "images": ["images/svart_trumpetsvamp.jpg"]
   },
   {
     "id": "svavelticka",
@@ -1619,7 +1610,7 @@
     "group": "Svampar",
     "subgroup": "Ascomyceter",
     "aliases": ["Gul svampsnylting"],
-    "images": ["images/gul-svampsnylting.jpg"]
+    "images": ["images/gul_svampsnylting.jpg"]
   },
   {
     "id": "gallsopp",
@@ -1673,7 +1664,7 @@
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Riskor)",
     "aliases": ["Gulmjölkig ekriska"],
-    "images": ["images/gulmjolkig-ekriska.jpg"]
+    "images": ["images/gulmjolkig_ekriska.jpg"]
   },
   {
     "id": "granblodriska",
@@ -1709,7 +1700,7 @@
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Vit flugsvamp"],
-    "images": ["images/vit-flugsvamp.jpg"]
+    "images": ["images/vit_flugsvamp.jpg"]
   },
   {
     "id": "lomsk-flugsvamp",
@@ -1718,7 +1709,7 @@
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Lömsk flugsvamp"],
-    "images": ["images/lomsk-flugsvamp.jpg"]
+    "images": ["images/lomsk_flugsvamp.jpg"]
   },
   {
     "id": "rod-flugsvamp",
@@ -1727,7 +1718,7 @@
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Röd flugsvamp"],
-    "images": ["images/rod-flugsvamp.jpg"]
+    "images": ["images/rod_flugsvamp.jpg"]
   },
   {
     "id": "brun-kamskivling",
@@ -1736,7 +1727,7 @@
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Brun kamskivling"],
-    "images": ["images/brun-kamskivling.jpg"]
+    "images": ["images/brun_kamskivling.jpg"]
   },
   {
     "id": "stolt-fjallskivling",
@@ -1745,7 +1736,7 @@
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Fjällskivlingar)",
     "aliases": ["Stolt fjällskivling"],
-    "images": ["images/stolt-fjallskivling.jpg"]
+    "images": ["images/stolt_fjallskivling.jpg"]
   },
   {
     "id": "honungsskivling",
@@ -1763,7 +1754,7 @@
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Vaxskivlingar)",
     "aliases": ["Scharlakansröd vaxskivling"],
-    "images": ["images/scharlakansrod-vaxskivling.jpg"]
+    "images": ["images/scharlakansrod_vaxskivling.jpg"]
   },
   {
     "id": "sotvaxskivling",
@@ -1812,12 +1803,12 @@
   },
   {
     "id": "en-spindelskivling",
-    "commonName": "En spindelskivling",
+    "commonName": "spindelskivling",
     "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
-    "aliases": ["En spindelskivling", "spindling"],
-    "images": ["images/en-spindelskivling.jpg"]
+    "aliases": ["spindelskivling", "spindling"],
+    "images": ["images/spindelskivling.jpg"]
   },
   {
     "id": "rynkad-tofsskivling",
@@ -1826,7 +1817,7 @@
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Rimskivling)",
     "aliases": ["Rynkad tofsskivling", "Rimskivling"],
-    "images": ["images/rynkad-tofsskivling.jpg"]
+    "images": ["images/rynkad_tofsskivling.jpg"]
   },
   {
     "id": "tuvspindelskivling",
@@ -1853,7 +1844,7 @@
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["Toppig giftspindelskivling"],
-    "images": ["images/toppig-giftspindelskivling.jpg"]
+    "images": ["images/toppig_giftspindelskivling.jpg"]
   },
   {
     "id": "rodskivig-kanelspindelskivling",
@@ -1862,7 +1853,7 @@
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["Rödskivig kanelspindelskivling"],
-    "images": ["images/rodskivig-kanelspindelskivling.jpg"]
+    "images": ["images/rodskivig_kanelspindelskivling.jpg"]
   },
   {
     "id": "pluggskivling",
@@ -1907,7 +1898,7 @@
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Bläcksvampar)",
     "aliases": ["Fjällig bläcksvamp"],
-    "images": ["images/fjallig-blacksvamp.jpg"]
+    "images": ["images/fjallig_blacksvamp.jpg"]
   },
   {
     "id": "gra-blacksvamp",
@@ -1916,7 +1907,7 @@
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Bläcksvampar)",
     "aliases": ["Grå bläcksvamp"],
-    "images": ["images/gra-blacksvamp.jpg"]
+    "images": ["images/gra_blacksvamp.jpg"]
   },
   {
     "id": "citrongul-slemskivling",
@@ -1925,7 +1916,7 @@
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Slemskivlingar)",
     "aliases": ["Citrongul slemskivling"],
-    "images": ["images/citrongul-slemskivling.jpg"]
+    "images": ["images/citrongul_slemskivling.jpg"]
   },
   {
     "id": "rokSlojskivling",
@@ -1934,16 +1925,7 @@
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Slöjskivlingar)",
     "aliases": ["Rökslöjskivling"],
-    "images": ["images/rokSlojskivling.jpg"]
-  },
-  {
-    "id": "en-hatta",
-    "commonName": "En hätta",
-    "latinName": "",
-    "group": "Svampar",
-    "subgroup": "Vitsporiga skivlingar (Hättor)",
-    "aliases": ["En hätta"],
-    "images": ["images/en-hatta.jpg"]
+    "images": ["images/rokslojskivling.jpg"]
   },
   {
     "id": "gra-brokskivling",
@@ -1952,7 +1934,7 @@
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Brokskivlingar)",
     "aliases": ["Grå brokskivling"],
-    "images": ["images/gra-brokskivling.jpg"]
+    "images": ["images/gra_brokskivling.jpg"]
   },
   {
     "id": "stubb-blacksvamp",
@@ -1961,7 +1943,7 @@
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Bläcksvampar)",
     "aliases": ["Stubb-bläcksvamp"],
-    "images": ["images/stubb-blacksvamp.jpg"]
+    "images": ["images/stubb_blacksvamp.jpg"]
   },
   {
     "id": "eksopp",
