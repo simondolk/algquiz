@@ -1390,7 +1390,7 @@
   {
     "id": "vartig-roksvamp",
     "commonName": "Vårtig röksvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Buksvampar",
     "aliases": ["Vårtig röksvamp"],
@@ -1399,7 +1399,7 @@
   {
     "id": "skalroksvamp",
     "commonName": "Skålröksvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Buksvampar",
     "aliases": ["Skålröksvamp"],
@@ -1408,7 +1408,7 @@
   {
     "id": "blek-taggsvamp",
     "commonName": "Blek taggsvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Taggsvampar",
     "aliases": ["Blek taggsvamp"],
@@ -1417,7 +1417,7 @@
   {
     "id": "rodgul-taggsvamp",
     "commonName": "Rödgul taggsvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Taggsvampar",
     "aliases": ["Rödgul taggsvamp"],
@@ -1426,7 +1426,7 @@
   {
     "id": "en-gul-fingersvamp",
     "commonName": "En gul fingersvamp",
-    "latinName": "Inte matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Fingersvampar",
     "aliases": ["En gul fingersvamp"],
@@ -1435,7 +1435,7 @@
   {
     "id": "druvfingersvamp",
     "commonName": "Druvfingersvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Fingersvampar",
     "aliases": ["Druvfingersvamp"],
@@ -1444,16 +1444,16 @@
   {
     "id": "gullhorn",
     "commonName": "Gullhorn",
-    "latinName": "Inte matsvamp",
+    "latinName": "",
     "group": "Svampar",
-    "subgroup": "Gelésvampar OBS! Ingen fingersvamp",
+    "subgroup": "Gelésvampar",
     "aliases": ["Gullhorn"],
     "images": ["images/gullhorn.jpg"]
   },
   {
     "id": "blomkalssvamp",
     "commonName": "Blomkålssvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "”Fingersvampar”",
     "aliases": ["Blomkålssvamp"],
@@ -1462,7 +1462,7 @@
   {
     "id": "kantarell",
     "commonName": "Kantarell",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Kantarell"],
@@ -1471,7 +1471,7 @@
   {
     "id": "blek-kantarell",
     "commonName": "Blek kantarell",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Blek kantarell"],
@@ -1480,7 +1480,7 @@
   {
     "id": "narrkantarell",
     "commonName": "Narrkantarell",
-    "latinName": "Inte matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar",
     "aliases": ["Narrkantarell"],
@@ -1489,7 +1489,7 @@
   {
     "id": "trattkantarell",
     "commonName": "Trattkantarell",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Trattkantarell"],
@@ -1498,7 +1498,7 @@
   {
     "id": "rodgul-trumpetsvamp",
     "commonName": "Rödgul trumpetsvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Rödgul trumpetsvamp"],
@@ -1507,7 +1507,7 @@
   {
     "id": "svart-trumpetsvamp",
     "commonName": "Svart trumpetsvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Kantarellsvampar",
     "aliases": ["Svart trumpetsvamp"],
@@ -1516,7 +1516,7 @@
   {
     "id": "porer-av-orsopp",
     "commonName": "Porer av örsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Exempel på svamp med rör/porer",
     "aliases": ["Porer av örsopp"],
@@ -1525,7 +1525,7 @@
   {
     "id": "svavelticka",
     "commonName": "Svavelticka",
-    "latinName": "Inte matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Tickor",
     "aliases": ["Svavelticka"],
@@ -1534,7 +1534,7 @@
   {
     "id": "farticka",
     "commonName": "Fårticka",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Tickor",
     "aliases": ["Fårticka"],
@@ -1543,7 +1543,7 @@
   {
     "id": "tegelsopp",
     "commonName": "Tegelsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Tegelsopp"],
@@ -1552,7 +1552,7 @@
   {
     "id": "aspsopp",
     "commonName": "Aspsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Aspsopp"],
@@ -1561,7 +1561,7 @@
   {
     "id": "bjorksopp",
     "commonName": "Björksopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Björksopp"],
@@ -1570,7 +1570,7 @@
   {
     "id": "smorsopp",
     "commonName": "Smörsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Smörsopp"],
@@ -1579,7 +1579,7 @@
   {
     "id": "grynsopp",
     "commonName": "Grynsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Grynsopp"],
@@ -1588,7 +1588,7 @@
   {
     "id": "sandsopp",
     "commonName": "Sandsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Sandsopp"],
@@ -1597,7 +1597,7 @@
   {
     "id": "brunsopp",
     "commonName": "Brunsopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Brunsopp"],
@@ -1606,7 +1606,7 @@
   {
     "id": "stensopp",
     "commonName": "Stensopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Stensopp", "Karljohan"],
@@ -1615,7 +1615,7 @@
   {
     "id": "gul-svampsnylting",
     "commonName": "Gul svampsnylting",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Ascomyceter",
     "aliases": ["Gul svampsnylting"],
@@ -1624,7 +1624,7 @@
   {
     "id": "gallsopp",
     "commonName": "Gallsopp",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Gallsopp"],
@@ -1633,7 +1633,7 @@
   {
     "id": "tegelkremla",
     "commonName": "Tegelkremla",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Kremlor)",
     "aliases": ["Tegelkremla"],
@@ -1642,7 +1642,7 @@
   {
     "id": "vinkremla",
     "commonName": "Vinkremla",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Kremlor)",
     "aliases": ["Vinkremla"],
@@ -1651,7 +1651,7 @@
   {
     "id": "gulkremla",
     "commonName": "Gulkremla",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Kremlor)",
     "aliases": ["Gulkremla"],
@@ -1660,7 +1660,7 @@
   {
     "id": "giftkremla",
     "commonName": "Giftkremla",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Kremlor)",
     "aliases": ["Giftkremla"],
@@ -1669,7 +1669,7 @@
   {
     "id": "gulmjolkig-ekriska",
     "commonName": "Gulmjölkig ekriska",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Riskor)",
     "aliases": ["Gulmjölkig ekriska"],
@@ -1678,7 +1678,7 @@
   {
     "id": "granblodriska",
     "commonName": "Granblodriska",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Riskor)",
     "aliases": ["Granblodriska"],
@@ -1687,7 +1687,7 @@
   {
     "id": "tallblodriska",
     "commonName": "Tallblodriska",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Riskor)",
     "aliases": ["Tallblodriska", "Läcker riska"],
@@ -1696,7 +1696,7 @@
   {
     "id": "skaggriska",
     "commonName": "Skäggriska",
-    "latinName": "”Finsk riska”",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Riskor)",
     "aliases": ["Skäggriska"],
@@ -1705,7 +1705,7 @@
   {
     "id": "vit-flugsvamp",
     "commonName": "Vit flugsvamp",
-    "latinName": "Dödligt giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Vit flugsvamp"],
@@ -1714,7 +1714,7 @@
   {
     "id": "lomsk-flugsvamp",
     "commonName": "Lömsk flugsvamp",
-    "latinName": "Dödligt giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Lömsk flugsvamp"],
@@ -1723,7 +1723,7 @@
   {
     "id": "rod-flugsvamp",
     "commonName": "Röd flugsvamp",
-    "latinName": "Giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Röd flugsvamp"],
@@ -1732,7 +1732,7 @@
   {
     "id": "brun-kamskivling",
     "commonName": "Brun kamskivling",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Flugsvampar)",
     "aliases": ["Brun kamskivling"],
@@ -1741,7 +1741,7 @@
   {
     "id": "stolt-fjallskivling",
     "commonName": "Stolt fjällskivling",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Fjällskivlingar)",
     "aliases": ["Stolt fjällskivling"],
@@ -1750,7 +1750,7 @@
   {
     "id": "honungsskivling",
     "commonName": "Honungsskivling",
-    "latinName": "Inte matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Honungsskivling)",
     "aliases": ["Honungsskivling"],
@@ -1759,7 +1759,7 @@
   {
     "id": "scharlakansrod-vaxskivling",
     "commonName": "Scharlakansröd vaxskivling",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Vaxskivlingar)",
     "aliases": ["Scharlakansröd vaxskivling"],
@@ -1768,7 +1768,7 @@
   {
     "id": "sotvaxskivling",
     "commonName": "Sotvaxskivling",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Vaxskivlingar)",
     "aliases": ["Sotvaxskivling"],
@@ -1777,7 +1777,7 @@
   {
     "id": "kastanjemusseron",
     "commonName": "Kastanjemusseron",
-    "latinName": "Giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Musseroner)",
     "aliases": ["Kastanjemusseron"],
@@ -1786,7 +1786,7 @@
   {
     "id": "riddarmusseron",
     "commonName": "Riddarmusseron",
-    "latinName": "Äts i måttliga mängder",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Musseroner)",
     "aliases": ["Riddarmusseron"],
@@ -1795,7 +1795,7 @@
   {
     "id": "dropptrattskivling",
     "commonName": "Dropptrattskivling",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Trattskivlingar)",
     "aliases": ["Dropptrattskivling"],
@@ -1804,7 +1804,7 @@
   {
     "id": "gifttrattskivling",
     "commonName": "Gifttrattskivling",
-    "latinName": "Giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Trattskivlingar)",
     "aliases": ["Gifttrattskivling"],
@@ -1813,7 +1813,7 @@
   {
     "id": "en-spindelskivling",
     "commonName": "En spindelskivling",
-    "latinName": "Rekommenderas inte som matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["En spindelskivling", "spindling"],
@@ -1822,7 +1822,7 @@
   {
     "id": "rynkad-tofsskivling",
     "commonName": "Rynkad tofsskivling",
-    "latinName": "God matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Rimskivling)",
     "aliases": ["Rynkad tofsskivling", "Rimskivling"],
@@ -1831,7 +1831,7 @@
   {
     "id": "tuvspindelskivling",
     "commonName": "Tuvspindelskivling",
-    "latinName": "Inte matsvamp",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["Tuvspindelskivling"],
@@ -1840,7 +1840,7 @@
   {
     "id": "bockspindelskivling",
     "commonName": "Bockspindelskivling",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["Bockspindelskivling"],
@@ -1849,7 +1849,7 @@
   {
     "id": "toppig-giftspindelskivling",
     "commonName": "Toppig giftspindelskivling",
-    "latinName": "Dödligt giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["Toppig giftspindelskivling"],
@@ -1858,7 +1858,7 @@
   {
     "id": "rodskivig-kanelspindelskivling",
     "commonName": "Rödskivig kanelspindelskivling",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Spindelskivlingar)",
     "aliases": ["Rödskivig kanelspindelskivling"],
@@ -1867,7 +1867,7 @@
   {
     "id": "pluggskivling",
     "commonName": "Pluggskivling",
-    "latinName": "Giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Brunsporiga skivlingar (Pluggskivlingar)",
     "aliases": ["Pluggskivling"],
@@ -1876,7 +1876,7 @@
   {
     "id": "snobollschampinjon",
     "commonName": "Snöbollschampinjon",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Champinjoner)",
     "aliases": ["Snöbollschampinjon"],
@@ -1885,7 +1885,7 @@
   {
     "id": "kungschampinjon",
     "commonName": "Kungschampinjon",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Champinjoner)",
     "aliases": ["Kungschampinjon"],
@@ -1894,7 +1894,7 @@
   {
     "id": "karbolchampinjon",
     "commonName": "Karbolchampinjon",
-    "latinName": "Giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Champinjoner)",
     "aliases": ["Karbolchampinjon"],
@@ -1903,7 +1903,7 @@
   {
     "id": "fjallig-blacksvamp",
     "commonName": "Fjällig bläcksvamp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Bläcksvampar)",
     "aliases": ["Fjällig bläcksvamp"],
@@ -1912,7 +1912,7 @@
   {
     "id": "gra-blacksvamp",
     "commonName": "Grå bläcksvamp",
-    "latinName": "Giftig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Bläcksvampar)",
     "aliases": ["Grå bläcksvamp"],
@@ -1921,7 +1921,7 @@
   {
     "id": "citrongul-slemskivling",
     "commonName": "Citrongul slemskivling",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Slemskivlingar)",
     "aliases": ["Citrongul slemskivling"],
@@ -1930,7 +1930,7 @@
   {
     "id": "rokSlojskivling",
     "commonName": "Rökslöjskivling",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Slöjskivlingar)",
     "aliases": ["Rökslöjskivling"],
@@ -1939,7 +1939,7 @@
   {
     "id": "en-hatta",
     "commonName": "En hätta",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Vitsporiga skivlingar (Hättor)",
     "aliases": ["En hätta"],
@@ -1948,7 +1948,7 @@
   {
     "id": "gra-brokskivling",
     "commonName": "Grå brokskivling",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Brokskivlingar)",
     "aliases": ["Grå brokskivling"],
@@ -1957,7 +1957,7 @@
   {
     "id": "stubb-blacksvamp",
     "commonName": "Stubb-bläcksvamp",
-    "latinName": "Oätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Svartsporiga skivlingar (Bläcksvampar)",
     "aliases": ["Stubb-bläcksvamp"],
@@ -1966,7 +1966,7 @@
   {
     "id": "eksopp",
     "commonName": "Eksopp",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Soppar",
     "aliases": ["Eksopp"],
@@ -1975,7 +1975,7 @@
   {
     "id": "sillkremla",
     "commonName": "Sillkremla",
-    "latinName": "Ätlig",
+    "latinName": "",
     "group": "Svampar",
     "subgroup": "Spröda skivlingar (Kremlor)",
     "aliases": ["Sillkremla"],
