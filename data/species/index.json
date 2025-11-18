@@ -1458,7 +1458,9 @@
         "group": "Svampar",
         "subgroup": "Fingersvampar",
         "aliases": [
-            "En gul fingersvamp"
+            "En gul fingersvamp",
+          "gul fingersvamp",
+          "fingersvamp"
         ],
         "images": [
             "images/en_gul_fingersvamp.jpg"
