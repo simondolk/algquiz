@@ -20,7 +20,7 @@
   "path": "data/categories/svampar.json"
 },
   {
-  "id": "faglar",
+  "id": "faglar-fagelbord",
   "title": "Vanliga fåglar runt fågelbordet",
   "path": "data/categories/faglar.json"
 }
