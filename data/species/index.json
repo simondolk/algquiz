@@ -2250,5 +2250,277 @@
     "images": [
       "images/nattslanda.jpg"
     ]
+  },
+    {
+    "id": "parus-major",
+    "commonName": "Talgoxe",
+    "latinName": "Parus major",
+    "group": "Fåglar",
+    "subgroup": "Mesfåglar",
+    "aliases": ["talgoxe", "parus major"],
+    "images": ["images/talgoxe.jpg"]
+  },
+  {
+    "id": "cyanistes-caeruleus",
+    "commonName": "Blåmes",
+    "latinName": "Cyanistes caeruleus",
+    "group": "Fåglar",
+    "subgroup": "Mesfåglar",
+    "aliases": ["blåmes", "cyanistes caeruleus"],
+    "images": ["images/blames.jpg"]
+  },
+  {
+    "id": "sitta-europaea",
+    "commonName": "Nötväcka",
+    "latinName": "Sitta europaea",
+    "group": "Fåglar",
+    "subgroup": "Nötväckor",
+    "aliases": ["nötväcka", "sitta europaea"],
+    "images": ["images/notvacka.jpg"]
+  },
+  {
+    "id": "passer-montanus",
+    "commonName": "Pilfink",
+    "latinName": "Passer montanus",
+    "group": "Fåglar",
+    "subgroup": "Sparvfåglar",
+    "aliases": ["pilfink", "passer montanus"],
+    "images": ["images/pilfink.jpg"]
+  },
+  {
+    "id": "passer-domesticus",
+    "commonName": "Gråsparv",
+    "latinName": "Passer domesticus",
+    "group": "Fåglar",
+    "subgroup": "Sparvfåglar",
+    "aliases": ["gråsparv", "passer domesticus"],
+    "images": ["images/grasparv.jpg"]
+  },
+  {
+    "id": "pyrrhula-pyrrhula",
+    "commonName": "Domherre",
+    "latinName": "Pyrrhula pyrrhula",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["domherre", "pyrrhula pyrrhula"],
+    "images": ["images/domherre.jpg"]
+  },
+  {
+    "id": "chloris-chloris",
+    "commonName": "Grönfink",
+    "latinName": "Chloris chloris",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["grönfink", "chloris chloris"],
+    "images": ["images/gronfink.jpg"]
+  },
+  {
+    "id": "fringilla-coelebs",
+    "commonName": "Bofink",
+    "latinName": "Fringilla coelebs",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["bofink", "fringilla coelebs"],
+    "images": ["images/bofink.jpg"]
+  },
+  {
+    "id": "fringilla-montifringilla",
+    "commonName": "Bergfink",
+    "latinName": "Fringilla montifringilla",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["bergfink", "fringilla montifringilla"],
+    "images": ["images/bergfink.jpg"]
+  },
+  {
+    "id": "dendrocopos-major",
+    "commonName": "Större hackspett",
+    "latinName": "Dendrocopos major",
+    "group": "Fåglar",
+    "subgroup": "Hackspettar",
+    "aliases": ["större hackspett", "dendrocopos major"],
+    "images": ["images/storre-hackspett.jpg"]
+  },
+  {
+    "id": "turdus-merula",
+    "commonName": "Koltrast",
+    "latinName": "Turdus merula",
+    "group": "Fåglar",
+    "subgroup": "Trastfåglar",
+    "aliases": ["koltrast", "turdus merula"],
+    "images": ["images/koltrast.jpg"]
+  },
+  {
+    "id": "erithacus-rubecula",
+    "commonName": "Rödhake",
+    "latinName": "Erithacus rubecula",
+    "group": "Fåglar",
+    "subgroup": "Flugsnappare",
+    "aliases": ["rödhake", "erithacus rubecula"],
+    "images": ["images/rodhake.jpg"]
+  },
+  {
+    "id": "spinus-spinus",
+    "commonName": "Grönsiska",
+    "latinName": "Spinus spinus",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["grönsiska", "spinus spinus"],
+    "images": ["images/gronsiska.jpg"]
+  },
+  {
+    "id": "carduelis-carduelis",
+    "commonName": "Steglits",
+    "latinName": "Carduelis carduelis",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["steglits", "carduelis carduelis"],
+    "images": ["images/steglits.jpg"]
+  },
+  {
+    "id": "coccothraustes-coccothraustes",
+    "commonName": "Stenknäck",
+    "latinName": "Coccothraustes coccothraustes",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["stenknäck", "coccothraustes coccothraustes"],
+    "images": ["images/stenknack.jpg"]
+  },
+  {
+    "id": "poecile-palustris",
+    "commonName": "Entita",
+    "latinName": "Poecile palustris",
+    "group": "Fåglar",
+    "subgroup": "Mesfåglar",
+    "aliases": ["entita", "poecile palustris"],
+    "images": ["images/entita.jpg"]
+  },
+  {
+    "id": "poecile-montanus",
+    "commonName": "Talltita",
+    "latinName": "Poecile montanus",
+    "group": "Fåglar",
+    "subgroup": "Mesfåglar",
+    "aliases": ["talltita", "poecile montanus"],
+    "images": ["images/talltita.jpg"]
+  },
+  {
+    "id": "periparus-ater",
+    "commonName": "Svartmes",
+    "latinName": "Periparus ater",
+    "group": "Fåglar",
+    "subgroup": "Mesfåglar",
+    "aliases": ["svartmes", "periparus ater"],
+    "images": ["images/svartmes.jpg"]
+  },
+  {
+    "id": "lophophanes-cristatus",
+    "commonName": "Tofsmes",
+    "latinName": "Lophophanes cristatus",
+    "group": "Fåglar",
+    "subgroup": "Mesfåglar",
+    "aliases": ["tofsmes", "lophophanes cristatus"],
+    "images": ["images/tofsmes.jpg"]
+  },
+  {
+    "id": "aegithalos-caudatus",
+    "commonName": "Stjärtmes",
+    "latinName": "Aegithalos caudatus",
+    "group": "Fåglar",
+    "subgroup": "Stjärtmesar",
+    "aliases": ["stjärtmes", "aegithalos caudatus"],
+    "images": ["images/stjartmes.jpg"]
+  },
+  {
+    "id": "emberiza-citrinella",
+    "commonName": "Gulsparv",
+    "latinName": "Emberiza citrinella",
+    "group": "Fåglar",
+    "subgroup": "Fältsparvar",
+    "aliases": ["gulsparv", "emberiza citrinella"],
+    "images": ["images/gulsparv.jpg"]
+  },
+  {
+    "id": "garrulus-glandarius",
+    "commonName": "Nötskrika",
+    "latinName": "Garrulus glandarius",
+    "group": "Fåglar",
+    "subgroup": "Kråkfåglar",
+    "aliases": ["nötskrika", "garrulus glandarius"],
+    "images": ["images/notskrika.jpg"]
+  },
+  {
+    "id": "pica-pica",
+    "commonName": "Skata",
+    "latinName": "Pica pica",
+    "group": "Fåglar",
+    "subgroup": "Kråkfåglar",
+    "aliases": ["skata", "pica pica"],
+    "images": ["images/skata.jpg"]
+  },
+  {
+    "id": "coloeus-monedula",
+    "commonName": "Kaja",
+    "latinName": "Coloeus monedula",
+    "group": "Fåglar",
+    "subgroup": "Kråkfåglar",
+    "aliases": ["kaja", "coloeus monedula"],
+    "images": ["images/kaja.jpg"]
+  },
+  {
+    "id": "turdus-pilaris",
+    "commonName": "Björktrast",
+    "latinName": "Turdus pilaris",
+    "group": "Fåglar",
+    "subgroup": "Trastfåglar",
+    "aliases": ["björktrast", "turdus pilaris"],
+    "images": ["images/bjorktrast.jpg"]
+  },
+  {
+    "id": "acanthis-flammea",
+    "commonName": "Gråsiska",
+    "latinName": "Acanthis flammea",
+    "group": "Fåglar",
+    "subgroup": "Finkfåglar",
+    "aliases": ["gråsiska", "acanthis flammea"],
+    "images": ["images/grasiska.jpg"]
+  },
+  {
+    "id": "streptopelia-decaocto",
+    "commonName": "Turkduva",
+    "latinName": "Streptopelia decaocto",
+    "group": "Fåglar",
+    "subgroup": "Duvfåglar",
+    "aliases": ["turkduva", "streptopelia decaocto"],
+    "images": ["images/turkduva.jpg"]
+  },
+  {
+    "id": "prunella-modularis",
+    "commonName": "Järnsparv",
+    "latinName": "Prunella modularis",
+    "group": "Fåglar",
+    "subgroup": "Järnsparvar",
+    "aliases": ["järnsparv", "prunella modularis"],
+    "images": ["images/jarnsparv.jpg"]
+  },
+  {
+    "id": "certhia-familiaris",
+    "commonName": "Trädkrypare",
+    "latinName": "Certhia familiaris",
+    "group": "Fåglar",
+    "subgroup": "Trädkrypare",
+    "aliases": ["trädkrypare", "certhia familiaris"],
+    "images": ["images/tradkrypare.jpg"]
+  },
+  {
+    "id": "picus-viridis",
+    "commonName": "Gröngöling",
+    "latinName": "Picus viridis",
+    "group": "Fåglar",
+    "subgroup": "Hackspettar",
+    "aliases": ["gröngöling", "picus viridis"],
+    "images": ["images/grongoling.jpg"]
   }
+
+  
 ]
