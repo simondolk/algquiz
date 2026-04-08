@@ -2646,5 +2646,23 @@
     "subgroup": "Gäss",
     "aliases": ["grågås", "anser anser"],
     "images": ["images/gragas.jpg"]
+  },
+  {
+    "id": "sturnus-vulgaris",
+    "commonName": "Stare",
+    "latinName": "Sturnus vulgaris",
+    "group": "Fåglar",
+    "subgroup": "Starar",
+    "aliases": ["stare", "sturnus vulgaris"],
+    "images": ["images/stare.jpg"]
+  },
+  {
+    "id": "columba-palumbus",
+    "commonName": "Ringduva",
+    "latinName": "Columba palumbus",
+    "group": "Fåglar",
+    "subgroup": "Duvor",
+    "aliases": ["ringduva", "columba palumbus"],
+    "images": ["images/ringduva.jpg"]
   }
 ]
