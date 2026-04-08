@@ -23,5 +23,10 @@
   "id": "faglar-fagelbord",
   "title": "Vanliga fåglar runt fågelbordet",
   "path": "data/categories/faglar-fagelbord.json"
+},
+    {
+  "id": "faglar-sodra-sverige",
+  "title": "Fåglar du bör kunna i södra Sverige",
+  "path": "data/categories/faglar-sodra-sverige.json"
 }
 ]
