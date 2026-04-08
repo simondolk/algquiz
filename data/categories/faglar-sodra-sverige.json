@@ -1,7 +1,7 @@
 {
-  "id": "faglar-fagelbord",
-  "name": "Vanliga fåglar runt fågelbordet",
-  "description": "30 vanliga fågelarter man kan se runt fågelbordet",
+  "id": "faglar-sodra-sverige",
+  "name": "Fåglar man bör kunna i södra Sverige",
+  "description": "Några utvalda arter man bara måste kunna i södra Sverige",
   "speciesIds": [
     "parus-major",
     "cyanistes-caeruleus",
