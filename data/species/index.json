@@ -2520,7 +2520,131 @@
     "subgroup": "Hackspettar",
     "aliases": ["gröngöling", "picus viridis"],
     "images": ["images/grongoling.jpg"]
+  },
+  {
+    "id": "cuculus-canorus",
+    "commonName": "Gök",
+    "latinName": "Cuculus canorus",
+    "group": "Fåglar",
+    "subgroup": "Gökar",
+    "aliases": ["gök", "cuculus canorus"],
+    "images": ["images/gok.jpg"]
+  },
+  {
+    "id": "cygnus-olor",
+    "commonName": "Knölsvan",
+    "latinName": "Cygnus olor",
+    "group": "Fåglar",
+    "subgroup": "Svanar",
+    "aliases": ["knölsvan", "cygnus olor"],
+    "images": ["images/knolsvan.jpg"]
+  },
+  {
+    "id": "grus-grus",
+    "commonName": "Trana",
+    "latinName": "Grus grus",
+    "group": "Fåglar",
+    "subgroup": "Tranor",
+    "aliases": ["trana", "grus grus"],
+    "images": ["images/trana.jpg"]
+  },
+  {
+    "id": "ardea-cinerea",
+    "commonName": "Gråhäger",
+    "latinName": "Ardea cinerea",
+    "group": "Fåglar",
+    "subgroup": "Hägrar",
+    "aliases": ["gråhäger", "grå häger", "ardea cinerea"],
+    "images": ["images/grahager.jpg"]
+  },
+  {
+    "id": "strix-aluco",
+    "commonName": "Kattuggla",
+    "latinName": "Strix aluco",
+    "group": "Fåglar",
+    "subgroup": "Ugglor",
+    "aliases": ["kattuggla", "strix aluco"],
+    "images": ["images/kattuggla.jpg"]
+  },
+  {
+    "id": "hirundo-rustica",
+    "commonName": "Ladusvala",
+    "latinName": "Hirundo rustica",
+    "group": "Fåglar",
+    "subgroup": "Svalor",
+    "aliases": ["ladusvala", "hirundo rustica"],
+    "images": ["images/ladusvala.jpg"]
+  },
+  {
+    "id": "vanellus-vanellus",
+    "commonName": "Tofsvipa",
+    "latinName": "Vanellus vanellus",
+    "group": "Fåglar",
+    "subgroup": "Vadare",
+    "aliases": ["tofsvipa", "vanellus vanellus"],
+    "images": ["images/tofsvipa.jpg"]
+  },
+  {
+    "id": "motacilla-alba",
+    "commonName": "Sädesärla",
+    "latinName": "Motacilla alba",
+    "group": "Fåglar",
+    "subgroup": "Ärlor",
+    "aliases": ["sädesärla", "motacilla alba"],
+    "images": ["images/sadesarla.jpg"]
+  },
+  {
+    "id": "phasianus-colchicus",
+    "commonName": "Fasan",
+    "latinName": "Phasianus colchicus",
+    "group": "Fåglar",
+    "subgroup": "Fälthöns",
+    "aliases": ["fasan", "phasianus colchicus"],
+    "images": ["images/fasan.jpg"]
+  },
+  {
+    "id": "milvus-milvus",
+    "commonName": "Röd glada",
+    "latinName": "Milvus milvus",
+    "group": "Fåglar",
+    "subgroup": "Rovfåglar",
+    "aliases": ["röd glada", "milvus milvus"],
+    "images": ["images/rod_glada.jpg"]
+  },
+  {
+    "id": "haliaeetus-albicilla",
+    "commonName": "Havsörn",
+    "latinName": "Haliaeetus albicilla",
+    "group": "Fåglar",
+    "subgroup": "Rovfåglar",
+    "aliases": ["havsörn", "haliaeetus albicilla"],
+    "images": ["images/havsorn.jpg"]
+  },
+  {
+    "id": "chroicocephalus-ridibundus",
+    "commonName": "Skrattmås",
+    "latinName": "Chroicocephalus ridibundus",
+    "group": "Fåglar",
+    "subgroup": "Måsfåglar",
+    "aliases": ["skrattmås", "chroicocephalus ridibundus"],
+    "images": ["images/skrattmas.jpg"]
+  },
+  {
+    "id": "haematopus-ostralegus",
+    "commonName": "Strandskata",
+    "latinName": "Haematopus ostralegus",
+    "group": "Fåglar",
+    "subgroup": "Vadare",
+    "aliases": ["strandskata", "haematopus ostralegus"],
+    "images": ["images/strandskata.jpg"]
+  },
+  {
+    "id": "anser-anser",
+    "commonName": "Grågås",
+    "latinName": "Anser anser",
+    "group": "Fåglar",
+    "subgroup": "Gäss",
+    "aliases": ["grågås", "anser anser"],
+    "images": ["images/gragas.jpg"]
   }
-
-  
 ]
